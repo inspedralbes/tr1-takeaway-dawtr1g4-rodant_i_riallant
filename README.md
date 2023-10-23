@@ -19,12 +19,9 @@ HEU DE MODIFICAR AQUEST DOCUMENT AMB LA VOSTRA INFORMACIÖ:
 * [URL de producció](meter url aqui) 
 (important que sigui amb un domini registrat) 
 
+
 * NOM: Rodant i Riallant
 * PRODUCTES: Pilotes
-
-* COORDINADORS: 	Arnau: Vue, Laravel
-* 		Aitor: Disseny
-* 		Mario: Desplegament
 
 * Plugins:
 * 	Navegadors: Chrome o Firefox: Vue.js devtools
