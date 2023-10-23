@@ -19,3 +19,16 @@ HEU DE MODIFICAR AQUEST DOCUMENT AMB LA VOSTRA INFORMACIÖ:
 * [URL de producció](meter url aqui) 
 (important que sigui amb un domini registrat) 
 
+
+* NOM: Rodant i Riallant
+* PRODUCTES: Pilotes
+
+* Plugins:
+* 	Navegadors: Chrome o Firefox: Vue.js devtools
+* 	Visual Studio Code: Thunder Client, JavaScript (ES6) code snippets, Laravel Extra Intellisense, Live Server, MySQL, Vue Language Features (Volar)
+
+* Chat-gpt: Es pot utilitzar sempre que s'entengui el contingut, preguntar si no s'enten
+
+* Classes html: Utilitzar format BEM!!
+
+
