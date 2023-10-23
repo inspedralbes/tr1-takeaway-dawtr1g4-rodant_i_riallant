@@ -5,8 +5,8 @@
 Teniu la carpeta /doc per deixar-hi tota la documentació que genereu, en format __markdown__
 
 HEU DE MODIFICAR AQUEST DOCUMENT AMB LA VOSTRA INFORMACIÖ:
-* Nom del projecte
-* Petita descripció
+* Rodant i Riallant
+* Rodant i Riallant<sup>TM</sup> és el portal web d'una botiga especialitzada en la venda de complements esférics, des d'una pilota de futból fins al reemplaçament d'una bola 3 per al seu joc de boles de billar, a Rodant i Riallant<sup>TM</sup> trobará el que necessita
 * Arnau Fernández - Rol: Coordinador de Front i Back
 * Pablo Matamoros
 * Aitor Barreiro - Rol: Coordinador de Disseny
