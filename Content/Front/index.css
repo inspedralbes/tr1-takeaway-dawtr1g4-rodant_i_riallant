@@ -249,43 +249,27 @@ input{
 
 /* Estilos para la lista de productos */
 .productes__producte {
-    display: flex;
-    margin-top: 10px;
+    display: grid;
+    margin-top: 15px;
     border: 2px solid #1f757f;
     border-radius: 10px;
     padding: 15px;
     background-color: #1f757f;
     color: white;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   }
   
   .producte__foto img {
-    max-width: 100px;
-    max-height: 100px;
-    border-radius: 10px;
+    width: 300px;
+    height: 300px;
   }
-  
-  .producte__titol {
-    flex: 1;
-    margin-left: 10px;
-    font-size: 18px;
-    font-weight: bold;
+  .producte__titol{
+    font-size: 65px;
+    margin-left: 20px;
   }
-  
-  .producte__preu {
-    font-weight: bold;
-    font-size: 20px;
+  .producte__preu{
+    font-size: 45px;
+    margin-left: auto;
   }
-  
-  .producte__quantitat {
-    font-weight: bold;
-    font-size: 16px;
-  }
-  input[type=button] .modificar-quantitat{
-    background-color: black;
-  }
-
-
 footer {
     margin-top: 25px;
     text-align: center;
