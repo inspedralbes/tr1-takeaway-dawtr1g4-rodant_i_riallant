@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>PruebaCommit</title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="getPantalla() == `titol`">
+            <h1>Benvolgut a la millor tenda d'escales</h1>
+            <button @click="canviarPantalla(`tenda`)">Tenda</button>
+        </div>
+        <div v-if="getPantalla() == `tenda`" class="app__tenda">
+            <div class="superior">
+                <h1>{{ pantallaActual }}</h1>
+                <button @click="canviarPantalla(`titol`)">Titol</button>
+            </div>
+
+            <div class="menu">
+                <div v-for="(producte, index) in productes">
+                    <div id="id{{index}}" class="item">
+
+                        <div class="nom">{{producte.nom}}</div>
+                        <div class="butons">
+                            <input type="button" value="-" @click="disminuirDemanats(index)">
+                            <input v-model="productes[index].counter" name="id{{index}}" min=0 max=9>
+                            <input type="button" value="+" @click="augmentarDemanats(index)">
+                        </div>
+                        <img :src="producte.img" alt="producte">
+
+                    </div>
+                </div>
+            </div>
+            <div class="ticket">
+                <h2>Ticket</h2>
+                <div class="ticket__productes">
+                    <div v-for="(producteComprar, index) in compra">
+                        <div class="productes__producte producte">
+                            <div class="producte__foto">
+                                <img :src="producteComprar.img" alt="producte">
+                            </div>
+                            <div class="producte__titol">
+                                {{producteComprar.nom}}
+                            </div>
+                            <div class="producte__preu">
+                                {{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
+                            </div>
+                            <div class="producte__quantitat">
+                                {{producteComprar.counter}}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="inferior">
+                <h2 >Inferior</h2>
+                <button @click="canviarPantalla(`checkout`)">Checkout</button>
+            </div>
+            
+        </div>
+        <div v-if="getPantalla() == `checkout`">
+            <h2>Total</h2>
+            <h3>{{getTotal()}}</h3>
+            <div v-for="(producteComprar, index) in compra">
+                <div class="productes__producte producte">
+                    <div class="producte__foto">
+                        <img :src="producteComprar.imatge" alt="Holiwi">
+                    </div>
+                    <div class="producte__titol">
+                        {{producteComprar.nom}}
+                    </div>
+                    <div class="producte__preu">
+                        {{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
+                    </div>
+                    <div class="producte__quantitat">
+                        {{producteComprar.counter}}
+                    </div>
+                </div>
+            </div>
+            <button @click="canviarPantalla(`tenda`)">Tenda</button>
+            <button @click="canviarPantalla(`titol`)">Inici</button>
+        </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
