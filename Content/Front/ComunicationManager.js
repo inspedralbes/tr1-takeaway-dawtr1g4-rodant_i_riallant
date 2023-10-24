@@ -5,6 +5,4 @@ export async function agafarPelicules(pagina){
     const productes = await response.json();
 
     return productes;
-
-    
 }
