@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "nombre": "Pilota de futbol (soccer)",
+        "nom": "Pilota de futbol (soccer)",
         "descripcio": "Pilota utilitzada en el futbol, és esferica i generalment esta feta de cuir o materials sintetics.",
         "estoc": 25,
         "img": "./img/soccer.jpg",
@@ -10,7 +10,7 @@
     },
     {
         "id": 2,
-        "nombre": "Pilota de basquet",
+        "nom": "Pilota de basquet",
         "descripcio": "Pilota utilitzada en el basquet, és una pilota esferica de goma o cuir.",
         "estoc": 30,
         "img": "./img/basket.jpg",
@@ -19,7 +19,7 @@
     },
     {
         "id": 3,
-        "nombre": "Pilota de voleibol",
+        "nom": "Pilota de voleibol",
         "descripcio": "Pilota utilitzada en el voleibol, és esferica i sovint esta feta de cuir o material sintetic.",
         "estoc": 20,
         "img": "./img/volley.jpg",
@@ -28,7 +28,7 @@
     },
     {
         "id": 4,
-        "nombre": "Pilota de beisbol",
+        "nom": "Pilota de beisbol",
         "descripcio": "Pilota utilitzada en el beisbol, és una pilota dura coberta de cuir amb una base interior de suro o goma.",
         "estoc": 40,
         "img": "./img/beisbol.jpg",
@@ -37,7 +37,7 @@
     },
     {
         "id": 5,
-        "nombre": "Pilota de tennis",
+        "nom": "Pilota de tennis",
         "descripcio": "Pilota utilitzada en el tennis, és una pilota groga o blanca amb una coberta exterior de feltre.",
         "estoc": 35,
         "img": "./img/tennis.jpg",
@@ -46,7 +46,7 @@
     },
     {
         "id": 6,
-        "nombre": "Pilota de golf",
+        "nom": "Pilota de golf",
         "descripcio": "Pilota utilitzada en el golf, és petita i dura, dissenyada per recorrer distancies llargues.",
         "estoc": 50,
         "img": "./img/golf.jpg",
@@ -55,7 +55,7 @@
     },
     {
         "id": 7,
-        "nombre": "Pilota de criquet",
+        "nom": "Pilota de criquet",
         "descripcio": "Pilota utilitzada en el criquet, és dura i cosida amb costures.",
         "estoc": 15,
         "img": "./img/cricket.jpg",
@@ -64,7 +64,7 @@
     },
     {
         "id": 8,
-        "nombre": "Pilota de ping-pong (tenis de taula)",
+        "nom": "Pilota de ping-pong (tenis de taula)",
         "descripcio": "Pilota utilitzada en el tennis de taula, és petita i lleugera.",
         "estoc": 60,
         "img": "./img/pingpong.jpg",
@@ -73,7 +73,7 @@
     },
     {
         "id": 9,
-        "nombre": "Pilota de rugbi",
+        "nom": "Pilota de rugbi",
         "descripcio": "Pilota utilitzada en el rugbi, és ovalada i s'utilitza per passades i cops de peu.",
         "estoc": 25,
         "img": "./img/rugby.jpg",
@@ -82,7 +82,7 @@
     },
     {
         "id": 10,
-        "nombre": "Pilota de softbol",
+        "nom": "Pilota de softbol",
         "descripcio": "Pilota utilitzada en el softbol, és similar a la pilota de beisbol pero mes gran i mes suau.",
         "estoc": 30,
         "img": "./img/softbol.jpg",
@@ -91,7 +91,7 @@
     },
     {
         "id": 11,
-        "nombre": "Pilota d'waterpolo",
+        "nom": "Pilota d'waterpolo",
         "descripcio": "Pilota utilitzada en l'waterpolo, és pesada i està dissenyada per flotar a l'aigua.",
         "estoc": 10,
         "img": "./img/waterpolo.jpg",
@@ -100,7 +100,7 @@
     },
     {
         "id": 12,
-        "nombre": "Pilota de squash",
+        "nom": "Pilota de squash",
         "descripcio": "Pilota utilitzada en el squash, és petita i de goma.",
         "estoc": 25,
         "img": "./img/squash.jpg",
@@ -109,7 +109,7 @@
     },
     {
         "id": 13,
-        "nombre": "Pilota de racquetbol",
+        "nom": "Pilota de racquetbol",
         "descripcio": "Pilota utilitzada en el racquetbol, és petita i dura.",
         "estoc": 20,
         "img": "./img/raquetball.jpg",
@@ -118,7 +118,7 @@
     },
     {
         "id": 14,
-        "nombre": "Pilota de futbol americà",
+        "nom": "Pilota de futbol americà",
         "descripcio": "Pilota utilitzada en el futbol americà, és ovalada i punxeguda als extrems.",
         "estoc": 20,
         "img": "./img/football.jpg",
@@ -127,7 +127,7 @@
     },
     {
         "id": 15,
-        "nombre": "Pilota d'handbol",
+        "nom": "Pilota d'handbol",
         "descripcio": "Pilota utilitzada en el handbol, és petita i dura.",
         "estoc": 15,
         "img": "./img/handball.jpg",
@@ -136,7 +136,7 @@
     },
     {
         "id": 16,
-        "nombre": "Pilota de petanca",
+        "nom": "Pilota de petanca",
         "descripcio": "Pilota utilitzada en l'esport de bitlles, és metallica i pesada.",
         "estoc": 10,
         "img": "./img/petanca.jpg",
@@ -145,7 +145,7 @@
     },
     {
         "id": 17,
-        "nombre": "Pilota de lacrosse",
+        "nom": "Pilota de lacrosse",
         "descripcio": "Pilota utilitzada en el lacrosse, és dura i té una xarxa a un extrem.",
         "estoc": 15,
         "img": "./img/lacrosse.jpg",
@@ -154,7 +154,7 @@
     },
     {
         "id": 18,
-        "nombre": "Pilota de criquet de bat i pilota",
+        "nom": "Pilota de criquet de bat i pilota",
         "descripcio": "Pilota utilitzada en el criquet, és mes lleugera i mes gran que la pilota de criquet tradicional i s'utilitza en jocs informals.",
         "estoc": 25,
         "img": "./img/cricketPelota.jpg",
@@ -163,7 +163,7 @@
     },
     {
         "id": 19,
-        "nombre": "Pilota medicinal",
+        "nom": "Pilota medicinal",
         "descripcio": "Utilitzada en entrenament funcional i rehabilitacio, és una pilota pesada que s'utilitza per exercicis de força i equilibri.",
         "estoc": 20,
         "img": "./img/medicinal.jpg",
@@ -172,7 +172,7 @@
     },
     {
         "id": 20,
-        "nombre": "Pilota suïssa (fitball)",
+        "nom": "Pilota suïssa (fitball)",
         "descripcio": "Utilitzada en entrenament de pilates i exercicis d'estabilitat, és una pilota inflable gran.",
         "estoc": 15,
         "img": "./img/suiza.jpg",
@@ -181,7 +181,7 @@
     },
     {
         "id": 21,
-        "nombre": "Pilota d'ioga",
+        "nom": "Pilota d'ioga",
         "descripcio": "Similar a la pilota suïssa, s'utilitza en exercicis d'ioga i pilates per millorar la flexibilitat i l'equilibri.",
         "estoc": 20,
         "img": "./img/yoga.jpg",
@@ -190,7 +190,7 @@
     },
     {
         "id": 22,
-        "nombre": "Pilota de paret (wall ball)",
+        "nom": "Pilota de paret (wall ball)",
         "descripcio": "Utilitzada en l'entrenament creuat, és una pilota pesada que es llança contra una paret com a part d'un exercici.",
         "estoc": 25,
         "img": "./img/wallball.jpg",
@@ -199,7 +199,7 @@
     },
     {
         "id": 23,
-        "nombre": "Pilota de boxa (speed bag)",
+        "nom": "Pilota de boxa (speed bag)",
         "descripcio": "Utilitzada en la boxa, és una petita pilota inflable que es colpeja per millorar la rapidesa i la coordinacio.",
         "estoc": 15,
         "img": "./img/boxeo.jpg",
@@ -208,7 +208,7 @@
     },
     {
         "id": 24,
-        "nombre": "Pilota de reaccio (reaction ball)",
+        "nom": "Pilota de reaccio (reaction ball)",
         "descripcio": "Utilitzada en l'entrenament esportiu, té una superficie irregular i rebot de manera imprevisible, la qual cosa millora l'agilitat i la coordinacio.",
         "estoc": 20,
         "img": "./img/reaccion.jpg",
@@ -217,7 +217,7 @@
     },
     {
         "id": 25,
-        "nombre": "Pilota de golf de practica",
+        "nom": "Pilota de golf de practica",
         "descripcio": "Utilitzada en la practica del golf, és una pilota mes lleugera que s'utilitza per practicar tirs al camp de practica.",
         "estoc": 30,
         "img": "./img/golf.jpg",
@@ -226,7 +226,7 @@
     },
     {
         "id": 26,
-        "nombre": "Pilota de bitlles",
+        "nom": "Pilota de bitlles",
         "descripcio": "Utilitzada en el bitlles, és gran i pesada, dissenyada per rodar per una pista de bitlles.",
         "estoc": 10,
         "img": "./img/boliche.jpg",
@@ -235,7 +235,7 @@
     },
     {
         "id": 27,
-        "nombre": "Pilota de cal·listenia",
+        "nom": "Pilota de cal·listenia",
         "descripcio": "Utilitzada en exercicis de cal·listenia, és una pilota petita que s'utilitza per augmentar la dificultat de certs moviments.",
         "estoc": 20,
         "img": "./img/calistenia.jpg",
@@ -244,7 +244,7 @@
     },
     {
         "id": 28,
-        "nombre": "Pilota de terapia (therapy ball)",
+        "nom": "Pilota de terapia (therapy ball)",
         "descripcio": "Utilitzada en fisioterapia i terapia ocupacional, és una pilota de goma utilitzada per millorar la força i la coordinacio.",
         "estoc": 15,
         "img": "./img/terapia.jpg",
