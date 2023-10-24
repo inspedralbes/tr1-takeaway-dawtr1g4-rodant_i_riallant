@@ -16,10 +16,10 @@
 <body>
     <div id="app">
         <div v-if="getPantalla() == `titol`">
-            <h1>Benvolgut a la millor tenda d'escales</h1>
-            <button @click="canviarPantalla(`tenda`)">Tenda</button>
+            <h1>Benvolgut a la millor botiga d'escales</h1>
+            <button @click="canviarPantalla(`botiga`)">botigaaaaa</button>
         </div>
-        <div v-if="getPantalla() == `tenda`" class="app__tenda">
+        <div v-if="getPantalla() == `botiga`" class="app__botiga">
             <div class="superior">
                 <h1>{{ pantallaActual }}</h1>
                 <button @click="canviarPantalla(`titol`)">Titol</button>
@@ -88,7 +88,9 @@
                     </div>
                 </div>
             </div>
-            <button @click="canviarPantalla(`tenda`)">Tenda</button>
+            <input v-model="email">
+            <button @click="ferCompra()"><h1>COMPRAR</h1></button>
+            <button @click="canviarPantalla(`botiga`)">botiga</button>
             <button @click="canviarPantalla(`titol`)">Inici</button>
         </div>
     </div>
