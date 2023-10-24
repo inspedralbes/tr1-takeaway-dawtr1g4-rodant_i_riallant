@@ -31,13 +31,14 @@ createApp({
                 });
 
                 if (localStorage.getItem('compra')!=null) {
+                    this.compra = [];
                     let recuperarCompra = JSON.parse(localStorage.getItem('compra'));
                     
                     recuperarCompra.forEach(element => {
                         this.productes.forEach(producte => {
                             if (element.id==producte.id) {
                                 producte.counter= element.counter;
-                                this.afegirCompra(producte.id);
+                                this.afegirCompra(producte.id-1);
                             }
                         });
                     });
@@ -46,7 +47,7 @@ createApp({
             });   
         },
         augmentarDemanats(index){
-            if (this.productes[index].counter<10) {
+            if (this.productes[index].counter<this.productes[index].estoc) {
                 this.productes[index].counter++;
                 this.afegirCompra(index);
             }
