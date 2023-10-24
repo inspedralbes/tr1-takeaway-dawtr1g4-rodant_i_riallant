@@ -1,107 +1,254 @@
 [
     {
-        "id": 0,
-        "nom": "Escalera de Madera",
-        "preu": 199.99,
-        "categoria": "Interior",
-        "imatge": "img/madera.jpg"
-    },
-    {
         "id": 1,
-        "nom": "Escalera de Aluminio Plegable",
-        "preu": 149.99,
-        "categoria": "Interior/Exterior",
-        "imatge": "img/aluminio.jpg"
+        "nom": "Pilota de futbol (soccer)",
+        "descripcio": "Pilota utilitzada en el futbol, és esferica i generalment esta feta de cuir o materials sintetics.",
+        "estoc": 25,
+        "img": "./img/soccer.jpg",
+        "categoria": "Esports",
+        "preu": 29.99
     },
     {
         "id": 2,
-        "nom": "Escalera de Caracol de Hierro Forjado",
-        "preu": 349.99,
-        "categoria": "Interior",
-        "imatge": "img/caracol_hierro.jpg"
+        "nom": "Pilota de basquet",
+        "descripcio": "Pilota utilitzada en el basquet, és una pilota esferica de goma o cuir.",
+        "estoc": 30,
+        "img": "./img/basket.jpg",
+        "categoria": "Esports",
+        "preu": 44.99
     },
     {
         "id": 3,
-        "nom": "Escalera de Cuerda",
-        "preu": 79.99,
-        "categoria": "Exterior",
-        "imatge": "img/cuerda.jpg"
+        "nom": "Pilota de voleibol",
+        "descripcio": "Pilota utilitzada en el voleibol, és esferica i sovint esta feta de cuir o material sintetic.",
+        "estoc": 20,
+        "img": "./img/volley.jpg",
+        "categoria": "Esports",
+        "preu": 21.99
     },
     {
         "id": 4,
-        "nom": "Escalera de Tijera de Aluminio",
-        "preu": 129.99,
-        "categoria": "Interior/Exterior",
-        "imatge": "img/tijera_aluminio.jpg"
+        "nom": "Pilota de beisbol",
+        "descripcio": "Pilota utilitzada en el beisbol, és una pilota dura coberta de cuir amb una base interior de suro o goma.",
+        "estoc": 40,
+        "img": "./img/beisbol.jpg",
+        "categoria": "Esports",
+        "preu": 35.99
     },
     {
         "id": 5,
-        "nom": "Escalera de Acero Inoxidable",
-        "preu": 269.99,
-        "categoria": "Interior",
-        "imatge": "img/acero_inoxidable.jpg"
+        "nom": "Pilota de tennis",
+        "descripcio": "Pilota utilitzada en el tennis, és una pilota groga o blanca amb una coberta exterior de feltre.",
+        "estoc": 35,
+        "img": "./img/tennis.jpg",
+        "categoria": "Esports",
+        "preu": 25.99
     },
     {
         "id": 6,
-        "nom": "Escalera de Madera Rústica",
-        "preu": 189.99,
-        "categoria": "Interior",
-        "imatge": "img/madera_rustica.jpg"
+        "nom": "Pilota de golf",
+        "descripcio": "Pilota utilitzada en el golf, és petita i dura, dissenyada per recorrer distancies llargues.",
+        "estoc": 50,
+        "img": "./img/golf.jpg",
+        "categoria": "Esports",
+        "preu": 42.99
     },
     {
         "id": 7,
-        "nom": "Escalera Telescópica de Aluminio",
-        "preu": 199.99,
-        "categoria": "Interior/Exterior",
-        "imatge": "img/telescopica_aluminio.jpg"
+        "nom": "Pilota de criquet",
+        "descripcio": "Pilota utilitzada en el criquet, és dura i cosida amb costures.",
+        "estoc": 15,
+        "img": "./img/cricket.jpg",
+        "categoria": "Esports",
+        "preu": 19.99
     },
     {
         "id": 8,
-        "nom": "Escalera de Hierro Decorativa",
-        "preu": 279.99,
-        "categoria": "Interior",
-        "imatge": "img/decorativa_hierro.jpg"
+        "nom": "Pilota de ping-pong (tenis de taula)",
+        "descripcio": "Pilota utilitzada en el tennis de taula, és petita i lleugera.",
+        "estoc": 60,
+        "img": "./img/pingpong.jpg",
+        "categoria": "Esports",
+        "preu": 31.99
     },
     {
         "id": 9,
-        "nom": "Escalera de Cuerda de Emergencia",
-        "preu": 99.99,
-        "categoria": "Interior/Exterior",
-        "imatge": "img/emergencia_cuerda.jpg"
+        "nom": "Pilota de rugbi",
+        "descripcio": "Pilota utilitzada en el rugbi, és ovalada i s'utilitza per passades i cops de peu.",
+        "estoc": 25,
+        "img": "./img/rugby.jpg",
+        "categoria": "Esports",
+        "preu": 28.99
     },
     {
         "id": 10,
-        "nom": "Escalera de Aluminio Resistente al Agua",
-        "preu": 159.99,
-        "categoria": "Exterior",
-        "imatge": "img/resistente_aluminio.jpg"
+        "nom": "Pilota de softbol",
+        "descripcio": "Pilota utilitzada en el softbol, és similar a la pilota de beisbol pero mes gran i mes suau.",
+        "estoc": 30,
+        "img": "./img/softbol.jpg",
+        "categoria": "Esports",
+        "preu": 32.99
     },
     {
         "id": 11,
-        "nom": "Escalera de Acero Pintada",
-        "preu": 229.99,
-        "categoria": "Interior",
-        "imatge": "img/pintada_acero.jpg"
+        "nom": "Pilota d'waterpolo",
+        "descripcio": "Pilota utilitzada en l'waterpolo, és pesada i està dissenyada per flotar a l'aigua.",
+        "estoc": 10,
+        "img": "./img/waterpolo.jpg",
+        "categoria": "Esports",
+        "preu": 23.99
     },
     {
         "id": 12,
-        "nom": "Escalera de Madera Antigua",
-        "preu": 199.99,
-        "categoria": "Interior",
-        "imatge": "img/madera_antigua.jpg"
+        "nom": "Pilota de squash",
+        "descripcio": "Pilota utilitzada en el squash, és petita i de goma.",
+        "estoc": 25,
+        "img": "./img/squash.jpg",
+        "categoria": "Esports",
+        "preu": 18.99
     },
     {
         "id": 13,
-        "nom": "Escalera de Aluminio Plegable Compacta",
-        "preu": 139.99,
-        "categoria": "Interior/Exterior",
-        "imatge": "img/plegable_aluminio.jpg"
+        "nom": "Pilota de racquetbol",
+        "descripcio": "Pilota utilitzada en el racquetbol, és petita i dura.",
+        "estoc": 20,
+        "img": "./img/raquetball.jpg",
+        "categoria": "Esports",
+        "preu": 29.99
     },
     {
         "id": 14,
-        "nom": "Escalera de Hierro Moderna",
-        "preu": 289.99,
-        "categoria": "Interior",
-        "imatge": "img/moderna_hierro.jpg"
+        "nom": "Pilota de futbol americà",
+        "descripcio": "Pilota utilitzada en el futbol americà, és ovalada i punxeguda als extrems.",
+        "estoc": 20,
+        "img": "./img/football.jpg",
+        "categoria": "Esports",
+        "preu": 22.99
+    },
+    {
+        "id": 15,
+        "nom": "Pilota d'handbol",
+        "descripcio": "Pilota utilitzada en el handbol, és petita i dura.",
+        "estoc": 15,
+        "img": "./img/handball.jpg",
+        "categoria": "Esports",
+        "preu": 24.99
+    },
+    {
+        "id": 16,
+        "nom": "Pilota de petanca",
+        "descripcio": "Pilota utilitzada en l'esport de bitlles, és metallica i pesada.",
+        "estoc": 10,
+        "img": "./img/petanca.jpg",
+        "categoria": "Esports",
+        "preu": 20.99
+    },
+    {
+        "id": 17,
+        "nom": "Pilota de lacrosse",
+        "descripcio": "Pilota utilitzada en el lacrosse, és dura i té una xarxa a un extrem.",
+        "estoc": 15,
+        "img": "./img/lacrosse.jpg",
+        "categoria": "Esports",
+        "preu": 17.99
+    },
+    {
+        "id": 18,
+        "nom": "Pilota de criquet de bat i pilota",
+        "descripcio": "Pilota utilitzada en el criquet, és mes lleugera i mes gran que la pilota de criquet tradicional i s'utilitza en jocs informals.",
+        "estoc": 25,
+        "img": "./img/cricketPelota.jpg",
+        "categoria": "Esports",
+        "preu": 16.99
+    },
+    {
+        "id": 19,
+        "nom": "Pilota medicinal",
+        "descripcio": "Utilitzada en entrenament funcional i rehabilitacio, és una pilota pesada que s'utilitza per exercicis de força i equilibri.",
+        "estoc": 20,
+        "img": "./img/medicinal.jpg",
+        "categoria": "Gimnas",
+        "preu": 46.99
+    },
+    {
+        "id": 20,
+        "nom": "Pilota suïssa (fitball)",
+        "descripcio": "Utilitzada en entrenament de pilates i exercicis d'estabilitat, és una pilota inflable gran.",
+        "estoc": 15,
+        "img": "./img/suiza.jpg",
+        "categoria": "Gimnas",
+        "preu": 38.99
+    },
+    {
+        "id": 21,
+        "nom": "Pilota d'ioga",
+        "descripcio": "Similar a la pilota suïssa, s'utilitza en exercicis d'ioga i pilates per millorar la flexibilitat i l'equilibri.",
+        "estoc": 20,
+        "img": "./img/yoga.jpg",
+        "categoria": "Gimnas",
+        "preu": 19.99
+    },
+    {
+        "id": 22,
+        "nom": "Pilota de paret (wall ball)",
+        "descripcio": "Utilitzada en l'entrenament creuat, és una pilota pesada que es llança contra una paret com a part d'un exercici.",
+        "estoc": 25,
+        "img": "./img/wallball.jpg",
+        "categoria": "Gimnas",
+        "preu": 28.99
+    },
+    {
+        "id": 23,
+        "nom": "Pilota de boxa (speed bag)",
+        "descripcio": "Utilitzada en la boxa, és una petita pilota inflable que es colpeja per millorar la rapidesa i la coordinacio.",
+        "estoc": 15,
+        "img": "./img/boxeo.jpg",
+        "categoria": "Gimnas",
+        "preu": 45.99
+    },
+    {
+        "id": 24,
+        "nom": "Pilota de reaccio (reaction ball)",
+        "descripcio": "Utilitzada en l'entrenament esportiu, té una superficie irregular i rebot de manera imprevisible, la qual cosa millora l'agilitat i la coordinacio.",
+        "estoc": 20,
+        "img": "./img/reaccion.jpg",
+        "categoria": "Esports",
+        "preu": 15.99
+    },
+    {
+        "id": 25,
+        "nom": "Pilota de golf de practica",
+        "descripcio": "Utilitzada en la practica del golf, és una pilota mes lleugera que s'utilitza per practicar tirs al camp de practica.",
+        "estoc": 30,
+        "img": "./img/golf.jpg",
+        "categoria": "Esports",
+        "preu": 27.99
+    },
+    {
+        "id": 26,
+        "nom": "Pilota de bitlles",
+        "descripcio": "Utilitzada en el bitlles, és gran i pesada, dissenyada per rodar per una pista de bitlles.",
+        "estoc": 10,
+        "img": "./img/boliche.jpg",
+        "categoria": "Esports",
+        "preu": 16.99
+    },
+    {
+        "id": 27,
+        "nom": "Pilota de cal·listenia",
+        "descripcio": "Utilitzada en exercicis de cal·listenia, és una pilota petita que s'utilitza per augmentar la dificultat de certs moviments.",
+        "estoc": 20,
+        "img": "./img/calistenia.jpg",
+        "categoria": "Gimnas",
+        "preu": 30.99
+    },
+    {
+        "id": 28,
+        "nom": "Pilota de terapia (therapy ball)",
+        "descripcio": "Utilitzada en fisioterapia i terapia ocupacional, és una pilota de goma utilitzada per millorar la força i la coordinacio.",
+        "estoc": 15,
+        "img": "./img/terapia.jpg",
+        "categoria": "Salut",
+        "preu": 20.99
     }
 ]
