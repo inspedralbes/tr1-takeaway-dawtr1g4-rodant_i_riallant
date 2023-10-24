@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->text('descripcio');
-            $table->string('categoria');
+            $table->bigInteger('categoria')->unsigned();
+            $table->foreign('categoria')->references('id')->on('categorias');
             $table->string('img');
             $table->integer('estoc');
             $table->integer('preu');
+            $table->integer('pendent')->default(0);
             $table->timestamps();
         });
 
@@ -29,7 +31,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el futbol, és esfèrica i generalment està feta de cuir o materials sintètics.',
                 'estoc' => 25,
                 'img' => './img/soccer.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 29.99
             ],
             [
@@ -38,7 +40,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el basquet, és una pilota esfèrica de goma o cuir.',
                 'estoc' => 30,
                 'img' => './img/basket.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 44.99
             ],
             [
@@ -47,7 +49,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el voleibol, és esfèrica i sovint està feta de cuir o material sintètic.',
                 'estoc' => 20,
                 'img' => './img/volley.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 21.99
             ],
             [
@@ -56,7 +58,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el beisbol, és una pilota dura coberta de cuir amb una base interior de suro o goma.',
                 'estoc' => 40,
                 'img' => './img/beisbol.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 35.99
             ],
             [
@@ -65,7 +67,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el tennis, és una pilota groga o blanca amb una coberta exterior de feltre.',
                 'estoc' => 35,
                 'img' => './img/tennis.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 25.99
             ],
             [
@@ -74,7 +76,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el golf, és petita i dura, dissenyada per recorrer distàncies llargues.',
                 'estoc' => 50,
                 'img' => './img/golf.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 42.99
             ],
             [
@@ -83,7 +85,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el criquet, és dura i cosida amb costures.',
                 'estoc' => 15,
                 'img' => './img/cricket.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 19.99
             ],
             [
@@ -92,7 +94,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el tennis de taula, és petita i lleugera.',
                 'estoc' => 60,
                 'img' => './img/pingpong.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 31.99
             ],
             [
@@ -101,7 +103,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el rugbi, és ovalada i s\'utilitza per passades i cops de peu.',
                 'estoc' => 25,
                 'img' => './img/rugby.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 28.99
             ],
             [
@@ -110,7 +112,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el softbol, és similar a la pilota de beisbol però més gran y més suau.',
                 'estoc' => 30,
                 'img' => './img/softbol.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 32.99
             ],
             [
@@ -119,7 +121,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en l\'waterpolo, és pesada y està dissenyada per flotar a l\'aigua.',
                 'estoc' => 10,
                 'img' => './img/waterpolo.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 23.99
             ],
             [
@@ -128,7 +130,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el squash, és petita y de goma.',
                 'estoc' => 25,
                 'img' => './img/squash.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 18.99
             ],
             [
@@ -137,7 +139,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el racquetbol, és petita y dura.',
                 'estoc' => 20,
                 'img' => './img/raquetball.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 29.99
             ],
             [
@@ -146,7 +148,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el futbol americà, és ovalada y punxeguda als extrems.',
                 'estoc' => 20,
                 'img' => './img/football.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 22.99
             ],
             [
@@ -155,7 +157,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el handbol, és petita y dura.',
                 'estoc' => 15,
                 'img' => './img/handball.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 24.99
             ],
             [
@@ -164,7 +166,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en l\'esport de bitlles, és metàllica y pesada.',
                 'estoc' => 10,
                 'img' => './img/petanca.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 20.99
             ],
             [
@@ -173,7 +175,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el lacrosse, és dura y té una xarxa a un extrem.',
                 'estoc' => 15,
                 'img' => './img/lacrosse.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 17.99
             ],
             [
@@ -182,7 +184,7 @@ return new class extends Migration
                 'descripcio' => 'Pilota utilitzada en el criquet, és mes lleugera y mes gran que la pilota de criquet tradicional y s\'utilitza en jocs informals.',
                 'estoc' => 25,
                 'img' => './img/cricketPelota.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 16.99
             ],
             [
@@ -191,7 +193,7 @@ return new class extends Migration
                 'descripcio' => 'Utilitzada en entrenament funcional y rehabilitació, és una pilota pesada que s\'utilitza per exercicis de força y equilibri.',
                 'estoc' => 20,
                 'img' => './img/medicinal.jpg',
-                'categoria' => 'Gimnas',
+                'categoria' => 2,
                 'preu' => 46.99
             ],
             [
@@ -200,7 +202,7 @@ return new class extends Migration
                 'descripcio' => 'Utilitzada en entrenament de pilates y exercicis d\'estabilitat, és una pilota inflable gran.',
                 'estoc' => 15,
                 'img' => './img/suiza.jpg',
-                'categoria' => 'Gimnas',
+                'categoria' => 2,
                 'preu' => 38.99
             ],
             [
@@ -209,7 +211,7 @@ return new class extends Migration
                 'descripcio' => 'Similar a la pilota suïssa, s\'utilitza en exercicis d\'ioga y pilates per millorar la flexibilitat y l\'equilibri.',
                 'estoc' => 20,
                 'img' => './img/yoga.jpg',
-                'categoria' => 'Gimnas',
+                'categoria' => 2,
                 'preu' => 19.99
             ],
             [
@@ -218,7 +220,7 @@ return new class extends Migration
                 'descripcio' => 'Utilitzada en l\'entrenament creuat, és una pilota pesada que es llança contra una paret com a part d\'un exercici.',
                 'estoc' => 25,
                 'img' => './img/wallball.jpg',
-                'categoria' => 'Gimnas',
+                'categoria' => 2,
                 'preu' => 28.99
             ],
             [
@@ -227,7 +229,7 @@ return new class extends Migration
                 'descripcio' => 'Utilitzada en la boxa, és una petita pilota inflable que es colpeja per millorar la rapidesa y la coordinació.',
                 'estoc' => 15,
                 'img' => './img/boxeo.jpg',
-                'categoria' => 'Gimnas',
+                'categoria' => 2,
                 'preu' => 45.99
             ],
             [
@@ -236,7 +238,7 @@ return new class extends Migration
                 'descripcio' => 'Utilitzada en l\'entrenament esportiu, té una superfície irregular y rebot de manera imprevisible, la qual cosa millora l\'agilitat y la coordinació.',
                 'estoc' => 20,
                 'img' => './img/reaccion.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 15.99
             ],
             [
@@ -245,7 +247,7 @@ return new class extends Migration
                 'descripcio' => 'Utilitzada en la pràctica del golf, és una pilota més lleugera que s\'utilitza per practicar tirs al camp de pràctica.',
                 'estoc' => 30,
                 'img' => './img/golf.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 27.99
             ],
             [
@@ -254,7 +256,7 @@ return new class extends Migration
                 'descripcio' => 'Utilitzada en el bitlles, és gran y pesada, dissenyada per rodar per una pista de bitlles.',
                 'estoc' => 10,
                 'img' => './img/boliche.jpg',
-                'categoria' => 'Esports',
+                'categoria' => 1,
                 'preu' => 16.99
             ],
             [
@@ -263,7 +265,7 @@ return new class extends Migration
                 'descripcio' => 'Utilitzada en exercicis de cal·listenia, és una pilota petita que s\'utilitza per augmentar la dificultat de certs moviments.',
                 'estoc' => 20,
                 'img' => './img/calistenia.jpg',
-                'categoria' => 'Gimnas',
+                'categoria' => 2,
                 'preu' => 30.99
             ],
             [
@@ -272,7 +274,7 @@ return new class extends Migration
                 'descripcio' => 'Utilitzada en fisioteràpia y teràpia ocupacional, és una pilota de goma utilitzada per millorar la força y la coordinació.',
                 'estoc' => 15,
                 'img' => './img/terapia.jpg',
-                'categoria' => 'Salut',
+                'categoria' => 3,
                 'preu' => 20.99
             ]
         ]);
