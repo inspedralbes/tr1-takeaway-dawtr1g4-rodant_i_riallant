@@ -16,7 +16,7 @@ HEU DE MODIFICAR AQUEST DOCUMENT AMB LA VOSTRA INFORMACIÖ:
 * [URL de diagrama de casos d'us](https://www.canva.com/design/DAFyD_4Kkjo/8qi7_hgN_8ab8oRXuBUmaQ/edit?utm_content=DAFyD_4Kkjo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 * [URL del taiga.io](https://tree.taiga.io/project/a19pabmatpav-transversal-1-grup-4/backlog)
 * [URL de preproducció](http://preprod.rirtr1g4.daw.inspedralbes.cat/)
-* [URL de producció]([b]en proceso[/b]) 
+* [URL de producció](en proceso) 
 (important que sigui amb un domini registrat) 
 
 
