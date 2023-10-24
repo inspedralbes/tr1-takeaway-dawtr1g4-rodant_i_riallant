@@ -3,6 +3,7 @@ body{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    background-color: #effcfa;
     
 }
 
@@ -85,8 +86,18 @@ img{
 
 .nom{
     display: none;
-    font-family: Arial, Helvetica, Sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-variant: small-caps;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-color:#3dd0d3;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 .butons{
@@ -95,23 +106,25 @@ img{
 
 .butons>input:nth-child(2){
     width: 30px;
-    opacity: 50%;
+    color:black;
 }
 
 input[type=button]{
     border-radius: 50%;
-    width: 23px;
+    width: 30px;
+    background-color: #22b3b8;
+    color: white;
 }
 
 input{
     text-align: center;
 }
 
-.item:hover{
+/* .item:hover{
     box-shadow:  15px 15px 5px 0px rgba(0,0,0,0.75);
-}
+} */
 
-.item:hover>.nom{
+/*.item:hover>.nom{
     position: absolute;
     top: 0;
     width: 100%;
@@ -122,13 +135,15 @@ input{
     text-align: center;
     justify-content: center;
 }
-
-.item:hover>.butons{
+*/
+/* .item:hover>.butons{
     display: flex;
     justify-content: center;
     width: 100%;
     position: absolute;
     bottom: 10px;
+} */
+
+.ocult{
+    display: none;
 }
-
-

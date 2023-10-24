@@ -10,13 +10,14 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="index.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>PruebaCommit</title>
+    <link rel="shortcut icon" href="./img/acero_inoxidable.jpg">
+    <title> Rodant i Riallant</title>
 </head>
 
 <body>
     <div id="app">
         <div v-if="getPantalla() == `titol`">
-            <h1>Benvolgut a la millor tenda d'escales</h1>
+            <h1>Benvolgut a Rodant i Riallant</h1>
             <button @click="canviarPantalla(`tenda`)">Tenda</button>
         </div>
         <div v-if="getPantalla() == `tenda`" class="app__tenda">
@@ -40,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="ticket">
+            <div class="ticket ocult">
                 <h2>Ticket</h2>
                 <div class="ticket__productes">
                     <div v-for="(producteComprar, index) in compra">
