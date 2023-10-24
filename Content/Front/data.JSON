@@ -1,254 +1,254 @@
 [
     {
         "id": 1,
-        "nombre": "Pelota de fútbol (soccer)",
-        "descripcion": "Pelota utilizada en el fútbol, es esférica y generalmente está hecha de cuero o materiales sintéticos.",
-        "stock": 25,
+        "nombre": "Pilota de futbol (soccer)",
+        "descripcio": "Pilota utilitzada en el futbol, és esferica i generalment esta feta de cuir o materials sintetics.",
+        "estoc": 25,
         "img": "./img/soccer.jpg",
-        "categoria": "Deportes",
-        "precio": 29.99
+        "categoria": "Esports",
+        "preu": 29.99
     },
     {
         "id": 2,
-        "nombre": "Pelota de baloncesto",
-        "descripcion": "Pelota utilizada en el baloncesto, es una pelota esférica de goma o cuero.",
-        "stock": 30,
+        "nombre": "Pilota de basquet",
+        "descripcio": "Pilota utilitzada en el basquet, és una pilota esferica de goma o cuir.",
+        "estoc": 30,
         "img": "./img/basket.jpg",
-        "categoria": "Deportes",
-        "precio": 44.99
+        "categoria": "Esports",
+        "preu": 44.99
     },
     {
         "id": 3,
-        "nombre": "Pelota de voleibol",
-        "descripcion": "Pelota utilizada en el voleibol, es esférica y suele estar hecha de cuero o material sintético.",
-        "stock": 20,
+        "nombre": "Pilota de voleibol",
+        "descripcio": "Pilota utilitzada en el voleibol, és esferica i sovint esta feta de cuir o material sintetic.",
+        "estoc": 20,
         "img": "./img/volley.jpg",
-        "categoria": "Deportes",
-        "precio": 21.99
+        "categoria": "Esports",
+        "preu": 21.99
     },
     {
         "id": 4,
-        "nombre": "Pelota de béisbol",
-        "descripcion": "Pelota utilizada en el béisbol, es una pelota dura cubierta de cuero con una base interior de corcho o goma.",
-        "stock": 40,
+        "nombre": "Pilota de beisbol",
+        "descripcio": "Pilota utilitzada en el beisbol, és una pilota dura coberta de cuir amb una base interior de suro o goma.",
+        "estoc": 40,
         "img": "./img/beisbol.jpg",
-        "categoria": "Deportes",
-        "precio": 35.99
+        "categoria": "Esports",
+        "preu": 35.99
     },
     {
         "id": 5,
-        "nombre": "Pelota de tenis",
-        "descripcion": "Pelota utilizada en el tenis, es una pelota amarilla o blanca con una cubierta exterior de fieltro.",
-        "stock": 35,
+        "nombre": "Pilota de tennis",
+        "descripcio": "Pilota utilitzada en el tennis, és una pilota groga o blanca amb una coberta exterior de feltre.",
+        "estoc": 35,
         "img": "./img/tennis.jpg",
-        "categoria": "Deportes",
-        "precio": 25.99
+        "categoria": "Esports",
+        "preu": 25.99
     },
     {
         "id": 6,
-        "nombre": "Pelota de golf",
-        "descripcion": "Pelota utilizada en el golf, es pequeña y dura, diseñada para recorrer distancias largas.",
-        "stock": 50,
+        "nombre": "Pilota de golf",
+        "descripcio": "Pilota utilitzada en el golf, és petita i dura, dissenyada per recorrer distancies llargues.",
+        "estoc": 50,
         "img": "./img/golf.jpg",
-        "categoria": "Deportes",
-        "precio": 42.99
+        "categoria": "Esports",
+        "preu": 42.99
     },
     {
         "id": 7,
-        "nombre": "Pelota de cricket",
-        "descripcion": "Pelota utilizada en el cricket, es dura y cosida con costuras.",
-        "stock": 15,
+        "nombre": "Pilota de criquet",
+        "descripcio": "Pilota utilitzada en el criquet, és dura i cosida amb costures.",
+        "estoc": 15,
         "img": "./img/cricket.jpg",
-        "categoria": "Deportes",
-        "precio": 19.99
+        "categoria": "Esports",
+        "preu": 19.99
     },
     {
         "id": 8,
-        "nombre": "Pelota de ping pong (tenis de mesa)",
-        "descripcion": "Pelota utilizada en el tenis de mesa, es pequeña y ligera.",
-        "stock": 60,
+        "nombre": "Pilota de ping-pong (tenis de taula)",
+        "descripcio": "Pilota utilitzada en el tennis de taula, és petita i lleugera.",
+        "estoc": 60,
         "img": "./img/pingpong.jpg",
-        "categoria": "Deportes",
-        "precio": 31.99
+        "categoria": "Esports",
+        "preu": 31.99
     },
     {
         "id": 9,
-        "nombre": "Pelota de rugby",
-        "descripcion": "Pelota utilizada en el rugby, es ovalada y se utiliza para pases y patadas.",
-        "stock": 25,
+        "nombre": "Pilota de rugbi",
+        "descripcio": "Pilota utilitzada en el rugbi, és ovalada i s'utilitza per passades i cops de peu.",
+        "estoc": 25,
         "img": "./img/rugby.jpg",
-        "categoria": "Deportes",
-        "precio": 28.99
+        "categoria": "Esports",
+        "preu": 28.99
     },
     {
         "id": 10,
-        "nombre": "Pelota de softbol",
-        "descripcion": "Pelota utilizada en el softbol, es similar a la pelota de béisbol pero más grande y blanda.",
-        "stock": 30,
+        "nombre": "Pilota de softbol",
+        "descripcio": "Pilota utilitzada en el softbol, és similar a la pilota de beisbol pero mes gran i mes suau.",
+        "estoc": 30,
         "img": "./img/softbol.jpg",
-        "categoria": "Deportes",
-        "precio": 32.99
+        "categoria": "Esports",
+        "preu": 32.99
     },
     {
         "id": 11,
-        "nombre": "Pelota de waterpolo",
-        "descripcion": "Pelota utilizada en el waterpolo, es pesada y está diseñada para flotar en el agua.",
-        "stock": 10,
+        "nombre": "Pilota d'waterpolo",
+        "descripcio": "Pilota utilitzada en l'waterpolo, és pesada i està dissenyada per flotar a l'aigua.",
+        "estoc": 10,
         "img": "./img/waterpolo.jpg",
-        "categoria": "Deportes",
-        "precio": 23.99
+        "categoria": "Esports",
+        "preu": 23.99
     },
     {
         "id": 12,
-        "nombre": "Pelota de squash",
-        "descripcion": "Pelota utilizada en el squash, es pequeña y de goma.",
-        "stock": 25,
+        "nombre": "Pilota de squash",
+        "descripcio": "Pilota utilitzada en el squash, és petita i de goma.",
+        "estoc": 25,
         "img": "./img/squash.jpg",
-        "categoria": "Deportes",
-        "precio": 18.99
+        "categoria": "Esports",
+        "preu": 18.99
     },
     {
         "id": 13,
-        "nombre": "Pelota de raquetbol",
-        "descripcion": "Pelota utilizada en el raquetbol, es pequeña y dura.",
-        "stock": 20,
+        "nombre": "Pilota de racquetbol",
+        "descripcio": "Pilota utilitzada en el racquetbol, és petita i dura.",
+        "estoc": 20,
         "img": "./img/raquetball.jfif",
-        "categoria": "Deportes",
-        "precio": 29.99
+        "categoria": "Esports",
+        "preu": 29.99
     },
     {
         "id": 14,
-        "nombre": "Pelota de fútbol americano",
-        "descripcion": "Pelota utilizada en el fútbol americano, es ovalada y puntiaguda en los extremos.",
-        "stock": 20,
+        "nombre": "Pilota de futbol americà",
+        "descripcio": "Pilota utilitzada en el futbol americà, és ovalada i punxeguda als extrems.",
+        "estoc": 20,
         "img": "./img/football.jpg",
-        "categoria": "Deportes",
-        "precio": 22.99
+        "categoria": "Esports",
+        "preu": 22.99
     },
     {
         "id": 15,
-        "nombre": "Pelota de handball",
-        "descripcion": "Pelota utilizada en el balonmano, es pequeña y dura.",
-        "stock": 15,
+        "nombre": "Pilota d'handbol",
+        "descripcio": "Pilota utilitzada en el handbol, és petita i dura.",
+        "estoc": 15,
         "img": "./img/handball.jpg",
-        "categoria": "Deportes",
-        "precio": 24.99
+        "categoria": "Esports",
+        "preu": 24.99
     },
     {
         "id": 16,
-        "nombre": "Pelota de petanca",
-        "descripcion": "Pelota utilizada en el deporte de bochas, es metálica y pesada.",
-        "stock": 10,
+        "nombre": "Pilota de petanca",
+        "descripcio": "Pilota utilitzada en l'esport de bitlles, és metallica i pesada.",
+        "estoc": 10,
         "img": "./img/petanca.jpg",
-        "categoria": "Deportes",
-        "precio": 20.99
+        "categoria": "Esports",
+        "preu": 20.99
     },
     {
         "id": 17,
-        "nombre": "Pelota de lacrosse",
-        "descripcion": "Pelota utilizada en el lacrosse, es dura y posee una red en un extremo.",
-        "stock": 15,
+        "nombre": "Pilota de lacrosse",
+        "descripcio": "Pilota utilitzada en el lacrosse, és dura i té una xarxa a un extrem.",
+        "estoc": 15,
         "img": "./img/lacrosse.jfif",
-        "categoria": "Deportes",
-        "precio": 17.99
+        "categoria": "Esports",
+        "preu": 17.99
     },
     {
         "id": 18,
-        "nombre": "Pelota de cricket de bate y pelota",
-        "descripcion": "Pelota utilizada en el cricket, es más ligera y más grande que la pelota de cricket tradicional y se utiliza en juegos informales.",
-        "stock": 25,
+        "nombre": "Pilota de criquet de bat i pilota",
+        "descripcio": "Pilota utilitzada en el criquet, és mes lleugera i mes gran que la pilota de criquet tradicional i s'utilitza en jocs informals.",
+        "estoc": 25,
         "img": "./img/cricketPelota.jpg",
-        "categoria": "Deportes",
-        "precio": 16.99
+        "categoria": "Esports",
+        "preu": 16.99
     },
     {
         "id": 19,
-        "nombre": "Pelota medicinal",
-        "descripcion": "Utilizada en entrenamiento funcional y rehabilitación, es una pelota pesada que se usa para ejercicios de fuerza y equilibrio.",
-        "stock": 20,
+        "nombre": "Pilota medicinal",
+        "descripcio": "Utilitzada en entrenament funcional i rehabilitacio, és una pilota pesada que s'utilitza per exercicis de força i equilibri.",
+        "estoc": 20,
         "img": "./img/medicinal.jpg",
-        "categoria": "Gimnasio",
-        "precio": 46.99
+        "categoria": "Gimnas",
+        "preu": 46.99
     },
     {
         "id": 20,
-        "nombre": "Pelota suiza (fitball)",
-        "descripcion": "Utilizada en entrenamiento de pilates y ejercicios de estabilidad, es una pelota inflable grande.",
-        "stock": 15,
+        "nombre": "Pilota suïssa (fitball)",
+        "descripcio": "Utilitzada en entrenament de pilates i exercicis d'estabilitat, és una pilota inflable gran.",
+        "estoc": 15,
         "img": "./img/suiza.jpg",
-        "categoria": "Gimnasio",
-        "precio": 38.99
+        "categoria": "Gimnas",
+        "preu": 38.99
     },
     {
         "id": 21,
-        "nombre": "Pelota de yoga",
-        "descripcion": "Similar a la pelota suiza, se utiliza en ejercicios de yoga y pilates para mejorar la flexibilidad y el equilibrio.",
-        "stock": 20,
+        "nombre": "Pilota d'ioga",
+        "descripcio": "Similar a la pilota suïssa, s'utilitza en exercicis d'ioga i pilates per millorar la flexibilitat i l'equilibri.",
+        "estoc": 20,
         "img": "./img/yoga.jpg",
-        "categoria": "Gimnasio",
-        "precio": 19.99
+        "categoria": "Gimnas",
+        "preu": 19.99
     },
     {
         "id": 22,
-        "nombre": "Pelota de pared (wall ball)",
-        "descripcion": "Utilizada en el entrenamiento cruzado, es una pelota pesada que se lanza contra una pared como parte de un ejercicio.",
-        "stock": 25,
+        "nombre": "Pilota de paret (wall ball)",
+        "descripcio": "Utilitzada en l'entrenament creuat, és una pilota pesada que es llança contra una paret com a part d'un exercici.",
+        "estoc": 25,
         "img": "./img/wallball.jfif",
-        "categoria": "Gimnasio",
-        "precio": 28.99
+        "categoria": "Gimnas",
+        "preu": 28.99
     },
     {
         "id": 23,
-        "nombre": "Pelota de boxeo (speed bag)",
-        "descripcion": "Utilizada en el boxeo, es una pequeña pelota inflable que se golpea para mejorar la rapidez y la coordinación.",
-        "stock": 15,
+        "nombre": "Pilota de boxa (speed bag)",
+        "descripcio": "Utilitzada en la boxa, és una petita pilota inflable que es colpeja per millorar la rapidesa i la coordinacio.",
+        "estoc": 15,
         "img": "./img/boxeo.jpg",
-        "categoria": "Gimnasio",
-        "precio": 45.99
+        "categoria": "Gimnas",
+        "preu": 45.99
     },
     {
         "id": 24,
-        "nombre": "Pelota de reacción (reaction ball)",
-        "descripcion": "Utilizada en el entrenamiento deportivo, tiene una superficie irregular y rebota de manera impredecible, lo que mejora la agilidad y la coordinación.",
-        "stock": 20,
+        "nombre": "Pilota de reaccio (reaction ball)",
+        "descripcio": "Utilitzada en l'entrenament esportiu, té una superficie irregular i rebot de manera imprevisible, la qual cosa millora l'agilitat i la coordinacio.",
+        "estoc": 20,
         "img": "./img/reaccion.jpg",
-        "categoria": "Deportes",
-        "precio": 15.99
+        "categoria": "Esports",
+        "preu": 15.99
     },
     {
         "id": 25,
-        "nombre": "Pelota de golf de práctica",
-        "descripcion": "Utilizada en la práctica del golf, es una pelota más ligera que se usa para practicar tiros en el campo de práctica.",
-        "stock": 30,
+        "nombre": "Pilota de golf de practica",
+        "descripcio": "Utilitzada en la practica del golf, és una pilota mes lleugera que s'utilitza per practicar tirs al camp de practica.",
+        "estoc": 30,
         "img": "./img/golf.jpg",
-        "categoria": "Deportes",
-        "precio": 27.99
+        "categoria": "Esports",
+        "preu": 27.99
     },
     {
         "id": 26,
-        "nombre": "Pelota de boliche",
-        "descripcion": "Utilizada en el boliche, es grande y pesada, diseñada para rodar por una pista de boliche.",
-        "stock": 10,
+        "nombre": "Pilota de bitlles",
+        "descripcio": "Utilitzada en el bitlles, és gran i pesada, dissenyada per rodar per una pista de bitlles.",
+        "estoc": 10,
         "img": "./img/boliche.jfif",
-        "categoria": "Deportes",
-        "precio": 16.99
+        "categoria": "Esports",
+        "preu": 16.99
     },
     {
         "id": 27,
-        "nombre": "Pelota de calistenia",
-        "descripcion": "Utilizada en ejercicios de calistenia, es una pelota pequeña que se usa para aumentar la dificultad de ciertos movimientos.",
-        "stock": 20,
+        "nombre": "Pilota de cal·listenia",
+        "descripcio": "Utilitzada en exercicis de cal·listenia, és una pilota petita que s'utilitza per augmentar la dificultat de certs moviments.",
+        "estoc": 20,
         "img": "./img/calistenia.jfif",
-        "categoria": "Gimnasio",
-        "precio": 30.99
+        "categoria": "Gimnas",
+        "preu": 30.99
     },
     {
         "id": 28,
-        "nombre": "Pelota de terapia (therapy ball)",
-        "descripcion": "Utilizada en fisioterapia y terapia ocupacional, es una pelota de goma utilizada para mejorar la fuerza y la coordinación.",
-        "stock": 15,
+        "nombre": "Pilota de terapia (therapy ball)",
+        "descripcio": "Utilitzada en fisioterapia i terapia ocupacional, és una pilota de goma utilitzada per millorar la força i la coordinacio.",
+        "estoc": 15,
         "img": "./img/terapia.jpg",
-        "categoria": "Salud",
-        "precio": 20.99
+        "categoria": "Salut",
+        "preu": 20.99
     }
 ]
