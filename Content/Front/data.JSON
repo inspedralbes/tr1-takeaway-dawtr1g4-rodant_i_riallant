@@ -112,7 +112,7 @@
         "nombre": "Pilota de racquetbol",
         "descripcio": "Pilota utilitzada en el racquetbol, és petita i dura.",
         "estoc": 20,
-        "img": "./img/raquetball.jfif",
+        "img": "./img/raquetball.jpg",
         "categoria": "Esports",
         "preu": 29.99
     },
@@ -148,7 +148,7 @@
         "nombre": "Pilota de lacrosse",
         "descripcio": "Pilota utilitzada en el lacrosse, és dura i té una xarxa a un extrem.",
         "estoc": 15,
-        "img": "./img/lacrosse.jfif",
+        "img": "./img/lacrosse.jpg",
         "categoria": "Esports",
         "preu": 17.99
     },
@@ -193,7 +193,7 @@
         "nombre": "Pilota de paret (wall ball)",
         "descripcio": "Utilitzada en l'entrenament creuat, és una pilota pesada que es llança contra una paret com a part d'un exercici.",
         "estoc": 25,
-        "img": "./img/wallball.jfif",
+        "img": "./img/wallball.jpg",
         "categoria": "Gimnas",
         "preu": 28.99
     },
@@ -229,7 +229,7 @@
         "nombre": "Pilota de bitlles",
         "descripcio": "Utilitzada en el bitlles, és gran i pesada, dissenyada per rodar per una pista de bitlles.",
         "estoc": 10,
-        "img": "./img/boliche.jfif",
+        "img": "./img/boliche.jpg",
         "categoria": "Esports",
         "preu": 16.99
     },
@@ -238,7 +238,7 @@
         "nombre": "Pilota de cal·listenia",
         "descripcio": "Utilitzada en exercicis de cal·listenia, és una pilota petita que s'utilitza per augmentar la dificultat de certs moviments.",
         "estoc": 20,
-        "img": "./img/calistenia.jfif",
+        "img": "./img/calistenia.jpg",
         "categoria": "Gimnas",
         "preu": 30.99
     },
