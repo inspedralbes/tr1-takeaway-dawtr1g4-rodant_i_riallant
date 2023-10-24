@@ -9,20 +9,59 @@
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="shortcut icon" href="./img/acero_inoxidable.jpg">
+    <link rel="shortcut icon" href="./img/beisbol.jpg">
     <title> Rodant i Riallant</title>
 </head>
 
+
 <body>
+    
     <div id="app">
+        <header>
+    
+            <nav class="navbar">
+                <p>Rodant i Riallant</p><br>
+                <div class="menu-icon">&#9776;</div>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <button class="cart-button" @click="canviarPantalla('checkout')">
+                    <i class="fas fa-shopping-cart"></i> Carrito
+                </button>
+            </nav>
+        </header>
         <div v-if="getPantalla() == `titol`">
             <h1>Benvolgut a Rodant i Riallant</h1>
             <button @click="canviarPantalla(`tenda`)">Tenda</button>
+    <h1 class="titulo">Informació de la Botiga</h1>
+    <p class="informacion">"Rodant i Riallant" és la vostra botiga de referència per a totes les vostres necessitats relacionades amb pilotes. ...</p>
+
+    <h2 class="horarios">Horaris d'Atenció</h2>
+    <p class="informacion">Dilluns a Divendres: 9:00 AM - 7:00 PM</p>
+    <p class="informacion">Dissabtes: 10:00 AM - 5:00 PM</p>
+    <p class="informacion">Diumenges: Tancat</p>
+
+    <h2>Imatge del Lloc</h2>
+    <img class="imagen" src="" alt="Imatge de la botiga Rodant i Riallant">
+
+    <h2>Número de Contacte</h2>
+    <p class="informacion">Podeu posar-vos en contacte amb nosaltres al següent número de telèfon: +XX-XXX-XXXXXXX</p>
+
+    <h2>Correu Electrònic</h2>
+    <p class="informacion">Si preferiu contactar-nos per correu electrònic, podeu escriure'ns a: <a class="email" href="mailto:info@rodantiriallant.com">info@rodantiriallant.com</a></p>
+
+    <h2>Ubicació</h2>
+    <p class="direccion">La nostra botiga "Rodant i Riallant" es troba a [Adreça de la vostra botiga]. Estem convenientment situats a [Ciutat o Localitat] per a servir a la nostra comunitat d'esportistes i amants del joc.</p>
+
         </div>
         <div v-if="getPantalla() == `tenda`" class="app__tenda">
             <div class="superior">
-                <h1>{{ pantallaActual }}</h1>
                 <button @click="canviarPantalla(`titol`)">Inici</button>
             </div>
 
@@ -63,16 +102,8 @@
 
                 </div>
             </div>
-
-            <div class="inferior">
-                <h2 >Inferior</h2>
-                <button @click="canviarPantalla(`checkout`)">Checkout</button>
-            </div>
-            
         </div>
         <div v-if="getPantalla() == `checkout`">
-            <h2>Total</h2>
-            <h3>{{getTotal()}}</h3>
             <div v-for="(producteComprar, index) in compra">
                 <div class="productes__producte producte">
                     <div class="producte__foto">
@@ -85,16 +116,23 @@
                         {{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
                     </div>
                     <div class="producte__quantitat">
+                        <input class="modificar-quantitat" type="button"value="-">
                         {{producteComprar.counter}}
+                        <input class="modificar-quatitat" type="button" value="+">
                     </div>
                 </div>
             </div>
-            <button @click="canviarPantalla(`tenda`)">Tenda</button>
-            <button @click="canviarPantalla(`titol`)">Inici</button>
-        </div>
-    </div>
+            <h2 class="total-preu-producte">Total {{getTotal()}}</h2>
+            <label for="emails">Email:</label>
+            <input type="email" id="emails" name="emails" multiple>
+            <input type="submit">
 
+            <button @click="canviarPantalla(`tenda`)">Tenda</button>
+        </div> 
+    </div>
+    <footer>
+        <p>&copy; 2023 Rodant i Riallant. Tots els seus drets reservats.</p>
+    </footer>
     <script type="module" src="index.js"></script>
 </body>
-
 </html>

@@ -1,15 +1,122 @@
 
 body{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #effcfa;
-    
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+header {
+    background-color: #d5f8f7;
+    color: #205059;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    height: 175px;
+    margin-bottom: 25px;
 }
 
+.navbar p {
+    font-size: 74px;
+    margin: 0;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 22px;
+    position: sticky;
+    top: 0;
+}
+
+.menu-icon {
+    font-size: 44px;
+    cursor: pointer;
+    display: block;
+}
+
+.nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #d5f8f7;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list.active {
+    display: flex;
+}
+
+.cart-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #22b3b8; 
+    color: #fff; 
+    padding: 40px 50px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 25px;
+    font-size: 30px;
+}
+
+.cart-button i.fa-shopping-cart {
+    margin-right: 5px; 
+    font-size: 30px; 
+}
+
+
+.titulo {
+    font-size: 24px;
+    color: #333;
+}
+
+
+.informacion {
+    font-size: 16px;
+    color: #666;
+}
+
+.horarios {
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff; 
+}
+
+.imagen {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.email {
+    color: #ff6600; /* Naranja */
+}
+
+h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.direccion {
+    font-size: 14px;
+    color: #444;
+}
+
+
+
 img{
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
    
 }
 
@@ -48,7 +155,7 @@ img{
 }
 
 .producte__foto img{
-    width: 136px;
+    width: 130px;
     
 }
 
@@ -80,15 +187,16 @@ img{
     position: relative;
     margin: 25px;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    height: 250px; 
-    width: 250px; 
+    height: 350px; 
+    width: 350px; 
     display: block;
+    align-items: center;
+    text-align: center;
 }
 
 
 .nom{
     display: none;
-    font-family: 'Times New Roman', Times, serif;
     font-variant: small-caps;
     color: #fff;
     position: absolute;
@@ -100,6 +208,7 @@ img{
     display: flex;
     text-align: center;
     justify-content: center;
+    font-size: 30px;
 }
 
 .butons{
@@ -111,25 +220,86 @@ img{
 }
 
 .butons>input:nth-child(2){
-    width: 35px;
+    width: 75px;
     color:black;
     margin-left: 10px;
     margin-right: 10px;
+    font-size: 38px;
 }
 
 input[type=button]{
     border-radius: 50%;
-    width: 40px;
-    height: 35px;
+    width: 70px;
+    height: 65px;
     background-color: #22b3b8;
     color: white;
     border-color: #22b3b8;
-}
+    font-size: 42px;
+} 
 
 input{
     text-align: center;
 }
+.total-preu-producte{
+    text-align: center;
+    font-size: 40px;
+    color: #205059;
+}
 
+
+/* Estilos para la lista de productos */
+.productes__producte {
+    display: flex;
+    margin-top: 10px;
+    border: 2px solid #1f757f;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #1f757f;
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .producte__foto img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 10px;
+  }
+  
+  .producte__titol {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .producte__preu {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .producte__quantitat {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  input[type=button] .modificar-quantitat{
+    background-color: black;
+  }
+
+
+footer {
+    margin-top: 25px;
+    text-align: center;
+    background-color: #10353c;
+    color: white;
+    padding: 15px 0;
+}
+
+  
+  footer p {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+  }
 /* .item:hover{
     box-shadow:  15px 15px 5px 0px rgba(0,0,0,0.75);
 } */
