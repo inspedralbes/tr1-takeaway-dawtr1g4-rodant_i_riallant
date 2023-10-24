@@ -8,9 +8,9 @@ body{
 }
 
 img{
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+    width: 250px;
+    height: 250px;
+   
 }
 
 .app__tenda{
@@ -73,16 +73,18 @@ img{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    width: 130%;
 }
 
-.item{
+.item {
     position: relative;
     margin: 25px;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    height: 200px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    height: 250px; 
+    width: 250px; 
     display: block;
 }
+
 
 .nom{
     display: none;
@@ -101,19 +103,27 @@ img{
 }
 
 .butons{
-    display: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
 }
 
 .butons>input:nth-child(2){
-    width: 30px;
+    width: 35px;
     color:black;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 input[type=button]{
     border-radius: 50%;
-    width: 30px;
+    width: 40px;
+    height: 35px;
     background-color: #22b3b8;
     color: white;
+    border-color: #22b3b8;
 }
 
 input{
