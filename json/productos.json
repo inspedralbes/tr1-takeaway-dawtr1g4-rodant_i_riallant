@@ -1,0 +1,227 @@
+[
+    {
+      "id": 1,
+      "nombre": "Pelota de fútbol (soccer)",
+      "descripcion": "Pelota utilizada en el fútbol, es esférica y generalmente está hecha de cuero o materiales sintéticos.",
+      "stock": 25,
+      "img": "./img/soccer.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 2,
+      "nombre": "Pelota de baloncesto",
+      "descripcion": "Pelota utilizada en el baloncesto, es una pelota esférica de goma o cuero.",
+      "stock": 30,
+      "img": "./img/basket.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 3,
+      "nombre": "Pelota de voleibol",
+      "descripcion": "Pelota utilizada en el voleibol, es esférica y suele estar hecha de cuero o material sintético.",
+      "stock": 20,
+      "img": "./img/volley.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 4,
+      "nombre": "Pelota de béisbol",
+      "descripcion": "Pelota utilizada en el béisbol, es una pelota dura cubierta de cuero con una base interior de corcho o goma.",
+      "stock": 40,
+      "img": "./img/beisbol.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 5,
+      "nombre": "Pelota de tenis",
+      "descripcion": "Pelota utilizada en el tenis, es una pelota amarilla o blanca con una cubierta exterior de fieltro.",
+      "stock": 35,
+      "img": "./img/tennis.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 6,
+      "nombre": "Pelota de golf",
+      "descripcion": "Pelota utilizada en el golf, es pequeña y dura, diseñada para recorrer distancias largas.",
+      "stock": 50,
+      "img": "./img/golf.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 7,
+      "nombre": "Pelota de cricket",
+      "descripcion": "Pelota utilizada en el cricket, es dura y cosida con costuras.",
+      "stock": 15,
+      "img": "./img/cricket.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 8,
+      "nombre": "Pelota de ping pong (tenis de mesa)",
+      "descripcion": "Pelota utilizada en el tenis de mesa, es pequeña y ligera.",
+      "stock": 60,
+      "img": "./img/pingpong.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 9,
+      "nombre": "Pelota de rugby",
+      "descripcion": "Pelota utilizada en el rugby, es ovalada y se utiliza para pases y patadas.",
+      "stock": 25,
+      "img": "./img/rugby.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 10,
+      "nombre": "Pelota de softbol",
+      "descripcion": "Pelota utilizada en el softbol, es similar a la pelota de béisbol pero más grande y blanda.",
+      "stock": 30,
+      "img": "./img/softbol.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 11,
+      "nombre": "Pelota de waterpolo",
+      "descripcion": "Pelota utilizada en el waterpolo, es pesada y está diseñada para flotar en el agua.",
+      "stock": 10,
+      "img": "./img/waterpolo.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 12,
+      "nombre": "Pelota de squash",
+      "descripcion": "Pelota utilizada en el squash, es pequeña y de goma.",
+      "stock": 25,
+      "img": "./img/squash.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 13,
+      "nombre": "Pelota de raquetbol",
+      "descripcion": "Pelota utilizada en el raquetbol, es pequeña y dura.",
+      "stock": 20,
+      "img": "./img/raquetball.jfif",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 14,
+      "nombre": "Pelota de fútbol americano",
+      "descripcion": "Pelota utilizada en el fútbol americano, es ovalada y puntiaguda en los extremos.",
+      "stock": 20,
+      "img": "./img/football.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 15,
+      "nombre": "Pelota de handball",
+      "descripcion": "Pelota utilizada en el balonmano, es pequeña y dura.",
+      "stock": 15,
+      "img": "./img/handball.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 16,
+      "nombre": "Pelota de petanca",
+      "descripcion": "Pelota utilizada en el deporte de bochas, es metálica y pesada.",
+      "stock": 10,
+      "img": "./img/petanca.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 17,
+      "nombre": "Pelota de lacrosse",
+      "descripcion": "Pelota utilizada en el lacrosse, es dura y posee una red en un extremo.",
+      "stock": 15,
+      "img": "./img/lacrosse.jfif",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 18,
+      "nombre": "Pelota de cricket de bate y pelota",
+      "descripcion": "Pelota utilizada en el cricket, es más ligera y más grande que la pelota de cricket tradicional y se utiliza en juegos informales.",
+      "stock": 25,
+      "img": "./img/cricketPelota.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 19,
+      "nombre": "Pelota medicinal",
+      "descripcion": "Utilizada en entrenamiento funcional y rehabilitación, es una pelota pesada que se usa para ejercicios de fuerza y equilibrio.",
+      "stock": 20,
+      "img": "./img/medicinal.jpg",
+      "categoria": "Gimnasio"
+    },
+    {
+      "id": 20,
+      "nombre": "Pelota suiza (fitball)",
+      "descripcion": "Utilizada en entrenamiento de pilates y ejercicios de estabilidad, es una pelota inflable grande.",
+      "stock": 15,
+      "img": "./img/suiza.jpg",
+      "categoria": "Gimnasio"
+    },
+    {
+      "id": 21,
+      "nombre": "Pelota de yoga",
+      "descripcion": "Similar a la pelota suiza, se utiliza en ejercicios de yoga y pilates para mejorar la flexibilidad y el equilibrio.",
+      "stock": 20,
+      "img": "./img/yoga.jpg",
+      "categoria": "Gimnasio"
+    },
+    {
+      "id": 22,
+      "nombre": "Pelota de pared (wall ball)",
+      "descripcion": "Utilizada en el entrenamiento cruzado, es una pelota pesada que se lanza contra una pared como parte de un ejercicio.",
+      "stock": 25,
+      "img": "./img/wallball.jfif",
+      "categoria": "Gimnasio"
+    },
+    {
+      "id": 23,
+      "nombre": "Pelota de boxeo (speed bag)",
+      "descripcion": "Utilizada en el boxeo, es una pequeña pelota inflable que se golpea para mejorar la rapidez y la coordinación.",
+      "stock": 15,
+      "img": "./img/boxeo.jpg",
+      "categoria": "Gimnasio"
+    },
+    {
+      "id": 24,
+      "nombre": "Pelota de reacción (reaction ball)",
+      "descripcion": "Utilizada en el entrenamiento deportivo, tiene una superficie irregular y rebota de manera impredecible, lo que mejora la agilidad y la coordinación.",
+      "stock": 20,
+      "img": "./img/reaccion.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 25,
+      "nombre": "Pelota de golf de práctica",
+      "descripcion": "Utilizada en la práctica del golf, es una pelota más ligera que se usa para practicar tiros en el campo de práctica.",
+      "stock": 30,
+      "img": "./img/golf.jpg",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 26,
+      "nombre": "Pelota de boliche",
+      "descripcion": "Utilizada en el boliche, es grande y pesada, diseñada para rodar por una pista de boliche.",
+      "stock": 10,
+      "img": "./img/boliche.jfif",
+      "categoria": "Deportes"
+    },
+    {
+      "id": 27,
+      "nombre": "Pelota de calistenia",
+      "descripcion": "Utilizada en ejercicios de calistenia, es una pelota pequeña que se usa para aumentar la dificultad de ciertos movimientos.",
+      "stock": 20,
+      "img": "./img/calistenia.jfif",
+      "categoria": "Gimnasio"
+    },
+    {
+      "id": 28,
+      "nombre": "Pelota de terapia (therapy ball)",
+      "descripcion": "Utilizada en fisioterapia y terapia ocupacional, es una pelota de goma utilizada para mejorar la fuerza y la coordinación.",
+      "stock": 15,
+      "img": "./img/terapia.jpg",
+      "categoria": "Salud"
+    }
+  ]
+  
