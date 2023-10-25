@@ -110,6 +110,8 @@ createApp({
 
                 enviar += '€';
 
+                enviar = 'Total: ' + enviar;
+
                 return enviar;
 
             } else {
