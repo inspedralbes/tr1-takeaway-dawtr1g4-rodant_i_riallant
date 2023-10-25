@@ -16,10 +16,10 @@
 <body>
     <div id="app">
         <div v-if="getPantalla() == `titol`">
-            <h1>Benvolgut a la millor tenda d'escales</h1>
-            <button @click="canviarPantalla(`tenda`)">Tenda</button>
+            <h1>Benvolgut a la millor botiga d'escales</h1>
+            <button @click="canviarPantalla(`botiga`)">botigaaaaa</button>
         </div>
-        <div v-if="getPantalla() == `tenda`" class="app__tenda">
+        <div v-if="getPantalla() == `botiga`" class="app__botiga">
             <div class="superior">
                 <h1>{{ pantallaActual }}</h1>
                 <button @click="canviarPantalla(`titol`)">Titol</button>
@@ -29,7 +29,7 @@
                 <div v-for="(producte, index) in productes">
                     <div id="id{{index}}" class="item">
 
-                        <div class="nom">{{producte.nom}}</div>
+                        <div class="nom">{{producte.nombre}}</div>
                         <div class="butons">
                             <input type="button" value="-" @click="disminuirDemanats(index)">
                             <input v-model="productes[index].counter" name="id{{index}}" min=0 max=9>
@@ -49,7 +49,7 @@
                                 <img :src="producteComprar.img" alt="producte">
                             </div>
                             <div class="producte__titol">
-                                {{producteComprar.nom}}
+                                {{producteComprar.nombre}}
                             </div>
                             <div class="producte__preu">
                                 {{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
@@ -75,10 +75,10 @@
             <div v-for="(producteComprar, index) in compra">
                 <div class="productes__producte producte">
                     <div class="producte__foto">
-                        <img :src="producteComprar.imatge" alt="Holiwi">
+                        <img :src="producteComprar.img" alt="producte">
                     </div>
                     <div class="producte__titol">
-                        {{producteComprar.nom}}
+                        {{producteComprar.nombre}}
                     </div>
                     <div class="producte__preu">
                         {{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
@@ -88,7 +88,9 @@
                     </div>
                 </div>
             </div>
-            <button @click="canviarPantalla(`tenda`)">Tenda</button>
+            <input v-model="email">
+            <button @click="ferCompra()"><h1>COMPRAR</h1></button>
+            <button @click="canviarPantalla(`botiga`)">botiga</button>
             <button @click="canviarPantalla(`titol`)">Inici</button>
         </div>
     </div>

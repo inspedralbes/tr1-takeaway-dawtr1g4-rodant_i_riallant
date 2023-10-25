@@ -12,7 +12,7 @@ img{
     object-fit: cover;
 }
 
-.app__tenda{
+.app__botiga{
     display: grid;
     grid-template-areas: "superior superior"
                         "menu ticket"
