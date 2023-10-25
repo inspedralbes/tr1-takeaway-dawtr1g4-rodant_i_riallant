@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\producteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+//Route::get('/afegir', [FormController::class, 'show'])
+ Route::get('/afegir', function(){
+     return view('newProduct');
+ });
+Route::post('/afegir',  [producteController::class, 'store'])->name('afegir-form');
