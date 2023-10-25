@@ -1,4 +1,6 @@
 import { agafarPelicules } from "./ComunicationManager.js";
+import { enviarComanda } from "./ComunicationManager.js";
+
 
 const { createApp } = Vue
 
@@ -11,6 +13,7 @@ createApp({
             compra: [],
             preuTotal: 0,
             email: "",
+            idComanda: "",
         }
     },
     methods: {
@@ -119,17 +122,21 @@ createApp({
 
             if (this.email.match(validRegex)) {
 
-                alert("Valid email address!");
+                let enviarJSON = {
+                    'productes': JSON.stringify(this.compra),
+                    'email': this.email,
+                    'preuTotal': this.preuTotal
+                }
+                // console.log(enviarJSON);
 
-                return true;
+                // this.idComanda = ;
+
+                enviarComanda(enviarJSON).then(data => {
+                    this.idComanda = data.id;
+                })
 
             } else {
-
                 alert("Invalid email address!");
-
-                return false;
-
-
             }
         }
     },
