@@ -25,6 +25,11 @@
                 <button @click="canviarPantalla(`titol`)">Titol</button>
             </div>
 
+            <button @click="mostrarFiltres()">Filtrar</button>
+            <div v-for="(categoria, index) in categories" @key="index">
+                <button @click="filtrar(categoria.id)">{{categoria.nom}}</button>
+            </div>
+
             <div class="menu">
                 <div v-for="(producte, index) in productes">
                     <div id="id{{index}}" class="item">

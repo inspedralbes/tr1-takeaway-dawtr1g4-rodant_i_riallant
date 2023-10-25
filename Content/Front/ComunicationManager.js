@@ -5,6 +5,13 @@ export async function agafarPelicules(){
     return productes;
 }
 
+export async function agafarCategories(){
+    const response = await fetch(`http://localhost:8000/api/categories`);
+    const categories = await response.json();
+
+    return categories;
+}
+
 export async function enviarComanda(objecte){
     const url = 'http://localhost:8000/api/comanda';
 
@@ -22,14 +29,10 @@ export async function enviarComanda(objecte){
                         'Content-Type': 'application/x-www-form-urlencoded', // Indicamos el tipo de contenido
                     },
                 };
-                let id = "";
                 // Realizar la solicitud POST usando fetch
                 const response = await fetch(url, options);
 
-                const data = await response.json();
-
-                id = (data).id;
-                console.log((data).id); // Hacer algo con la respuesta del servidor
+                const data = await response.json(); // Hacer algo con la respuesta del servidor
                 
-                return id;
+                return data;
 }

@@ -1,4 +1,5 @@
 import { agafarPelicules } from "./ComunicationManager.js";
+import { agafarCategories } from "./ComunicationManager.js";
 import { enviarComanda } from "./ComunicationManager.js";
 
 
@@ -13,7 +14,9 @@ createApp({
             compra: [],
             preuTotal: 0,
             email: "",
-            idComanda: "",
+            comanda: {},
+            categories: [],
+            productesCopia: [],
         }
     },
     methods: {
@@ -22,16 +25,15 @@ createApp({
         },
         canviarPantalla(nova) {
             this.pantallaActual = nova;
-            console.log(this.pantallaActual);
             if (nova == "botiga") {
                 this.getProductes();
-
             }
         },
         getProductes() {
             agafarPelicules(this.paginaActual)
                 .then(peliculas => {
                     this.productes = peliculas;
+                    this.productesCopia = this.productes;
                     this.productes.forEach(producte => {
                         producte.counter = 0;
                     });
@@ -118,6 +120,18 @@ createApp({
                 return `No s'ha fet cap compra`;
             }
         },
+
+        mostrarFiltres(){
+            agafarCategories().then(
+                data => this.categories = data
+            )
+        },
+
+        filtrar(categoria){
+
+            this.productes = this.productesCopia.filter((producte) => producte.categoria == categoria);
+        },
+        
         ferCompra() {
 
             const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -134,7 +148,7 @@ createApp({
                 // this.idComanda = ;
 
                 enviarComanda(enviarJSON).then(data => {
-                    this.idComanda = data.id;
+                    this.comanda = data;
                 })
 
             } else {
