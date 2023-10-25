@@ -60,27 +60,27 @@
     <p class="direccion">La nostra botiga "Rodant i Riallant" es troba a [Adreça de la vostra botiga]. Estem convenientment situats a [Ciutat o Localitat] per a servir a la nostra comunitat d'esportistes i amants del joc.</p>
 
         </div>
-        <div v-if="getPantalla() == `tenda`" class="app__tenda">
-            <div class="superior">
+        <div v-if="getPantalla() == `tenda`" class="app__botiga">
+            <div class="botiga__superior">
                 <button @click="canviarPantalla(`titol`)">Inici</button>
             </div>
 
-            <div class="menu">
+            <div class="botiga__menu">
                 <div v-for="(producte, index) in productes">
-                    <div id="id{{index}}" class="item">
+                    <div id="id{{index}}" class="botiga__item">
 
-                        <div class="nom">{{producte.nom}}</div>
-                        <div class="butons">
+                        <div class="botiga__nom">{{producte.nom}}</div>
+                        <div class="botiga__butons">
                             <input type="button" value="-" @click="disminuirDemanats(index)">
-                            <input v-model="productes[index].counter" name="id{{index}}" min=0 max=9>
+                            <input class="botiga__quantitat" v-model="productes[index].counter" name="id{{index}}" min=0 max=9>
                             <input type="button" value="+" @click="augmentarDemanats(index)">
                         </div>
-                        <img :src="producte.img" alt="producte">
+                        <img class="botiga__imagen" :src="producte.img" alt="producte">
 
                     </div>
                 </div>
             </div>
-            <div class="ticket ocult">
+            <!-- <div class="ticket ocult">
                 <h2>Ticket</h2>
                 <div class="ticket__productes">
                     <div v-for="(producteComprar, index) in compra">
@@ -101,34 +101,40 @@
                     </div>
 
                 </div>
-            </div>
+            </div> -->
         </div>
         <div v-if="getPantalla() == `checkout`">
+            <button @click="canviarPantalla(`tenda`)">Tenda</button>
             <div v-for="(producteComprar, index) in compra">
                 <div class="productes__producte producte">
                     <div class="producte__foto">
                         <img :src="producteComprar.img" alt="producte">
                     </div>
                     <div class="producte__titol">
-                        {{producteComprar.nom}}
+                        <h2>{{producteComprar.nom}}</h2>
                     </div>
-                    <div class="producte__preu">
+                    <div class="producte__preus preus">
+                        <div class="preus__preu-unic">
+                            <p>{{producteComprar.preu}}€</p>
+                        </div>
+                        <div class="preus__quantitat">
+                            <p>{{producteComprar.counter}}</p>
+                        </div>
+                        <div class="preus__preu-quantitat">
+                            <p>{{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€</p>
+                        </div>
                         
-                        <p class="preu-quantitat">{{producteComprar.preu}}€</p>
-                        <p class="preu-producte">{{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€</p>
                     </div>
-                    <div class="producte__quantitat">
-                        {{producteComprar.counter}}
-                        
-                    </div>
+                    
                 </div>
             </div>
-            <h2 class="total-preu-producte">Total {{getTotal()}}</h2>
-            <label for="emails">Email:</label>
-            <input type="email" id="emails" name="emails" multiple>
-            <input type="submit">
-
-            <button @click="canviarPantalla(`tenda`)">Tenda</button>
+            <h2 class="total__preu-producte">Total {{getTotal()}}</h2>
+            <div class="formulari__usuari email">
+                <label for="emails">Email </label>
+                <input type="text" id="emails" name="emails" multiple>
+                <input type="submit">
+            </div>
+            
         </div> 
     </div>
     <footer>
