@@ -1,3 +1,19 @@
+
+@font-face {
+    font-family: 'Tilt Neon';
+    src: url('./fonts/TiltNeon-Regular.ttf');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('./fonts/Ubuntu-Bold.ttf');
+    src: url('./fonts/Ubuntu-BoldItalic.ttf');
+    src: url('./fonts/Ubuntu-Italic.ttf');
+    src: url('./fonts/Ubuntu-Light.ttf');
+    src: url('./fonts/Ubuntu-LightItalic.ttf');
+    src: url('./fonts/Ubuntu-Medium.ttf');
+    src: url('./fonts/Ubuntu-MediumItalic.ttf');
+    src: url('./fonts/Ubuntu-Regular.ttf');
+}
 body {
     background-color: #effcfa;
     margin: 0;
@@ -17,10 +33,12 @@ header {
 }
 
 .navbar p {
+    font-family: 'Tilt Neon';
     font-size: 74px;
     margin: 0;
     margin-bottom: 15px;
     display: block;
+
 }
 
 .navbar {
