@@ -2,13 +2,17 @@ export async function agafarPelicules(){
     const response = await fetch(`http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes`);
     //http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
     //http://localhost:8000/api/productes
+
+// http://localhost:8000/  ==  http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/
+
     const productes = await response.json();
 
     return productes;
 }
 
 export async function enviarComanda(objecte){
-    const url = 'http://localhost:8000/api/comanda';
+    const url = 'http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/comanda';
+    //http://localhost:8000/api/comanda
 
                 // Datos que deseas enviar en formato de formulario
                 const formData = new URLSearchParams();
