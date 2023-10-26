@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: 'Tilt Neon';
-    src: url('./fonts/TiltNeon-Regular.ttf');
+    src: url('./fonts/TiltNeon-Regular.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Ubuntu';
