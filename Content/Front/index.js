@@ -14,6 +14,7 @@ createApp({
             preuTotal: 0,
             email: "",
             idComanda: "",
+            aplicarEfecte:false,
         }
     },
     methods: {
@@ -56,13 +57,17 @@ createApp({
             if (this.productes[index].counter < this.productes[index].estoc) {
                 this.productes[index].counter++;
                 this.afegirCompra(index);
+                this.aplicarEfecte = true;
+                setTimeout(() => {this.aplicarEfecte = false;}, 500); 
+
             }
         },
         disminuirDemanats(index) {
             if (this.productes[index].counter > 0) {
                 this.productes[index].counter--;
                 this.disminuirCompra(index);
-
+                this.aplicarEfecte = true;
+                setTimeout(() => {this.aplicarEfecte = false;}, 500); 
             }
         },
         afegirCompra(index) {
@@ -140,6 +145,9 @@ createApp({
             } else {
                 alert("Invalid email address!");
             }
+        },
+        afegirTransicio(){
+
         }
     },
 

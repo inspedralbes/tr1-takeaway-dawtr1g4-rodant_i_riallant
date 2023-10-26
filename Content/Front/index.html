@@ -64,11 +64,9 @@
             <div class="botiga__superior">
                 <button @click="canviarPantalla(`titol`)">Inici</button>
             </div>
-
             <div class="botiga__menu">
                 <div v-for="(producte, index) in productes">
-                    <div id="id{{index}}" class="botiga__item">
-
+                    <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
                         <div class="botiga__nom">{{producte.nom}}</div>
                         <div class="botiga__butons">
                             <input type="button" value="-" @click="disminuirDemanats(index)">
@@ -76,7 +74,6 @@
                             <input type="button" value="+" @click="augmentarDemanats(index)">
                         </div>
                         <img class="botiga__imagen" :src="producte.img" alt="producte">
-
                     </div>
                 </div>
             </div>
@@ -104,7 +101,7 @@
             </div> -->
         </div>
         <div v-if="getPantalla() == `checkout`">
-            <button @click="canviarPantalla(`tenda`)">Tenda</button>
+            <button @click="canviarPantalla(`botiga`)">Botiga</button>
             <div v-for="(producteComprar, index) in compra">
                 <div class="productes__producte producte">
                     <div class="producte__foto">

@@ -172,7 +172,6 @@ header {
     justify-content: center;
     width: 130%;
 }
-
 .botiga__item {
     position: relative;
     margin: 25px;
@@ -182,9 +181,11 @@ header {
     display: block;
     align-items: center;
     text-align: center;
+    transition: 0.5s;
 }
-
-
+.botiga__item-transition:hover{
+    transform:scale(1.2,1.2);
+ }
 .botiga__nom {
     display: none;
     font-variant: small-caps;
