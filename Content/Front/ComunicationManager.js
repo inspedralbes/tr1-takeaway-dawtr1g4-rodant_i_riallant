@@ -33,6 +33,8 @@ export async function enviarComanda(objecte){
                 const response = await fetch(url, options);
 
                 const data = await response.json(); // Hacer algo con la respuesta del servidor
+
+                console.log(data);
                 
                 return data;
 }
