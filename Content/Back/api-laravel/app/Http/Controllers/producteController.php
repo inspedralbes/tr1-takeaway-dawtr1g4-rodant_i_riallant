@@ -36,9 +36,9 @@ class producteController extends Controller
             $producte-> estoc = $request->estoc;
 
             $producte->save();
-
             return view('newProduct')->with('success', 'Producto añadido correctamente');
-            
+
+            //->with('success', 'Producto añadido correctamente')
         }    
     }
 

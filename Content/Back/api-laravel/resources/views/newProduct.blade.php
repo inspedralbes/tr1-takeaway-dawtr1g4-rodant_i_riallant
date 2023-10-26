@@ -5,7 +5,9 @@
       @csrf
       
       @if(session('success'))
-      <h6 class="alert alert-success">{{ session('success') }}</h6>
+        <div class="alert alert-success">
+        {{ session('success') }}
+        </div>
       @endif
       @error('title')
       <h6 class="alert alert-danger">{{ $message }}</h6>
