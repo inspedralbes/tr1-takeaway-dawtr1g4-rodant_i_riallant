@@ -54,12 +54,16 @@ header {
     top: 0;
 }
 
+.header__navbar h1{
+    font-family: 'Tilt Neon';
+}
+
 .header__navbar p {
     font-size: 74px;
     margin: 0;
     margin-bottom: 15px;
     display: block;
-    font-family: 'Tilt Neon';
+    
 }
 
 .menu-icon {
