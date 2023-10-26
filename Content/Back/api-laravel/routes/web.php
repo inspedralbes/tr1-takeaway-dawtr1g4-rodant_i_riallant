@@ -20,5 +20,5 @@ Route::get('/', function () {
 //Route::get('/afegir', [FormController::class, 'show'])
  Route::get('/afegir', function(){
      return view('newProduct');
- });
-Route::post('/afegir',  [producteController::class, 'store'])->name('afegir-form');
+ })->name('afegir');
+Route::post('/afegir',  [producteController::class, 'store'])->name('afegir');
