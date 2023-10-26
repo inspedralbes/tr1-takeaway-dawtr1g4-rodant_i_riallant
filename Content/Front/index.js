@@ -143,9 +143,6 @@ createApp({
                     'email': this.email,
                     'preuTotal': this.preuTotal
                 }
-                // console.log(enviarJSON);
-
-                // this.idComanda = ;
 
                 enviarComanda(enviarJSON).then(data => {
                     this.comanda = data;
