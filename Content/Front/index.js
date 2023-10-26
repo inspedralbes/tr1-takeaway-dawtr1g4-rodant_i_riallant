@@ -1,4 +1,6 @@
-import {agafarPelicules} from "./ComunicationManager.js";
+import { agafarPelicules } from "./ComunicationManager.js";
+import { enviarComanda } from "./ComunicationManager.js";
+
 
 const { createApp } = Vue
 
@@ -8,71 +10,75 @@ createApp({
             pantallaActual: "titol",
             productes: [],
             paginaActual: 1,
-            // compra: localStorage.getItem('compra')!=null?JSON.parse(localStorage.getItem('compra')):[],
             compra: [],
+            preuTotal: 0,
+            email: "",
+            idComanda: "",
         }
     },
     methods: {
-        getPantalla(){
+        getPantalla() {
             return this.pantallaActual;
         },
-        canviarPantalla(nova){
+        canviarPantalla(nova) {
             this.pantallaActual = nova;
-            if (nova == "tenda") {
+            console.log(this.pantallaActual);
+            if (nova == "botiga") {
                 this.getProductes();
+
             }
         },
-        getProductes(){
+        getProductes() {
             agafarPelicules(this.paginaActual)
-            .then(peliculas =>{ 
-                this.productes = peliculas;
-                this.productes.forEach(producte=>{
-                    producte.counter = 0;
-                });
-
-                if (localStorage.getItem('compra')!=null) {
-                    this.compra = [];
-                    let recuperarCompra = JSON.parse(localStorage.getItem('compra'));
-                    
-                    recuperarCompra.forEach(element => {
-                        this.productes.forEach(producte => {
-                            if (element.id==producte.id) {
-                                producte.counter= element.counter;
-                                this.afegirCompra(producte.id-1);
-                            }
-                        });
+                .then(peliculas => {
+                    this.productes = peliculas;
+                    this.productes.forEach(producte => {
+                        producte.counter = 0;
                     });
-                }
 
-            });   
+                    if (localStorage.getItem('compra') != null) {
+                        this.compra = [];
+                        let recuperarCompra = JSON.parse(localStorage.getItem('compra'));
+
+                        recuperarCompra.forEach(element => {
+                            this.productes.forEach(producte => {
+                                if (element.id == producte.id) {
+                                    producte.counter = element.counter;
+                                    this.afegirCompra(producte.id - 1);
+                                }
+                            });
+                        });
+                    }
+
+                });
         },
-        augmentarDemanats(index){
-            if (this.productes[index].counter<this.productes[index].estoc) {
+        augmentarDemanats(index) {
+            if (this.productes[index].counter < this.productes[index].estoc) {
                 this.productes[index].counter++;
                 this.afegirCompra(index);
             }
         },
-        disminuirDemanats(index){
-            if (this.productes[index].counter>0) {
+        disminuirDemanats(index) {
+            if (this.productes[index].counter > 0) {
                 this.productes[index].counter--;
                 this.disminuirCompra(index);
 
             }
         },
-        afegirCompra(index){
+        afegirCompra(index) {
             let codisproductesCompra = [];
             this.compra.forEach(producteAComprar => {
                 codisproductesCompra.push(producteAComprar.id)
             });
 
             let foundIndex = codisproductesCompra.indexOf(this.productes[index].id);
-            
+
             if (foundIndex == -1) {
                 this.compra.push(this.productes[index]);
             }
             localStorage.setItem('compra', JSON.stringify(this.compra));
         },
-        disminuirCompra(index){
+        disminuirCompra(index) {
             let codisproductesCompra = [];
             this.compra.forEach(producteAComprar => {
                 codisproductesCompra.push(producteAComprar.id)
@@ -83,27 +89,56 @@ createApp({
 
                 this.compra.splice(foundIndex, 1);
 
-            } 
+            }
             localStorage.setItem('compra', JSON.stringify(this.compra));
         },
-        getTotal(){
-            if (localStorage.getItem('compra')!=null) {
+        getTotal() {
+            if (localStorage.getItem('compra') != null) {
                 let compraTotal = JSON.parse(localStorage.getItem('compra'));
 
                 let preuTotal = 0;
 
-                compraTotal.forEach(element =>{
-                    preuTotal += element.counter*element.preu;
+                compraTotal.forEach(element => {
+                    preuTotal += element.counter * element.preu;
                 })
 
-                let enviar =((Math.round(preuTotal*100)/100).toFixed(2)).toString();
+                let enviar = ((Math.round(preuTotal * 100) / 100).toFixed(2))
 
-                enviar+='€';
+                this.preuTotal = enviar;
+
+                enviar = enviar.toString();
+
+                enviar += '€';
+
+                enviar = 'Total: ' + enviar;
 
                 return enviar;
 
-            } else{
+            } else {
                 return `No s'ha fet cap compra`;
+            }
+        },
+        ferCompra() {
+
+            const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (this.email.match(validRegex)) {
+
+                let enviarJSON = {
+                    'productes': JSON.stringify(this.compra),
+                    'email': this.email,
+                    'preuTotal': this.preuTotal
+                }
+                // console.log(enviarJSON);
+
+                // this.idComanda = ;
+
+                enviarComanda(enviarJSON).then(data => {
+                    this.idComanda = data.id;
+                })
+
+            } else {
+                alert("Invalid email address!");
             }
         }
     },

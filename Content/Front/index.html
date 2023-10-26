@@ -38,7 +38,7 @@
         </header>
         <div v-if="getPantalla() == `titol`">
             <h1>Benvolgut a Rodant i Riallant</h1>
-            <button @click="canviarPantalla(`tenda`)">Tenda</button>
+            <button @click="canviarPantalla(`botiga`)">Botiga</button>
     <h1 class="titulo">Informació de la Botiga</h1>
     <p class="informacion">"Rodant i Riallant" és la vostra botiga de referència per a totes les vostres necessitats relacionades amb pilotes. ...</p>
 
@@ -60,7 +60,7 @@
     <p class="direccion">La nostra botiga "Rodant i Riallant" es troba a [Adreça de la vostra botiga]. Estem convenientment situats a [Ciutat o Localitat] per a servir a la nostra comunitat d'esportistes i amants del joc.</p>
 
         </div>
-        <div v-if="getPantalla() == `tenda`" class="app__botiga">
+        <div v-if="getPantalla() == `botiga`" class="app__botiga">
             <div class="botiga__superior">
                 <button @click="canviarPantalla(`titol`)">Inici</button>
             </div>
@@ -128,11 +128,11 @@
                     
                 </div>
             </div>
-            <h2 class="total__preu-producte">Total {{getTotal()}}</h2>
+            <h2 class="total__preu-producte">{{getTotal()}}</h2>
             <div class="formulari__usuari email">
-                <label for="emails">Email </label>
-                <input type="text" id="emails" name="emails" multiple>
-                <input type="submit">
+                <label for="email">Email </label>
+                <input v-model="email" id="email">
+                <button @click="ferCompra()"><h1>COMPRAR</h1></button>
             </div>
             
         </div> 
