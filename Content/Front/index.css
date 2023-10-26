@@ -1,117 +1,364 @@
+body {
+    background-color: #effcfa;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
 
-body{
-    width: 80%;
+header {
+    background-color: #d5f8f7;
+    color: #205059;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    height: 175px;
+    margin-bottom: 25px;
+}
+
+.navbar p {
+    font-size: 74px;
+    margin: 0;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 22px;
+    position: sticky;
+    top: 0;
+}
+
+.menu-icon {
+    font-size: 44px;
+
+    display: block;
+}
+
+.nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #d5f8f7;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list.active {
+    display: flex;
+}
+
+.cart-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #22b3b8;
+    color: #fff;
+    padding: 40px 50px;
+    border: none;
+    border-radius: 5px;
     margin-left: auto;
-    margin-right: auto;
-    
+    margin-right: 25px;
+    font-size: 30px;
 }
 
-img{
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+.cart-button i.fa-shopping-cart {
+    margin-right: 5px;
+    font-size: 30px;
 }
 
-.app__botiga{
+
+.titulo {
+    font-size: 24px;
+    color: #333;
+}
+
+
+.informacion {
+    font-size: 16px;
+    color: #666;
+}
+
+.horarios {
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.imagen {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.email {
+    color: #ff6600;
+    /* Naranja */
+}
+
+
+
+.direccion {
+    font-size: 14px;
+    color: #444;
+}
+
+
+.app__botiga {
     display: grid;
     grid-template-areas: "superior superior"
-                        "menu ticket"
-                        "inferior inferior";
+        "menu ticket"
+        "inferior inferior";
     grid-template-columns: 7fr 3fr;
 }
 
-.superior{
+.botiga__superior {
     grid-area: superior;
 }
 
-.ticket{
+.ticket {
     grid-area: ticket;
     display: grid;
     grid-template-rows: 7vh auto;
 }
 
-.productes__producte{
+.productes__producte {
     margin: 5px;
     border: 1px solid black;
 }
 
-.producte{
+.producte {
     display: grid;
-    grid-template-areas: 
-            "foto titol titol"
-            "foto preu quantitat";
+    grid-template-areas:
+        "foto titol titol"
+        "foto preu quantitat";
 }
 
-.producte__foto{
+.producte__foto {
     grid-area: foto;
 }
 
-.producte__foto img{
-    width: 136px;
-    
+.producte__foto img {
+    width: 130px;
+
 }
 
-.producte__titol{
+.producte__titol {
     grid-area: titol;
 }
 
-.producte__preu{
+.producte__preu {
     grid-area: preu;
 }
 
-.producte__quantitat{
+.producte__quantitat {
     grid-area: quantitat;
 }
 
-.inferior{
+.inferior {
     grid-area: inferior;
 }
 
-.menu{
+.botiga__menu {
     grid-area: menu;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    width: 130%;
 }
 
-.item{
+.botiga__item {
     position: relative;
     margin: 25px;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    height: 200px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    height: 350px;
+    width: 350px;
     display: block;
-}
-
-.nom{
-    display: none;
-    font-family: Arial, Helvetica, Sans-serif;
-    font-variant: small-caps;
-}
-
-.butons{
-    display: none;
-}
-
-.butons>input:nth-child(2){
-    width: 30px;
-    opacity: 50%;
-}
-
-input[type=button]{
-    border-radius: 50%;
-    width: 23px;
-}
-
-input{
+    align-items: center;
     text-align: center;
 }
 
-.item:hover{
-    box-shadow:  15px 15px 5px 0px rgba(0,0,0,0.75);
+
+.botiga__nom {
+    display: none;
+    font-variant: small-caps;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-color: #3dd0d3;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 30px;
 }
 
-.item:hover>.nom{
+.botiga__butons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+.botiga__imagen{
+    width: 350px;
+    height: 350px;
+}
+
+.butons>input:nth-child(2) {
+    width: 65px;
+    color: black;
+    font-size: 38px;
+}
+
+input[type=button] {
+    border-radius: 50%;
+    width: 70px;
+    height: 65px;
+    background-color: #22b3b8;
+    color: white;
+    border-color: #22b3b8;
+    font-size: 42px;
+    margin-left: 12px;
+    margin-right: 5px;
+}
+
+input {
+    text-align: center;
+}
+
+.producte__foto {
+    grid-area: foto;
+}
+
+.producte__titol {
+    grid-area: titol;
+}
+
+.producte__preu-stock {
+    grid-area: stock-preu;
+}
+
+.producte__preu-quantitat {
+    grid-area: quantitat-preu;
+}
+
+.producte__quantitat {
+    grid-area: quantitat;
+}
+
+.productes__producte {
+    display: grid;
+    grid-template-areas:
+        "foto titol"
+        "foto preus";
+    grid-template-columns: 1fr 3fr;
+    /* 'foto titol titol titol stock-preu stock-preu'
+    'foto titol titol titol stock-preu stock-preu'
+    'foto titol titol titol stock-preu stock-preu'
+    'foto quantitat quantitat quantitat-preu quantitat-preu quantitat-preu'; */
+}
+
+.productes__producte>div {
+    text-align: center;
+    background-color: #10353c;
+    color: white
+}
+
+.producte__foto img {
+    height: 80%;
+    object-fit: cover;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.producte__titol h2 {
+    font-size: 52px;
+}
+
+.producte__preus {
+    grid-area: preus;
+}
+
+.preus {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.preus__quantitat p {
+    font-size: 34px;
+}
+.preus__preu-unic p {
+    font-size: 34px;
+}
+.preus__preu-quantitat p {
+    font-size: 38px;
+    font-weight: bold;
+}
+
+
+.total__preu-producte {
+    text-align: center;
+    font-size: 40px;
+    color: #1f757f;
+}
+.formulari__usuari{
+    text-align: center; 
+    margin: 0 auto;
+    padding: 20px;
+}
+label {
+    font-weight: bold;
+    font-size: 32px;
+    color: #205059;
+    display: block;
+}
+
+input[type="text"] {
+    text-align: justify;
+    width: 70%;
+    padding: 30px;
+    margin: 5px 0;
+    font-size: 32px;
+}
+
+input[type="submit"] {
+    align-items: center;
+    background-color: #22b3b8;
+    color: #fff;
+    padding: 35px 60px;
+    border: none;
+    font-size: 28px;
+    display: block; 
+}
+
+footer {
+    margin-top: 25px;
+    text-align: center;
+    background-color: #10353c;
+    color: white;
+    padding: 15px 0;
+}
+
+
+footer p {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* .item:hover{
+    box-shadow:  15px 15px 5px 0px rgba(0,0,0,0.75);
+} */
+
+/*.item:hover>.nom{
     position: absolute;
     top: 0;
     width: 100%;
@@ -122,13 +369,15 @@ input{
     text-align: center;
     justify-content: center;
 }
-
-.item:hover>.butons{
+*/
+/* .item:hover>.butons{
     display: flex;
     justify-content: center;
     width: 100%;
     position: absolute;
     bottom: 10px;
+} */
+
+.ocult {
+    display: none;
 }
-
-
