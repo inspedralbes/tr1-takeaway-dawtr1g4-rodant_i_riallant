@@ -128,6 +128,45 @@ createApp({
                 return `No s'ha fet cap compra`;
             }
         },
+        getTotalPreuProducte() {
+            if (localStorage.getItem('compra') != null) {
+                let compraTotal = JSON.parse(localStorage.getItem('compra'));
+
+                let preuTotal = 0;
+
+                compraTotal.forEach(element => {
+                    preuTotal += element.counter * element.preu;
+                })
+
+                let enviar = ((Math.round(preuTotal * 100) / 100).toFixed(2))
+
+                this.preuTotal = enviar;
+
+                enviar = enviar.toString();
+
+                enviar += '€';
+
+                return enviar;
+            }
+
+        },
+        getProducteTotalComprat(){
+            if (localStorage.getItem('compra') != null) {
+
+                let comprarProducte=JSON.parse(localStorage.getItem('compra'));
+                let numProducte=0;
+                comprarProducte.forEach(element=>{
+                    if(element.counter==0){
+                        return numProducte=0;
+                    }else{
+                        numProducte+=element.counter;
+                        return numProducte;
+                    }
+                
+            })
+            }
+        
+        },
 
         mostrarFiltres(){
             if (this.categories.length > 0) {

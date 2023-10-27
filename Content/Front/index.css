@@ -68,7 +68,6 @@ header {
 
 .menu-icon {
     font-size: 44px;
-
     display: block;
 }
 
@@ -160,13 +159,28 @@ header {
 .botiga__superior>button{
     display: block;
 }
-
-/* .ticket {
-    grid-area: ticket;
-    display: grid;
-    grid-template-rows: 7vh auto;
+.ticket__productes{
+    background-color: #10353c;
+    color: white;
+    position: sticky;
+    bottom: 0;
+    height: 22vh;
+    width: 100%;
+    text-align: center;
 }
 
+.ticket-producte{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.ticket-producte h2{
+    color: white;
+    font-size: 1.5em;
+}
+.ticket-producte p{
+    color: white;
+    font-size: 1.25em;
+}
 .productes__producte {
     margin: 5px;
     border: 1px solid black;
@@ -178,15 +192,11 @@ header {
         "foto titol titol"
         "foto preu quantitat";
         
-} */
+} 
 
 .producte__foto {
     grid-area: foto;
 }
-
-/* .producte__foto img {
-
-} */
 
 .producte__titol {
     grid-area: titol;
@@ -310,10 +320,6 @@ input {
     padding-right: 2vh;
     border: 1px solid black;
     background-color: #10353c;
-    /* 'foto titol titol titol stock-preu stock-preu'
-    'foto titol titol titol stock-preu stock-preu'
-    'foto titol titol titol stock-preu stock-preu'
-    'foto quantitat quantitat quantitat-preu quantitat-preu quantitat-preu'; */
 }
 
 .productes__producte>div {
@@ -434,7 +440,6 @@ input[type="submit"] {
 }
 
 footer {
-    margin-top: 25px;
     text-align: center;
     background-color: #10353c;
     color: white;

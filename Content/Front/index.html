@@ -71,37 +71,24 @@
                         <div class="botiga__nom">{{producte.nom}}</div>
                         <div class="botiga__butons">
                             <input type="button" value="-" @click="disminuirDemanats(index)">
-                            <input class="botiga__quantitat" v-model="productes[index].counter" name="id{{index}}" min=0
-                                max=9>
+                            <input class="botiga__quantitat" v-model="productes[index].counter" name="id{{index}}" min=0 max=9>
                             <input type="button" value="+" @click="augmentarDemanats(index)">
                         </div>
                         <img class="botiga__imagen" :src="producte.img" alt="producte">
                     </div>
                 </div>
             </div>
-            <!-- <div class="ticket ocult">
-                <h2>Ticket</h2>
-                <div class="ticket__productes">
-                    <div v-for="(producteComprar, index) in compra">
-                        <div class="productes__producte producte">
-                            <div class="producte__foto">
-                                <img :src="producteComprar.img" alt="producte">
-                            </div>
-                            <div class="producte__titol">
-                                {{producteComprar.nom}}
-                            </div>
-                            <div class="producte__preu">
-                                {{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
-                            </div>
-                            <div class="producte__quantitat">
-                                {{producteComprar.counter}}
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div> -->
+                
         </div>
+        <div v-if="getPantalla() == `botiga`" class="ticket__productes">
+                <div class="ticket-producte">
+                    <h2>Producte:</h2>
+                    <p>{{getProducteTotalComprat()}}</p>
+                    <h2>Total:</h2>
+                    <p>{{getTotalPreuProducte()}}</p>
+                </div>
+        </div>
+
         <div v-if="getPantalla() == `checkout`">
             <button @click="canviarPantalla(`botiga`)">Botiga</button>
             <div v-for="(producteComprar, index) in compra">
