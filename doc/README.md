@@ -13,3 +13,10 @@ eines necessaries i com es crea l'entorn per que algú us ajudi en el vostre pro
 
 ## API / Endpoints / punts de comunicació
 Heu d'indicar quins són els punts d'entrada de la API i quins són els JSON que s'envien i es reben a cada endpoint
+
+## Estats existents en les comandes
+1. Confirmar comanda
+2. Preparant
+3. Enviat
+4. En repart
+5. Entregat
