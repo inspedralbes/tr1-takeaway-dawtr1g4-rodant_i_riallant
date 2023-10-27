@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Notificacio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Comanda;
 
@@ -78,6 +80,11 @@ class comandaController extends Controller
             if ($comanda->estat == 4) {
                 $redirigir = true;
             }
+
+            $notification = new Notificacio($comanda);
+
+            Mail::to($comanda->email)->send($notification);
+
             $comanda->save();
             if ($redirigir) {
                 return redirect()->route('comandes');
