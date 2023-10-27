@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text('productes');
             $table->integer('preuTotal');
             $table->string('email');
+            $table->integer('estat')->default(0);
             $table->timestamps();
         });
     }

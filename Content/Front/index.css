@@ -1,8 +1,38 @@
+
+@font-face {
+    font-family: 'Tilt Neon';
+    src: url('./fonts/TiltNeon-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('./fonts/Ubuntu-Bold.ttf');
+    src: url('./fonts/Ubuntu-BoldItalic.ttf');
+    src: url('./fonts/Ubuntu-Italic.ttf');
+    src: url('./fonts/Ubuntu-Light.ttf');
+    src: url('./fonts/Ubuntu-LightItalic.ttf');
+    src: url('./fonts/Ubuntu-Medium.ttf');
+    src: url('./fonts/Ubuntu-MediumItalic.ttf');
+    src: url('./fonts/Ubuntu-Regular.ttf');
+}
+:root {
+    --mida-item: 200px;
+}
+
+
 body {
     background-color: #effcfa;
     margin: 0;
     padding: 0;
     font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+    background-color: #22b3b8;
+    color: #fff;
+    padding: 2vmin 2vmax;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4em;
 }
 
 header {
@@ -12,23 +42,28 @@ header {
     display: flex;
     flex-direction: column;
     text-align: justify;
-    height: 175px;
+    height: 15vh;
     margin-bottom: 25px;
 }
 
-.navbar p {
-    font-size: 74px;
-    margin: 0;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.navbar {
+.header__navbar {
     display: flex;
     flex-direction: column;
     margin-left: 22px;
     position: sticky;
     top: 0;
+}
+
+.header__navbar h1{
+    font-family: 'Tilt Neon';
+}
+
+.header__navbar p {
+    font-size: 74px;
+    margin: 0;
+    margin-bottom: 15px;
+    display: block;
+    
 }
 
 .menu-icon {
@@ -57,14 +92,13 @@ header {
 .cart-button {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 3vw;
     background-color: #22b3b8;
     color: #fff;
-    padding: 40px 50px;
+    padding: 4vmin 5vmax;
     border: none;
     border-radius: 5px;
     margin-left: auto;
-    margin-right: 25px;
     font-size: 30px;
 }
 
@@ -113,16 +147,21 @@ header {
 .app__botiga {
     display: grid;
     grid-template-areas: "superior superior"
-        "menu ticket"
+        "menu ."
         "inferior inferior";
     grid-template-columns: 7fr 3fr;
 }
 
 .botiga__superior {
     grid-area: superior;
+
 }
 
-.ticket {
+.botiga__superior>button{
+    display: block;
+}
+
+/* .ticket {
     grid-area: ticket;
     display: grid;
     grid-template-rows: 7vh auto;
@@ -138,16 +177,16 @@ header {
     grid-template-areas:
         "foto titol titol"
         "foto preu quantitat";
-}
+        
+} */
 
 .producte__foto {
     grid-area: foto;
 }
 
-.producte__foto img {
-    width: 130px;
+/* .producte__foto img {
 
-}
+} */
 
 .producte__titol {
     grid-area: titol;
@@ -161,7 +200,7 @@ header {
     grid-area: quantitat;
 }
 
-.inferior {
+.botiga__inferior {
     grid-area: inferior;
 }
 
@@ -172,19 +211,20 @@ header {
     justify-content: center;
     width: 130%;
 }
-
 .botiga__item {
     position: relative;
     margin: 25px;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    height: 350px;
-    width: 350px;
+    height: var(--mida-item);
+    width: var(--mida-item);
     display: block;
     align-items: center;
     text-align: center;
+    transition: 0.5s;
 }
-
-
+.botiga__item-transition:hover{
+    transform:scale(1.15,1.15);
+ }
 .botiga__nom {
     display: none;
     font-variant: small-caps;
@@ -194,11 +234,12 @@ header {
     width: 100%;
     padding-top: 5px;
     padding-bottom: 10px;
-    background-color: #3dd0d3;
+    background-color: #3dd0d371;
     display: flex;
     text-align: center;
     justify-content: center;
-    font-size: 30px;
+    text-shadow: 1px 1px black;
+    font-size: 1.3em;
 }
 
 .botiga__butons {
@@ -208,27 +249,31 @@ header {
     position: absolute;
     bottom: 10px;
 }
-.botiga__imagen{
-    width: 350px;
-    height: 350px;
+
+.botiga__imagen {
+    width: var(--mida-item);
+    height: var(--mida-item);
+    object-fit: cover;
 }
 
-.butons>input:nth-child(2) {
-    width: 65px;
+
+
+.botiga__quantitat {
+    width: 30px;
     color: black;
-    font-size: 38px;
+    font-size: px;
 }
 
 input[type=button] {
     border-radius: 50%;
-    width: 70px;
-    height: 65px;
+    width: 50px;
+    height: 45px;
     background-color: #22b3b8;
     color: white;
     border-color: #22b3b8;
-    font-size: 42px;
-    margin-left: 12px;
-    margin-right: 5px;
+    font-size: 2em;
+    margin-left: 5px;
+    margin-right: 2px;
 }
 
 input {
@@ -260,7 +305,11 @@ input {
     grid-template-areas:
         "foto titol"
         "foto preus";
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 2fr 3fr;
+    margin: 5px;
+    padding-right: 2vh;
+    border: 1px solid black;
+    background-color: #10353c;
     /* 'foto titol titol titol stock-preu stock-preu'
     'foto titol titol titol stock-preu stock-preu'
     'foto titol titol titol stock-preu stock-preu'
@@ -269,19 +318,22 @@ input {
 
 .productes__producte>div {
     text-align: center;
-    background-color: #10353c;
-    color: white
+    color: white;
 }
 
 .producte__foto img {
-    height: 80%;
+    height: 20vh;
     object-fit: cover;
     width: 80%;
-    margin-top: 30px;
+    margin-top: 5%;
 }
 
 .producte__titol h2 {
-    font-size: 52px;
+    font-size: 2em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 55vw;
 }
 
 .producte__preus {
@@ -292,14 +344,17 @@ input {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
 .preus__quantitat p {
-    font-size: 34px;
+    font-size: 2em;
 }
+
 .preus__preu-unic p {
-    font-size: 34px;
+    font-size: 2em;
 }
+
 .preus__preu-quantitat p {
-    font-size: 38px;
+    font-size: 2em;
     font-weight: bold;
 }
 
@@ -309,11 +364,13 @@ input {
     font-size: 40px;
     color: #1f757f;
 }
-.formulari__usuari{
-    text-align: center; 
+
+.formulari__usuari {
+    text-align: center;
     margin: 0 auto;
     padding: 20px;
 }
+
 label {
     font-weight: bold;
     font-size: 32px;
@@ -336,7 +393,44 @@ input[type="submit"] {
     padding: 35px 60px;
     border: none;
     font-size: 28px;
-    display: block; 
+    display: block;
+}
+
+.app__comanda {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.app__comanda>* {
+    text-align: center;
+}
+
+.comanda__estat {
+    width: 10rem;
+    margin: 0;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.comanda__estat--0 {
+    background-color: red;
+}
+
+.comanda__estat--1 {
+    background-color: hsl(51, 100%, 50%);
+}
+
+.comanda__estat--2 {
+    background-color: rgb(136, 255, 0);
+}
+
+.comanda__estat--3 {
+    background-color: rgb(0, 225, 255);
 }
 
 footer {
