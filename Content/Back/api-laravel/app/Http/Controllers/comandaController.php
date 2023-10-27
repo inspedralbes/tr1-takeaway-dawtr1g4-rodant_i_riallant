@@ -76,14 +76,14 @@ class comandaController extends Controller
                     $comanda->momentRebuda = now();
                     break;
             }
+            $notification = new Notificacio($comanda);
+
+            Mail::to($comanda->email)->send($notification);
+
             $comanda->estat += intval($request->estat);
             if ($comanda->estat == 4) {
                 $redirigir = true;
             }
-
-            $notification = new Notificacio($comanda);
-
-            Mail::to($comanda->email)->send($notification);
 
             $comanda->save();
             if ($redirigir) {
