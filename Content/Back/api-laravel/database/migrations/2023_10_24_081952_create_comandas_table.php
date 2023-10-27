@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('email');
             $table->integer('estat')->default(0);
             $table->timestamps();
+            $table->timestamp('momentPreparacio')->nullable();
+            $table->timestamp('momentEnviament')->nullable();
+            $table->timestamp('momentRepartiment')->nullable();
+            $table->timestamp('momentRebuda')->nullable();
         });
     }
 
