@@ -19,7 +19,11 @@ class comandaController extends Controller
         if ($validator->fails()) {
             return 'Error';
         } else {
-            return Comanda::create($request->all());
+
+            $c = Comanda::create($request->all());
+            $c->estat = 0;
+            return $c;
+            
         }    
     }
 
