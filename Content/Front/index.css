@@ -106,43 +106,43 @@ header {
     margin-right: 5px;
     font-size: 30px;
 }
-
-
-.titulo {
-    font-size: 24px;
-    color: #333;
+.landing-botiga{
+   text-align: justify;
+   margin: 20px;
+   font-family: 'Ubuntu';
+   line-height: 1.5em;
+   color: black;
 }
-
-
-.informacion {
-    font-size: 16px;
-    color: #666;
+.landing-salutacio{
+    font-size: 2em;
+    color: #205059;
+    margin-bottom: 20px;
 }
-
-.horarios {
-    font-size: 14px;
-    font-weight: bold;
-    color: #007bff;
+.landing__informacio h1{
+    font-size: 2em;
+    color: #205059;
 }
-
-.imagen {
-    max-width: 100%;
-    height: auto;
+.landing__informacio h2{
+    font-size: 1.3em;
+    color: #225f68;
 }
-
-
-.email {
-    color: #ff6600;
-    /* Naranja */
+.landing__informacio p{
+    font-size: 1.05em;
 }
-
-
-
-.direccion {
-    font-size: 14px;
-    color: #444;
+.landing__informacio a{
+    font-size: 1.05em;
+    text-decoration: none;
+    color: black;
 }
-
+.landing__informacio img{
+    height: 25vh;
+    object-fit: cover;
+    width: 85%;
+    margin-top: 5%;
+    align-items: center;
+    margin: auto;
+    display: flex;
+}
 
 .app__botiga {
     display: grid;
