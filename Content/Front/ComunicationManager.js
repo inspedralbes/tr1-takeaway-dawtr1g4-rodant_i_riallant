@@ -1,6 +1,9 @@
 export async function agafarPelicules(){
-    const response = await fetch(`http://localhost:8000/api/productes`);
-    const productes = await response.json();
+    const response = await fetch(`http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes`);
+    //http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
+    //http://localhost:8000/api/productes
+
+// http://localhost:8000/  ==  http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/
 
     return productes;
 }
