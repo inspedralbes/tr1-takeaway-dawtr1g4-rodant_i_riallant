@@ -1,18 +1,25 @@
 export async function agafarPelicules(){
-    const response = await fetch(`http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes`);
+    const response = await fetch(`http://preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes`);
     //http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
+    //http://.preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
     //http://localhost:8000/api/productes
 
 // http://localhost:8000/  ==  http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/
-
+//http://.preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/
     const productes = await response.json();
 
     return productes;
 }
 
+export async function agafarCategories(){
+    const response = await fetch(`http://preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/categories`);
+    const categories = await response.json();
+
+    return categories;
+}
+
 export async function enviarComanda(objecte){
-    const url = 'http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/comanda';
-    //http://localhost:8000/api/comanda
+    const url = 'http://preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/comanda';
 
                 // Datos que deseas enviar en formato de formulario
                 const formData = new URLSearchParams();
@@ -28,14 +35,12 @@ export async function enviarComanda(objecte){
                         'Content-Type': 'application/x-www-form-urlencoded', // Indicamos el tipo de contenido
                     },
                 };
-                let id = "";
                 // Realizar la solicitud POST usando fetch
                 const response = await fetch(url, options);
 
-                const data = await response.json();
+                const data = await response.json(); // Hacer algo con la respuesta del servidor
 
-                id = (data).id;
-                console.log((data).id); // Hacer algo con la respuesta del servidor
+                console.log(data);
                 
-                return id;
+                return data;
 }

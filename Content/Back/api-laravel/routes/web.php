@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProducteController;
+use App\Http\Controllers\ComandaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/comandes', [ComandaController::class,'index'])->name('comandes');
+
+Route::get('comanda/{id}', [ComandaController::class,'buscar'])->name('comanda-modif');
+
+Route::patch('comanda/{id}', [ComandaController::class, 'update'])->name('comanda-editar-estat');
+
+//Route::get('/afegir', [FormController::class, 'show'])
+ Route::get('/afegir', function(){
+     return view('newProduct');
+ })->name('afegir');
+Route::post('/afegir',  [ProducteController::class, 'store'])->name('afegir');

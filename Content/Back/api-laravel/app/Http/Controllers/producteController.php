@@ -24,9 +24,21 @@ class producteController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return 'Error';
+            return view('newProduct')->with('error', 'Error al formulari');
         } else {
-            return Producte::create($request->all());
+            $producte = new Producte;
+
+            $producte-> nom = $request->nom;
+            $producte-> descripcio = $request->descripcio;
+            $producte-> preu = $request->preu;
+            $producte-> categoria = $request->categoria;
+            $producte-> img = $request->img;
+            $producte-> estoc = $request->estoc;
+
+            $producte->save();
+            return view('newProduct')->with('success', 'Producto añadido correctamente');
+
+            //->with('success', 'Producto añadido correctamente')
         }    
     }
 
