@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('preuTotal', 8, 2);
             $table->string('email');
             $table->integer('estat')->default(0);
+            $table->foreign('usuari')->references('id')->on('usuaris');
             $table->timestamps();
             $table->timestamp('momentPreparacio')->nullable();
             $table->timestamp('momentEnviament')->nullable();
