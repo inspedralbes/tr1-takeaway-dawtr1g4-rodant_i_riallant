@@ -16,6 +16,8 @@
 }
 :root {
     --mida-item: 200px;
+    --mida-primera-barra: -9vw;
+    --mida-total-part: 18vw;
 }
 
 
@@ -410,35 +412,68 @@ input[type="submit"] {
     text-align: center;
 }
 
-.comanda__estat {
-    width: 21VW;
+.comanda__estat{
+    position: relative;
+}
+
+p.estat__part {
+    width: var(--mida-total-part);
     margin: 0;
     padding: 3vh 0;
     font-weight: 600;
     font-size: large;
 }
 
-.comanda__estat--0 {
+.estat__part--0 {
     background-color: red;
 }
 
-.comanda__estat--1 {
+.estat__part--1 {
     background-color: hsl(51, 100%, 50%);
 }
 
-.comanda__estat--2 {
+.estat__part--2 {
     background-color: rgb(136, 255, 0);
 }
 
-.comanda__estat--3 {
+.estat__part--3 {
     background-color: rgb(0, 225, 255);
 }
-/* Crearprogreso estado aquí */
-.comanda__estat--marcador{
-    height: 70px;
-    rotate: 180deg;
+
+.estat__part--4 {
+    background-color: rgb(255, 255, 255);
 }
-.comanda__estat--barra{
+
+.estat__part--marcador{
+    height: 15vw;
+    rotate: 180deg;
+    position: absolute;
+    top: 75%;
+    left: -7.5vw;
+    transition: transform 3s ease-in-out 1s;
+}
+
+.part__marcador--0{
+    transform: translateX(var(--mida-primera-barra));
+}
+
+.part__marcador--1{
+    transform: translateX(calc(var(--mida-primera-barra) - var(--mida-total-part)));
+}
+
+.part__marcador--2{
+    transform: translateX(calc(var(--mida-primera-barra) - var(--mida-total-part) * 2));
+}
+
+.part__marcador--3{
+    transform: translateX(calc(var(--mida-primera-barra) - var(--mida-total-part) * 3));
+}
+
+.part__marcador--4{
+    transform: translateX(calc(var(--mida-primera-barra) - var(--mida-total-part) * 4));
+}
+
+.comanda__estat{
     display: flex;
 }
 
