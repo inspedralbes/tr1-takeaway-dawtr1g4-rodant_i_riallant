@@ -1,6 +1,9 @@
 @extends('app')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/newProdForm.css') }}">
+
+
     <form action="{{ route('afegir') }}" method="POST">
       @csrf
       
