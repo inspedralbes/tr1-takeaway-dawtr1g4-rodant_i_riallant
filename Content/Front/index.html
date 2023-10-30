@@ -50,9 +50,11 @@
             </div>
         </div>
         </div>
+       
         <div v-if="getPantalla() == `botiga`" class="app__botiga">
             <div class="botiga__superior">
                 <button @click="canviarPantalla(`titol`)">Inici</button>
+                <button @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</button>
                 <button @click="mostrarFiltres()">Filtrar</button>
                 <div v-if="mostrarCategories">
                     <div>
@@ -80,6 +82,11 @@
             </div>
                 
         </div>
+        <div v-if="getPantalla() == 'BuscarComanda'" class="">
+            <label for="numComanda">Numero de la comanda:</label>
+            <input type="number" id="numComanda" name="numComanda" min="1" v-model="comanda.id" />
+            <input type="submit" value="Enviar" @click="buscarComanda" />
+          </div>
         <div v-if="getPantalla() == `botiga`" class="ticket__productes">
                 <div class="ticket-producte">
                     <h2>Producte:</h2>
@@ -124,6 +131,7 @@
             </div>
 
         </div>
+        <div if></div>
         <div v-if="getPantalla() == `comanda`" class="app__comanda">
             <h1 class="comanda__numero">Comanda nº{{comanda.id}}</h1>
             <h2 class="comanda__estat" :class="'comanda__estat--' + comanda.estat">Estat: {{comanda.estat}}</h2>

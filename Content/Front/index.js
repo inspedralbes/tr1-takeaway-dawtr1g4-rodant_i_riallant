@@ -223,7 +223,11 @@ createApp({
         },
         afegirTransicio(){
 
+        },
+        buscarComanda(){
+          
         }
+
     },
 
 }).mount('#app')
