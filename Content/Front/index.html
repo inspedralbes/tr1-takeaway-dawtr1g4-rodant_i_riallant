@@ -64,23 +64,23 @@
                 </div>
                 <div>
                     <input v-model="busqueda" placeholder="Buscar productos" />
-                    <div v-for="producto in productosFiltrados" :key="producto.id">
-                      {{ producto.nombre }}
-                    </div>
                   </div>
             </div>
             <div class="botiga__menu">
-                <div v-for="(producte, index) in productosFiltrados">
-                    <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
-                        <div class="botiga__nom">{{producte.nom}}</div>
-                        <div class="botiga__butons">
-                            <input type="button" value="-" @click="disminuirDemanats(index)">
-                            <input class="botiga__quantitat" v-model="productes[index].counter" name="id{{index}}" min=0
-                                max=9>
-                            <input type="button" value="+" @click="augmentarDemanats(index)">
+                <div v-for="(producte, index) in productes">
+                    <div v-if="producte.nom.toLowerCase().includes(this.busqueda.toLowerCase().trim())">
+                        <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
+                            <div class="botiga__nom">{{producte.nom}}</div>
+                            <div class="botiga__butons">
+                                <input type="button" value="-" @click="disminuirDemanats(index)">
+                                <input class="botiga__quantitat" v-model="productes[index].counter" name="id{{index}}" min=0
+                                    max=9>
+                                <input type="button" value="+" @click="augmentarDemanats(index)">
+                            </div>
+                            <img class="botiga__imagen" :src="producte.img" alt="producte">
                         </div>
-                        <img class="botiga__imagen" :src="producte.img" alt="producte">
                     </div>
+                    
                 </div>
             </div>
             <!-- <div class="ticket ocult">

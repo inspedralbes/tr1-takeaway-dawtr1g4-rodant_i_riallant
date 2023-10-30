@@ -194,17 +194,6 @@ createApp({
         afegirTransicio(){
 
         }
-    },
-    computed: {
-        productosFiltrados() {
-          const busqueda = this.busqueda.toLowerCase().trim();
-          if (busqueda === "") {
-            return this.productes; // Mostrar todos los productos si la búsqueda está vacía
-          } else {
-            return this.productes.filter(producto => producto.nom.toLowerCase().includes(busqueda));
-          }
-        },
-    },
-    
+    }   
 
 }).mount('#app')
