@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-<link rel="stylesheet" href="{{ asset('newProdForm.css') }}">
+<link rel="stylesheet" href="{{URL::asset('css/newProdForm.css') }}">
 
 
     <form action="{{ route('afegir') }}" method="POST" class="formulari">
