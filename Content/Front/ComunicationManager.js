@@ -1,5 +1,5 @@
 export async function agafarPelicules(){
-    const response = await fetch(`http://preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes`);
+    const response = await fetch(`http://localhost:8000/api/productes`);
     //http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
     //http://.preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
     //http://localhost:8000/api/productes
@@ -12,14 +12,14 @@ export async function agafarPelicules(){
 }
 
 export async function agafarCategories(){
-    const response = await fetch(`http://preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/categories`);
+    const response = await fetch(`http://localhost:8000/api/categories`);
     const categories = await response.json();
 
     return categories;
 }
 
 export async function enviarComanda(objecte){
-    const url = 'http://preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/comanda';
+    const url = 'http://localhost:8000/api/comanda';
 
                 // Datos que deseas enviar en formato de formulario
                 const formData = new URLSearchParams();
@@ -43,4 +43,14 @@ export async function enviarComanda(objecte){
                 console.log(data);
                 
                 return data;
+}
+export async function agafarComanda(idComanda) {
+
+    console.log(idComanda)
+    const url = `http://localhost:8000/api/comanda/${idComanda}`;
+
+    const response = await fetch(url);
+    const comanda = await response.json();
+    console.log(comanda);
+    return comanda;
 }

@@ -22,19 +22,24 @@
     <div id="app">
         <header>
 
-            <nav class="header__navbar">
-                <h1>RODANT I RIALLANT</h1>
-                <div class="menu-icon">&#9776;</div>
-                <ul class="nav-list" id="nav-list">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Acerca de</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
+
+            <input type="checkbox" id="nav-toggler" name value >
+            <div class="page-wrap">
+                <h1 @click="canviarPantalla(`titol`)">RODANT I RIALLANT</h1>
+              <label for="nav-toggler" class="toggle"><p class="toggle">☰</p></label>
+        <!-- This is the corresponding nav to the nav toggler above.--> 
+            <div class="hidden-nav">
+                <ul>
+                    <li @click="canviarPantalla(`titol`)">Rodant i Riallant</li>
+                    <li><a href="#home">Login</a></li>
+                    <li><a href="#webdesign">Filtres</a></li>
+                    <li  @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
                 </ul>
-                <button class="cart-button" @click="canviarPantalla('checkout')">
-                    <i class="fas fa-shopping-cart"></i> Carro
-                </button>
-            </nav>
+                
+            </div>
+            <button class="cart-button" @click="canviarPantalla('checkout')">
+                <i class="fas fa-shopping-cart"></i> Carro
+            </button>
         </header>
         <div v-if="getPantalla() == `titol`" class="app__landing landing">
             <div class="landing-botiga">
@@ -53,8 +58,6 @@
        
         <div v-if="getPantalla() == `botiga`" class="app__botiga">
             <div class="botiga__superior">
-                <button @click="canviarPantalla(`titol`)">Inici</button>
-                <button @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</button>
                 <button @click="mostrarFiltres()">Filtrar</button>
                 <div v-if="mostrarCategories">
                     <div>

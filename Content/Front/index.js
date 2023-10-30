@@ -1,6 +1,7 @@
 import { agafarPelicules } from "./ComunicationManager.js";
 import { agafarCategories } from "./ComunicationManager.js";
 import { enviarComanda } from "./ComunicationManager.js";
+import{agafarComanda} from "./ComunicationManager.js";
 
 
 const { createApp } = Vue
@@ -21,6 +22,7 @@ createApp({
             mostrarCategories: false,
             productesCopia: [],
             aplicarEfecte:false,
+            menuOpen: false
         }
     },
     methods: {
@@ -32,6 +34,9 @@ createApp({
             if (nova == "botiga") {
                 this.getProductes();
             }
+        },
+        toggleMenu() {
+            this.menuOpen = !this.menuOpen;
         },
         getProductes() {
             agafarPelicules(this.paginaActual)
@@ -224,10 +229,25 @@ createApp({
         afegirTransicio(){
 
         },
-        buscarComanda(){
-          
+        buscarComanda() {
+            agafarComanda(this.comanda.id)
+              .then((data) => {
+                if (data) {                  
+                  this.comanda = data;
+                  this.pantallaActual = "comanda"
+                }
+              })
+            //   .catch((error) => {
+            //     console.error('Error al buscar la comanda:', error);
+            //     this.comandaEncontrada = null; // Limpiamos el resultado en caso de error
+            //   });
+            }
         }
-
-    },
-
+          
+        
+        
+        
+    
 }).mount('#app')
+
+
