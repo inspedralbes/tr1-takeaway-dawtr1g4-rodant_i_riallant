@@ -141,7 +141,7 @@
         <div v-if="getPantalla() == `comanda`" class="app__comanda">
             <h1 class="comanda__numero">Comanda nº{{comanda.id}}</h1>
             <!-- <h2 class="comanda__estat" :class="'comanda__estat--' + comanda.estat">Estat: {{comanda.estat}}</h2> -->
-            <!-- Crearprogreso estado aquí -->
+            <!-- Crear progreso estado aquí -->
             <!-- <p class="arrow_test">arrow test : &#8593;  &#10514; <i class="comanda__progress--marker"></i></p> -->
             <div class="comanda__estat--barra">aqui la barra
                 
@@ -149,9 +149,9 @@
                 <p class="comanda__estat comanda__estat--1">Estat: {{comanda.estat}}</p>
                 <p class="comanda__estat comanda__estat--2">Estat: {{comanda.estat}}</p>
                 <p class="comanda__estat comanda__estat--3">Estat: {{comanda.estat}}</p>
+                <img class="comanda__estat--marcador" src="progress__arrow.png" alt="" srcset="">
 
             </div>
-            <img class="comanda__estat--marcador" src="progress__arrow.png" alt="" srcset="">
             <button @click="canviarPantalla(`botiga`)">Botiga</button>
         </div>
     </div>
