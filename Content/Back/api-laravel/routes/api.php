@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\categoriaController;
 use App\Http\Controllers\comandaController;
 use App\Http\Controllers\producteController;
 use Illuminate\Http\Request;
@@ -32,6 +33,8 @@ Route::get('/productes/search/{name}', [producteController::class, 'search']);
 Route::post('/comanda', [comandaController::class,'store']);
 
 Route::get('/comanda/{id}', [comandaController::class, 'show']);
+
+Route::get('/categories', [categoriaController::class,'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
