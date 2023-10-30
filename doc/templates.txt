@@ -1,1 +1,0 @@
-template pedidos(admin) cambiar estado: https://design.penpot.app/#/view/b4857f34-a0e5-81ae-8003-57457eacdce1?page-id=b4857f34-a0e5-81ae-8003-57457eacdce2&section=interactions&index=0&share-id=b4857f34-a0e5-81ae-8003-574fdae7ccc2
