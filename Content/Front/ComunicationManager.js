@@ -1,5 +1,5 @@
 export async function agafarPelicules(){
-    const response = await fetch(`http://preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes`);
+    const response = await fetch(`http://localhost:8000/api/productes`);
     //http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
     //http://.preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
     //http://localhost:8000/api/productes
@@ -19,7 +19,7 @@ export async function agafarCategories(){
 }
 
 export async function enviarComanda(objecte){
-    const url = 'http://preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/comanda';
+    const url = 'http://localhost:8000/api/comanda';
 
                 // Datos que deseas enviar en formato de formulario
                 const formData = new URLSearchParams();
