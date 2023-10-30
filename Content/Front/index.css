@@ -432,6 +432,19 @@ input[type="submit"] {
 .comanda__estat--3 {
     background-color: rgb(0, 225, 255);
 }
+/* Crearprogreso estado aquí */
+.comanda__estat--marcador{
+    height: 70px;
+    rotate: 180deg;
+}
+.comanda__estat--barra{
+    display: flex;
+}
+
+.arrow_test{
+    font-weight: bolder;
+    font-size: larger;
+}
 
 footer {
     margin-top: 25px;
