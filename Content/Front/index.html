@@ -62,11 +62,15 @@
                         <button @click="filtrar(categoria.id)">{{categoria.nom}}</button>
                     </div>
                 </div>
+                <div>
+                    <input v-model="busqueda" placeholder="Buscar productos" />
+                    <div v-for="producto in productosFiltrados" :key="producto.id">
+                      {{ producto.nombre }}
+                    </div>
+                  </div>
             </div>
-
-
             <div class="botiga__menu">
-                <div v-for="(producte, index) in productes">
+                <div v-for="(producte, index) in productosFiltrados">
                     <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
                         <div class="botiga__nom">{{producte.nom}}</div>
                         <div class="botiga__butons">
