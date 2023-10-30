@@ -141,6 +141,7 @@
         <div v-if="getPantalla() == `comanda`" class="app__comanda">
             <h1 class="comanda__numero">Comanda nº{{comanda.id}}</h1>
             <h2 class="comanda__estat" :class="'comanda__estat--' + comanda.estat">Estat: {{comanda.estat}}</h2>
+            <!-- Crearprogreso estado aquí -->
             <button @click="canviarPantalla(`botiga`)">Botiga</button>
         </div>
     </div>
