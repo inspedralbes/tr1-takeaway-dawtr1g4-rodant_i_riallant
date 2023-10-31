@@ -1,19 +1,25 @@
 /* EXPLICACIÓN DE RUTAS
+Todas las rutas de ComunicationManager parten de la root de laravel, y es lo único que se debe cambiar 
+a la hora de desplegar, las rutas son:
+
+EN LOCAL: http://localhost:8000/api/
 
 
+EN PREPRODUCCIÓN: //http://preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/
 
 
+EN PRODUCCIÓN: //http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/
 
+SE DEBEN SUSTITUIR TODAS LAS LLAMADAS A API SOLAMENTE EN LA PORCIÓN DE LA RUTA RAÍZ
+
+EJEMPLO 
+HOST: //http://localhost:8000/api/productes
+PRODUCCIÓN ://http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
 
 */
 export async function agafarPelicules(){
     const response = await fetch(`http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes`);
-    //http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
-    //http://.preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
-    //http://localhost:8000/api/productes
 
-// http://localhost:8000/  ==  http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/
-//http://.preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/
     const productes = await response.json();
 
     return productes;
