@@ -176,9 +176,6 @@ createApp({
                 enviarComanda(enviarJSON).then(data => {
                     this.comanda = data;
                 })
-
-                console.log(this.comanda);
-
                 this.pantallaActual = `comanda`;
 
                 this.compra = [];

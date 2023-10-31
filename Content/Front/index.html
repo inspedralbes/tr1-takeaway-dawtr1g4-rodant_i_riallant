@@ -142,9 +142,22 @@
             </div>
 
         </div>
-        <div v-if="getPantalla() == `comanda`" class="app__comanda">
+        <div v-if="getPantalla() == `comanda`" class="app__comanda comanda">
             <h1 class="comanda__numero">Comanda nº{{comanda.id}}</h1>
-            <h2 class="comanda__estat" :class="'comanda__estat--' + comanda.estat">Estat: {{comanda.estat}}</h2>
+            <!-- <h2 class="comanda__estat" :class="'comanda__estat--' + comanda.estat">Estat: {{comanda.estat}}</h2> -->
+            <!-- Crear progreso estado aquí -->
+            <!-- <p class="arrow_test">arrow test : &#8593;  &#10514; <i class="comanda__progress--marker"></i></p> -->
+            <div class="comanda__estat estat">
+                
+                <p class="estat__part estat__part--0">Pendent</p>
+                <p class="estat__part estat__part--1">Preparant-se</p>
+                <p class="estat__part estat__part--2">Enviant-se</p>
+                <p class="estat__part estat__part--3">Repartint-se</p>
+                <p class="estat__part estat__part--4">Per recollir</p>
+                <img class="estat__part--marcador" :class="`part__marcador--${comanda.estat}`" src="progress__arrow.png" alt="fletxa" srcset="">
+
+                <!-- :class="`part__marcador--` + comanda.estat " -->
+            </div>
             <button @click="canviarPantalla(`botiga`)">Botiga</button>
         </div>
     </div>
