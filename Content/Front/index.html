@@ -30,9 +30,9 @@
             <nav class="hidden-nav">
                 <ul>
                     <li @click="canviarPantalla(`titol`)">Rodant i Riallant</li>
-                    <div v-if="getPantalla() == `botiga`" class="">
+                    <div v-if="getPantalla() == `botiga`">
                         <li @click="mostrarFiltres()">Filtres</li>
-                        <div v-if="mostrarCategories">
+                        <div v-if="mostrarCategories" class="filtre-botiga">
                         <div>
                             <li @click="filtrar(-1)">Reset</li>
                         </div>
