@@ -157,18 +157,12 @@ createApp({
         },
         getProducteTotalComprat(){
             if (localStorage.getItem('compra') != null) {
-
                 let comprarProducte=JSON.parse(localStorage.getItem('compra'));
                 let numProducte=0;
                 comprarProducte.forEach(element=>{
-                    if(element.counter==0){
-                        return numProducte=0;
-                    }else{
-                        numProducte+=element.counter;
-                        return numProducte;
-                    }
-                
+                        numProducte+=element.counter;  
             })
+            return numProducte;
             }
         
         },

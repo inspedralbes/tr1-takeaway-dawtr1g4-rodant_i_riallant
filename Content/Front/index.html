@@ -22,24 +22,30 @@
 
     <div id="app">
         <header>
-
-
+            <h1 @click="canviarPantalla(`titol`)">RODANT I <br>RIALLANT</h1>
             <input type="checkbox" id="nav-toggler" name value >
             <div class="page-wrap">
-                <h1 @click="canviarPantalla(`titol`)">RODANT I RIALLANT</h1>
               <label for="nav-toggler" class="toggle"><p class="toggle">☰</p></label>
         <!-- This is the corresponding nav to the nav toggler above.--> 
             <div class="hidden-nav">
                 <ul>
                     <li @click="canviarPantalla(`titol`)">Rodant i Riallant</li>
-                    <li><a href="#home">Login</a></li>
-                    <li><a href="#webdesign">Filtres</a></li>
-                    <li  @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
+                    <div v-if="getPantalla() == `botiga`" class="app__landing landing">
+                        <li @click="mostrarFiltres()">Filtres</li>
+                        <div v-if="mostrarCategories">
+                        <div>
+                            <button @click="filtrar(-1)">Reset</button>
+                        </div>
+                        <div v-for="(categoria, index) in categories" @key="index">
+                            <button @click="filtrar(categoria.id)">{{categoria.nom}}</button>
+                        </div>
+                    </div>
+                    </div>
+                    <li @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
                 </ul>
-                
             </div>
             <button class="cart-button" @click="canviarPantalla('checkout')">
-                <i class="fas fa-shopping-cart"></i> Carro
+                <i class="fas fa-shopping-cart"></i> 
             </button>
         </header>
         <div v-if="getPantalla() == `titol`" class="app__landing landing">
@@ -58,19 +64,6 @@
         </div>
        
         <div v-if="getPantalla() == `botiga`" class="app__botiga">
-            <div class="botiga__superior">
-                <button @click="mostrarFiltres()">Filtrar</button>
-                <div v-if="mostrarCategories">
-                    <div>
-                        <button @click="filtrar(-1)">Reset</button>
-                    </div>
-                    <div v-for="(categoria, index) in categories" @key="index">
-                        <button @click="filtrar(categoria.id)">{{categoria.nom}}</button>
-                    </div>
-                </div>
-            </div>
-
-
             <div class="botiga__menu">
                 <div v-for="(producte, index) in productes">
                     <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
