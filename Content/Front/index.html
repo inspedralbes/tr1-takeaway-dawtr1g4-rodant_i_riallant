@@ -32,9 +32,8 @@
                     <li><a href="#">Servicios</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
-                <button class="cart-button" @click="canviarPantalla('checkout')">
-                    <i class="fas fa-shopping-cart"></i> Carro
-                </button>
+                <button v-if="getPantalla() == `botiga`" class="cart-button" @click="canviarPantalla('checkout')">
+                    <i class="fas fa-shopping-cart"></i></button>
             </nav>
         </header>
         <div v-if="getPantalla() == `titol`" class="app__landing landing">
