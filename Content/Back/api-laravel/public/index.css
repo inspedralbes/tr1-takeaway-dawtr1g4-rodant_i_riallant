@@ -1,0 +1,63 @@
+:root{
+    --aquamarine-blue-50: #effcfa;
+    --aquamarine-blue-100: #d5f8f7;
+    --aquamarine-blue-200: #b1f0ef;
+    --aquamarine-blue-300: #69e2e2;
+    --aquamarine-blue-400: #3dd0d3;
+    --aquamarine-blue-500: #22b3b8;
+    --aquamarine-blue-600: #1f919b;
+    --aquamarine-blue-700: #1f757f;
+    --aquamarine-blue-800: #225f68;
+    --aquamarine-blue-900: #205059;
+    --aquamarine-blue-950: #10353c;
+}
+
+body {
+    background-color: var(--aquamarine-blue-50);
+}
+
+h1{
+    text-align: center;
+}
+
+.llistat{
+    background-color: var(--aquamarine-blue-200);
+    display: grid;
+    grid-template-rows: 1fr;
+    margin-top: 5vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.titols, .comanda{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.comanda:nth-child(2n+1){
+    background-color: var(--aquamarine-blue-400);
+}
+
+
+
+.comanda:last-child{
+    border-bottom: 1px solid var(--aquamarine-blue-950);
+}
+
+.titols *, .comanda * {
+    border-left: 1px solid var(--aquamarine-blue-950);
+    border-top: 1px solid var(--aquamarine-blue-950);
+    padding: 5px;
+    /* padding-left: 5px;
+    padding-right: 5px; */
+    text-align: center;
+}
+
+.titols>*:last-child, .comanda>*:last-child{
+    border-right: 1px solid var(--aquamarine-blue-950);
+}
+
+.titols *{
+    margin: 0;
+    padding: 3vh;
+}

@@ -27,7 +27,7 @@
         </div>
         <div class="form-group">
           <label for="img">Direcció de la imatge</label>
-          <input type="text" class="form-control" id="img" name="img" placeholder="Ex. './img/nomFitxer.jpg'">
+          <input type="file" id="img" name="img">
         </div>
         <div class="form-group">
           <label for="categoria">Categoria</label>

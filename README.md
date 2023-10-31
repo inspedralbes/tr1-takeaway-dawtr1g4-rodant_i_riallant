@@ -12,6 +12,7 @@ HEU DE MODIFICAR AQUEST DOCUMENT AMB LA VOSTRA INFORMACIÖ:
 * Aitor Barreiro - Rol: Coordinador de Disseny
 * Mario Benavente - Rol: Coordinador de Desplegament
 * [URL del prototip de penpot](https://design.penpot.app/#/view/3e6de94f-2e83-80a3-8003-5225e6cc9de8?page-id=3e6de94f-2e83-80a3-8003-5225e6cc9de9&section=interactions&index=0&share-id=3e6de94f-2e83-80a3-8003-53587650d917) 
+* [URL de la paleta de colors y color #69e2e2](https://uicolors.app/create)
 (penseu a deixar el prototip públic)
 * [URL de diagrama de casos d'us](https://www.canva.com/design/DAFyD_4Kkjo/8qi7_hgN_8ab8oRXuBUmaQ/edit?utm_content=DAFyD_4Kkjo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 * [URL del taiga.io](https://tree.taiga.io/project/a19pabmatpav-transversal-1-grup-4/backlog)
