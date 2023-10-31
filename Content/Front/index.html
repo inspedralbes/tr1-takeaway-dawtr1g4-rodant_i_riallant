@@ -22,15 +22,26 @@
 
     <div id="app">
         <header>
-
-            <nav class="header__navbar">
-                <h1>RODANT I RIALLANT</h1>
-                <div class="menu-icon">&#9776;</div>
-                <ul class="nav-list" id="nav-list">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Acerca de</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
+            <h1 @click="canviarPantalla(`titol`)">RODANT I <br>RIALLANT</h1>
+            <input type="checkbox" id="nav-toggler" name value >
+            <div class="page-wrap">
+              <label for="nav-toggler" class="toggle"><p class="toggle">☰</p></label>
+        <!-- This is the corresponding nav to the nav toggler above.--> 
+            <div class="hidden-nav">
+                <ul>
+                    <li @click="canviarPantalla(`titol`)">Rodant i Riallant</li>
+                    <div v-if="getPantalla() == `botiga`" class="app__landing landing">
+                        <li @click="mostrarFiltres()">Filtres</li>
+                        <div v-if="mostrarCategories">
+                        <div>
+                            <button @click="filtrar(-1)">Reset</button>
+                        </div>
+                        <div v-for="(categoria, index) in categories" @key="index">
+                            <button @click="filtrar(categoria.id)">{{categoria.nom}}</button>
+                        </div>
+                    </div>
+                    </div>
+                    <li @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
                 </ul>
                 <button v-if="getPantalla() == `botiga`" class="cart-button" @click="canviarPantalla('checkout')">
                     <i class="fas fa-shopping-cart"></i></button>
@@ -50,22 +61,8 @@
             </div>
         </div>
         </div>
+       
         <div v-if="getPantalla() == `botiga`" class="app__botiga">
-            <div class="botiga__superior">
-                <button @click="canviarPantalla(`titol`)">Inici</button>
-                <button @click="mostrarFiltres()">Filtrar</button>
-                <div v-if="mostrarCategories">
-                    <div>
-                        <button @click="filtrar(-1)">Reset</button>
-                    </div>
-                    <div v-for="(categoria, index) in categories" @key="index">
-                        <button @click="filtrar(categoria.id)">{{categoria.nom}}</button>
-                    </div>
-                </div>
-                <div>
-                    <input v-model="busqueda" placeholder="Buscar productos" />
-                  </div>
-            </div>
             <div class="botiga__menu">
                 <div v-for="(producte, index) in productes">
                     <div v-if="producte.nom.toLowerCase().includes(this.busqueda.toLowerCase().trim())">
@@ -83,29 +80,22 @@
                     
                 </div>
             </div>
-            <!-- <div class="ticket ocult">
-                <h2>Ticket</h2>
-                <div class="ticket__productes">
-                    <div v-for="(producteComprar, index) in compra">
-                        <div class="productes__producte producte">
-                            <div class="producte__foto">
-                                <img :src="producteComprar.img" alt="producte">
-                            </div>
-                            <div class="producte__titol">
-                                {{producteComprar.nom}}
-                            </div>
-                            <div class="producte__preu">
-                                {{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
-                            </div>
-                            <div class="producte__quantitat">
-                                {{producteComprar.counter}}
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div> -->
+                
         </div>
+        <div v-if="getPantalla() == 'BuscarComanda'" class="">
+            <label for="numComanda">Numero de la comanda:</label>
+            <input type="number" id="numComanda" name="numComanda" min="1" v-model="comanda.id" />
+            <input type="submit" value="Enviar" @click="buscarComanda" />
+          </div>
+        <div v-if="getPantalla() == `botiga`" class="ticket__productes">
+                <div class="ticket-producte">
+                    <h2>Producte:</h2>
+                    <p>{{getProducteTotalComprat()}}</p>
+                    <h2>Total:</h2>
+                    <p>{{getTotalPreuProducte()}}</p>
+                </div>
+        </div>
+
         <div v-if="getPantalla() == `checkout`">
             <button @click="canviarPantalla(`botiga`)">Botiga</button>
             <div v-for="(producteComprar, index) in compra">

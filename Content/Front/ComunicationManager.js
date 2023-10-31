@@ -42,3 +42,13 @@ export async function enviarComanda(objecte){
                 
                 return data;
 }
+export async function agafarComanda(idComanda) {
+
+    console.log(idComanda)
+    const url = `http://localhost:8000/api/comanda/${idComanda}`;
+
+    const response = await fetch(url);
+    const comanda = await response.json();
+    console.log(comanda);
+    return comanda;
+}

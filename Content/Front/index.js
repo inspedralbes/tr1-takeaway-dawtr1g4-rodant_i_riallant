@@ -1,6 +1,7 @@
 import { agafarPelicules } from "./ComunicationManager.js";
 import { agafarCategories } from "./ComunicationManager.js";
 import { enviarComanda } from "./ComunicationManager.js";
+import{agafarComanda} from "./ComunicationManager.js";
 
 
 const { createApp } = Vue
@@ -22,6 +23,7 @@ createApp({
             mostrarCategories: false,
             productesCopia: [],
             aplicarEfecte:false,
+            menuOpen: false
         }
     },
     methods: {
@@ -33,6 +35,9 @@ createApp({
             if (nova == "botiga") {
                 this.getProductes();
             }
+        },
+        toggleMenu() {
+            this.menuOpen = !this.menuOpen;
         },
         getProductes() {
             agafarPelicules(this.paginaActual)
@@ -129,6 +134,39 @@ createApp({
                 return `No s'ha fet cap compra`;
             }
         },
+        getTotalPreuProducte() {
+            if (localStorage.getItem('compra') != null) {
+                let compraTotal = JSON.parse(localStorage.getItem('compra'));
+
+                let preuTotal = 0;
+
+                compraTotal.forEach(element => {
+                    preuTotal += element.counter * element.preu;
+                })
+
+                let enviar = ((Math.round(preuTotal * 100) / 100).toFixed(2))
+
+                this.preuTotal = enviar;
+
+                enviar = enviar.toString();
+
+                enviar += '€';
+
+                return enviar;
+            }
+
+        },
+        getProducteTotalComprat(){
+            if (localStorage.getItem('compra') != null) {
+                let comprarProducte=JSON.parse(localStorage.getItem('compra'));
+                let numProducte=0;
+                comprarProducte.forEach(element=>{
+                        numProducte+=element.counter;  
+            })
+            return numProducte;
+            }
+        
+        },
 
         mostrarFiltres(){
             if (this.categories.length > 0) {
@@ -190,7 +228,22 @@ createApp({
         },
         afegirTransicio(){
 
+        },
+        buscarComanda() {
+            agafarComanda(this.comanda.id)
+              .then((data) => {
+                if (data) {                  
+                  this.comanda = data;
+                  this.pantallaActual = "comanda"
+                }
+              })
+            //   .catch((error) => {
+            //     console.error('Error al buscar la comanda:', error);
+            //     this.comandaEncontrada = null; // Limpiamos el resultado en caso de error
+            //   });
+            }
         }
-    }   
 
 }).mount('#app')
+
+
