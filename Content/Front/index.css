@@ -18,11 +18,22 @@
     --mida-item: 200px;
     --mida-primera-barra: -9vw;
     --mida-total-part: 18vw;
+    --aquamarine-blue-50: #effcfa;
+    --aquamarine-blue-100: #d5f8f7;
+    --aquamarine-blue-200: #b1f0ef;
+    --aquamarine-blue-300: #69e2e2;
+    --aquamarine-blue-400: #3dd0d3;
+    --aquamarine-blue-500: #22b3b8;
+    --aquamarine-blue-600: #1f919b;
+    --aquamarine-blue-700: #1f757f;
+    --aquamarine-blue-800: #225f68;
+    --aquamarine-blue-900: #205059;
+    --aquamarine-blue-950: #10353c;
 }
 
 
 body {
-    background-color: #effcfa;
+    background-color: var(--aquamarine-blue-50);
     margin: 0;
     padding: 0;
     font-family:'Ubuntu';
@@ -33,7 +44,7 @@ h1{
 }
 
 button {
-    background-color: #22b3b8;
+    background-color:var(--aquamarine-blue-500);
     color: #fff;
     padding: 2vmin 2vmax;
     border: none;
@@ -42,7 +53,7 @@ button {
 }
 header{
     top: 0;
-    background-color: #d5f8f7;
+    background-color: var(--aquamarine-blue-100);
     height: 16vh;
     position: relative;
     padding-top: 2vh;
@@ -52,7 +63,7 @@ header h1{
     font-family: 'Tilt Neon';
 }
 .toggle {
-    color:#205059;
+    color:var(--aquamarine-blue-900);
     position: absolute;
     top: 3vh;
     left: 2vw;
@@ -90,7 +101,7 @@ header h1{
     z-index: 1;
     width: 50%;
     padding: 20px;
-    background-color: #10353c;
+    background-color: var(--aquamarine-blue-950);
     transition: all .15s ease;
     height: 100%;
     
@@ -120,7 +131,7 @@ header h1{
     position: absolute;
     top: 2vh;
     right: 5vw;
-    background-color: #22b3b8;
+    background-color: var(--aquamarine-blue-500);
     color: #fff;
     padding: 4vmin 5vmax;
     border: none;
@@ -142,25 +153,25 @@ header h1{
 }
 .landing-salutacio{
     font-size: 2em;
-    color: #205059;
+    color: var(--aquamarine-blue-900);
     margin-bottom: 20px;
 }
 .informacio {
     border: 1px solid #ccc; 
     border-radius: 5px; 
-    background-color: #d5f8f7;
+    background-color: var(--aquamarine-blue-100);
     margin-top: 15px;
 
   }
   
 .landing__informacio h1{
     font-size: 2em;
-    color: #205059;
+    color: var(--aquamarine-blue-900);
     line-height: 1.5;
 }
 .landing__informacio h2{
     font-size: 1.3em;
-    color: #225f68;
+    color: var(--aquamarine-blue-800);
     text-decoration: underline;
 }
 .landing__informacio p{
@@ -182,24 +193,11 @@ header h1{
     padding-bottom: 25px;
 }
 
-.app__botiga {
-    display: grid;
-    grid-template-areas: "superior superior"
-        "menu ."
-        "inferior inferior";
-    grid-template-columns: 7fr 3fr;
-}
-
-.botiga__superior {
-    grid-area: superior;
-
-}
-
 .botiga__superior>button{
     display: block;
 }
 .ticket__productes{
-    background-color: #10353c;
+    background-color: var(--aquamarine-blue-950);
     color: white;
     position: sticky;
     bottom: 0;
@@ -250,16 +248,11 @@ header h1{
     grid-area: quantitat;
 }
 
-.botiga__inferior {
-    grid-area: inferior;
-}
-
 .botiga__menu {
     grid-area: menu;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 130%;
 }
 .botiga__item {
     position: relative;
@@ -267,6 +260,8 @@ header h1{
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     height: var(--mida-item);
     width: var(--mida-item);
+    max-height: 35vw;
+    max-width: 35vw;
     display: block;
     align-items: center;
     text-align: center;
@@ -289,7 +284,6 @@ header h1{
     text-align: center;
     justify-content: center;
     text-shadow: 1px 1px black;
-    font-size: 1.3em;
 }
 
 .botiga__butons {
@@ -303,6 +297,8 @@ header h1{
 .botiga__imagen {
     width: var(--mida-item);
     height: var(--mida-item);
+    max-height: 35vw;
+    max-width: 35vw;
     object-fit: cover;
 }
 
@@ -311,16 +307,16 @@ header h1{
 .botiga__quantitat {
     width: 30px;
     color: black;
-    font-size: px;
+    
 }
 
 input[type=button] {
     border-radius: 50%;
     width: 50px;
     height: 45px;
-    background-color: #22b3b8;
+    background-color: var(--aquamarine-blue-500);
     color: white;
-    border-color: #22b3b8;
+    border-color: var(--aquamarine-blue-500);
     font-size: 2em;
     margin-left: 5px;
     margin-right: 2px;
@@ -359,7 +355,7 @@ input {
     margin: 5px;
     padding-right: 2vh;
     border: 1px solid black;
-    background-color: #10353c;
+    background-color: var(--aquamarine-blue-950);
 }
 
 .productes__producte>div {
@@ -408,7 +404,7 @@ input {
 .total__preu-producte {
     text-align: center;
     font-size: 40px;
-    color: #1f757f;
+    color: var(--aquamarine-blue-700);
 }
 
 .formulari__usuari {
@@ -420,7 +416,7 @@ input {
 label {
     font-weight: bold;
     font-size: 32px;
-    color: #205059;
+    color: var(--aquamarine-blue-900);
     display: block;
 }
 
@@ -434,7 +430,7 @@ input[type="text"] {
 
 input[type="submit"] {
     align-items: center;
-    background-color: #22b3b8;
+    background-color: var(--aquamarine-blue-500);
     color: #fff;
     padding: 35px 60px;
     border: none;
@@ -528,12 +524,15 @@ p.estat__part {
 
 footer {
     text-align: center;
-    background-color: #10353c;
+    background-color: var(--aquamarine-blue-950);
     color: white;
     padding: 15px 0;
     z-index: 3;
 }
 
+.email input{
+    margin-bottom: 7vh;
+}
 
 footer p {
     color: white;
@@ -541,30 +540,6 @@ footer p {
     font-size: 25px;
     z-index: 3;
 }
-
-/* .item:hover{
-    box-shadow:  15px 15px 5px 0px rgba(0,0,0,0.75);
-} */
-
-/*.item:hover>.nom{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.808);
-    display: flex;
-    text-align: center;
-    justify-content: center;
-}
-*/
-/* .item:hover>.butons{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    position: absolute;
-    bottom: 10px;
-} */
 
 .ocult {
     display: none;

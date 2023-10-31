@@ -223,7 +223,7 @@ createApp({
                 });
 
             } else {
-                alert("Invalid email address!");
+                alert("Escriu una adreça d'email vàlida");
             }
         },
         afegirTransicio(){
@@ -242,7 +242,12 @@ createApp({
             //     this.comandaEncontrada = null; // Limpiamos el resultado en caso de error
             //   });
             }
-        }
+        },
+        computed: {
+            disponible(producte){
+                return producte.estoc - producte.pendent;
+            }
+          }
 
 }).mount('#app')
 
