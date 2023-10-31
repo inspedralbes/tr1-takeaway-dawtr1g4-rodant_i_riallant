@@ -109,7 +109,7 @@ header {
     font-size: 30px;
 }
 .landing-botiga{
-   text-align: justify;
+   text-align: center;
    margin: 20px;
    font-family: 'Ubuntu';
    line-height: 1.5em;
@@ -120,13 +120,23 @@ header {
     color: #205059;
     margin-bottom: 20px;
 }
+.informacio {
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #d5f8f7;
+    margin-top: 15px;
+
+  }
+  
 .landing__informacio h1{
     font-size: 2em;
     color: #205059;
+    line-height: 1.5;
 }
 .landing__informacio h2{
     font-size: 1.3em;
     color: #225f68;
+    text-decoration: underline;
 }
 .landing__informacio p{
     font-size: 1.05em;
@@ -144,6 +154,7 @@ header {
     align-items: center;
     margin: auto;
     display: flex;
+    padding-bottom: 25px;
 }
 
 .app__botiga {
