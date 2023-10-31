@@ -1,3 +1,11 @@
+/* EXPLICACIÓN DE RUTAS
+
+
+
+
+
+
+*/
 export async function agafarPelicules(){
     const response = await fetch(`http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes`);
     //http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes
