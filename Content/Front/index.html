@@ -27,25 +27,26 @@
             <div class="page-wrap">
               <label for="nav-toggler" class="toggle"><p class="toggle">☰</p></label>
         <!-- This is the corresponding nav to the nav toggler above.--> 
-            <div class="hidden-nav">
+            <nav class="hidden-nav">
                 <ul>
                     <li @click="canviarPantalla(`titol`)">Rodant i Riallant</li>
-                    <div v-if="getPantalla() == `botiga`" class="app__landing landing">
+                    <div v-if="getPantalla() == `botiga`" class="">
                         <li @click="mostrarFiltres()">Filtres</li>
                         <div v-if="mostrarCategories">
                         <div>
-                            <button @click="filtrar(-1)">Reset</button>
+                            <li @click="filtrar(-1)">Reset</li>
                         </div>
                         <div v-for="(categoria, index) in categories" @key="index">
-                            <button @click="filtrar(categoria.id)">{{categoria.nom}}</button>
+                            <li @click="filtrar(categoria.id)">{{categoria.nom}}</li>
                         </div>
                     </div>
                     </div>
                     <li @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
                 </ul>
-                <button v-if="getPantalla() == `botiga`" class="cart-button" @click="canviarPantalla('checkout')">
-                    <i class="fas fa-shopping-cart"></i></button>
             </nav>
+            <button v-if="getPantalla() == `botiga`" class="cart-button" @click="canviarPantalla('checkout')">
+                <i class="fas fa-shopping-cart"></i></button>
+            
         </header>
         <div v-if="getPantalla() == `titol`" class="app__landing landing">
             <div class="landing-botiga">
