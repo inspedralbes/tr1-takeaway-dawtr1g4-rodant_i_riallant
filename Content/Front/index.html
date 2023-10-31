@@ -43,10 +43,9 @@
                     </div>
                     <li @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
                 </ul>
-            </div>
-            <button class="cart-button" @click="canviarPantalla('checkout')">
-                <i class="fas fa-shopping-cart"></i> 
-            </button>
+                <button v-if="getPantalla() == `botiga`" class="cart-button" @click="canviarPantalla('checkout')">
+                    <i class="fas fa-shopping-cart"></i></button>
+            </nav>
         </header>
         <div v-if="getPantalla() == `titol`" class="app__landing landing">
             <div class="landing-botiga">
@@ -57,7 +56,7 @@
                 <p>Dilluns a Divendres: 9:00 - 19:00</p>
                 <h2>Contacte</h2><p>Tèlefon: +34 5872568978</p>
                 <p>Correu: <a href="mailto:info@rodantiriallant.com">info@rodantiriallant.com</a></p>
-                <p>Ens trobem el Carrer de les Pilotes (La Rodona)</p>
+                <p>Ens trobem en el Carrer de les Pilotes (La Rodona)</p>
                 <img src="./img/botiga.png" alt="Imatge de la botiga Rodant i Riallant">
             </div>
         </div>
@@ -66,15 +65,19 @@
         <div v-if="getPantalla() == `botiga`" class="app__botiga">
             <div class="botiga__menu">
                 <div v-for="(producte, index) in productes">
-                    <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
-                        <div class="botiga__nom">{{producte.nom}}</div>
-                        <div class="botiga__butons">
-                            <input type="button" value="-" @click="disminuirDemanats(index)">
-                            <input class="botiga__quantitat" v-model="productes[index].counter" name="id{{index}}" min=0 max=9>
-                            <input type="button" value="+" @click="augmentarDemanats(index)">
+                    <div v-if="producte.nom.toLowerCase().includes(this.busqueda.toLowerCase().trim())">
+                        <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
+                            <div class="botiga__nom">{{producte.nom}}</div>
+                            <div class="botiga__butons">
+                                <input type="button" value="-" @click="disminuirDemanats(index)">
+                                <input class="botiga__quantitat" v-model="productes[index].counter" name="id{{index}}" min=0
+                                    max=9>
+                                <input type="button" value="+" @click="augmentarDemanats(index)">
+                            </div>
+                            <img class="botiga__imagen" :src="producte.img" alt="producte">
                         </div>
-                        <img class="botiga__imagen" :src="producte.img" alt="producte">
                     </div>
+                    
                 </div>
             </div>
                 
@@ -128,10 +131,22 @@
             </div>
 
         </div>
-        <div if></div>
-        <div v-if="getPantalla() == `comanda`" class="app__comanda">
+        <div v-if="getPantalla() == `comanda`" class="app__comanda comanda">
             <h1 class="comanda__numero">Comanda nº{{comanda.id}}</h1>
-            <h2 class="comanda__estat" :class="'comanda__estat--' + comanda.estat">Estat: {{comanda.estat}}</h2>
+            <!-- <h2 class="comanda__estat" :class="'comanda__estat--' + comanda.estat">Estat: {{comanda.estat}}</h2> -->
+            <!-- Crear progreso estado aquí -->
+            <!-- <p class="arrow_test">arrow test : &#8593;  &#10514; <i class="comanda__progress--marker"></i></p> -->
+            <div class="comanda__estat estat">
+                
+                <p class="estat__part estat__part--0">Pendent</p>
+                <p class="estat__part estat__part--1">Preparant-se</p>
+                <p class="estat__part estat__part--2">Enviant-se</p>
+                <p class="estat__part estat__part--3">Repartint-se</p>
+                <p class="estat__part estat__part--4">Per recollir</p>
+                <img class="estat__part--marcador" :class="`part__marcador--${comanda.estat}`" src="progress__arrow.png" alt="fletxa" srcset="">
+
+                <!-- :class="`part__marcador--` + comanda.estat " -->
+            </div>
             <button @click="canviarPantalla(`botiga`)">Botiga</button>
         </div>
     </div>
