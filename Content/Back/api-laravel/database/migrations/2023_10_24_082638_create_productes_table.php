@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('categoria')->references('id')->on('categorias');
             $table->string('img');
             $table->integer('estoc');
-            $table->integer('preu');
+            $table->decimal('preu', 8, 2);
             $table->integer('pendent')->default(0);
             $table->timestamps();
         });
