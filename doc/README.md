@@ -6,7 +6,8 @@ Ha d'incloure, com a mínim
   - ...
 
 ## Instruccions per desplegar el projecte a producció
-Quins fitxers s'han d'editar i com (típicament per connectar la BD etc...)
+* [URL al README per a deployment](https://github.com/inspedralbes/tr1-takeaway-dawtr1g4-rodant_i_riallant/blob/8ab10f909aa5789d63cc275cb6e037f50edc70fb/doc/deployREADME.md) 
+
 
 ## Instruccions per seguir codificant el projecte
 eines necessaries i com es crea l'entorn per que algú us ajudi en el vostre projecte.
