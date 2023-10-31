@@ -89,10 +89,6 @@ header h1{
     padding-left: 0;
     transform: scale(.7);
   }
-  .main-content{
-    position: relative;
-    z-index: 0;
-  }
   .hidden-nav{
     position: fixed;
     top: 0;
@@ -101,7 +97,7 @@ header h1{
     z-index: 1;
     width: 50%;
     padding: 20px;
-    background-color: var(--aquamarine-blue-950);
+    background-color: var( --aquamarine-blue-800);
     transition: all .15s ease;
     height: 100%;
     
@@ -371,7 +367,7 @@ input {
 }
 
 .producte__titol h2 {
-    font-size: 2em;
+    font-size: 1.6em;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -388,15 +384,15 @@ input {
 }
 
 .preus__quantitat p {
-    font-size: 2em;
+    font-size: 1.7em;
 }
 
 .preus__preu-unic p {
-    font-size: 2em;
+    font-size: 1.7em;
 }
 
 .preus__preu-quantitat p {
-    font-size: 2em;
+    font-size: 1.7em;
     font-weight: bold;
 }
 
@@ -522,23 +518,23 @@ p.estat__part {
     font-size: larger;
 }
 
-footer {
-    text-align: center;
-    background-color: var(--aquamarine-blue-950);
-    color: white;
-    padding: 15px 0;
-    z-index: 3;
-}
+
 
 .email input{
     margin-bottom: 7vh;
 }
-
+footer {
+    
+    text-align: center;
+    background-color: var(--aquamarine-blue-950);
+    color: white;
+    padding: 15px 0;
+    
+}
 footer p {
     color: white;
     text-decoration: none;
     font-size: 25px;
-    z-index: 3;
 }
 
 .ocult {
