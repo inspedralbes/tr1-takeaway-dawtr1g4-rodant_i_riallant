@@ -242,7 +242,12 @@ createApp({
             //     this.comandaEncontrada = null; // Limpiamos el resultado en caso de error
             //   });
             }
-        }
+        },
+        computed: {
+            disponible(producte){
+                return producte.estoc - producte.pendent;
+            }
+          }
 
 }).mount('#app')
 

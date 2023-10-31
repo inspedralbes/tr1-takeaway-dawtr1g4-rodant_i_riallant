@@ -185,19 +185,6 @@ header h1{
     padding-bottom: 25px;
 }
 
-.app__botiga {
-    display: grid;
-    grid-template-areas: "superior superior"
-        "menu ."
-        "inferior inferior";
-    grid-template-columns: 7fr 3fr;
-}
-
-.botiga__superior {
-    grid-area: superior;
-
-}
-
 .botiga__superior>button{
     display: block;
 }
@@ -252,16 +239,11 @@ header h1{
     grid-area: quantitat;
 }
 
-.botiga__inferior {
-    grid-area: inferior;
-}
-
 .botiga__menu {
     grid-area: menu;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 130%;
 }
 .botiga__item {
     position: relative;
@@ -269,6 +251,8 @@ header h1{
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     height: var(--mida-item);
     width: var(--mida-item);
+    max-height: 35vw;
+    max-width: 35vw;
     display: block;
     align-items: center;
     text-align: center;
@@ -291,7 +275,6 @@ header h1{
     text-align: center;
     justify-content: center;
     text-shadow: 1px 1px black;
-    font-size: 1.3em;
 }
 
 .botiga__butons {
@@ -305,6 +288,8 @@ header h1{
 .botiga__imagen {
     width: var(--mida-item);
     height: var(--mida-item);
+    max-height: 35vw;
+    max-width: 35vw;
     object-fit: cover;
 }
 
