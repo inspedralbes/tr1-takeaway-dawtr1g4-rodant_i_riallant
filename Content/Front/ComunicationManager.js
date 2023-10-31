@@ -12,7 +12,7 @@ export async function agafarPelicules(){
 }
 
 export async function agafarCategories(){
-    const response = await fetch(`http://preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/categories`);
+    const response = await fetch(`http://localhost:8000/api/categories`);
     const categories = await response.json();
 
     return categories;
