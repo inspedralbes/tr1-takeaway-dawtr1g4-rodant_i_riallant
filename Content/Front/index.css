@@ -425,23 +425,23 @@ p.estat__part {
 }
 
 .estat__part--0 {
-    background-color: red;
+    background-color: rgb(255, 0, 0);
 }
 
 .estat__part--1 {
-    background-color: hsl(51, 100%, 50%);
+    background-color: rgb(255, 153, 0);
 }
 
 .estat__part--2 {
-    background-color: rgb(136, 255, 0);
+    background-color: rgb(238, 255, 0);
 }
 
 .estat__part--3 {
-    background-color: rgb(0, 225, 255);
+    background-color: rgb(0, 255, 64);
 }
 
 .estat__part--4 {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 255, 242);
 }
 
 .estat__part--marcador{

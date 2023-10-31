@@ -146,11 +146,11 @@
             <div class="comanda__estat estat">
                 
                 <p class="estat__part estat__part--0">Pendent</p>
-                <p class="estat__part estat__part--1">Estat: {{comanda.estat}}</p>
-                <p class="estat__part estat__part--2">Estat: {{comanda.estat}}</p>
-                <p class="estat__part estat__part--3">Estat: {{comanda.estat}}</p>
-                <p class="estat__part estat__part--4">Estat: {{comanda.estat}}</p>
-                <img class="estat__part--marcador"  src="progress__arrow.png" alt="fletxa" srcset="">
+                <p class="estat__part estat__part--1">Preparant-se</p>
+                <p class="estat__part estat__part--2">Enviant-se</p>
+                <p class="estat__part estat__part--3">Repartint-se</p>
+                <p class="estat__part estat__part--4">Per recollir</p>
+                <img class="estat__part--marcador" :class="`part__marcador--${comanda.estat}`" src="progress__arrow.png" alt="fletxa" srcset="">
 
                 <!-- :class="`part__marcador--` + comanda.estat " -->
             </div>
