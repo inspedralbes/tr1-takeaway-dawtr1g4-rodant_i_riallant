@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('comandas', function (Blueprint $table) {
             $table->id();
             $table->text('productes');
-            $table->integer('preuTotal');
+            // $table->integer('preuTotal');
+            $table->decimal('preuTotal', 8, 2);
             $table->string('email');
             $table->integer('estat')->default(0);
             $table->timestamps();
