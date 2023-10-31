@@ -176,7 +176,7 @@ createApp({
                 });
 
             } else {
-                alert("Invalid email address!");
+                alert("Escriu una adreça d'email vàlida");
             }
         },
         afegirTransicio(){

@@ -18,18 +18,29 @@
     --mida-item: 200px;
     --mida-primera-barra: -9vw;
     --mida-total-part: 18vw;
+    --aquamarine-blue-50: #effcfa;
+    --aquamarine-blue-100: #d5f8f7;
+    --aquamarine-blue-200: #b1f0ef;
+    --aquamarine-blue-300: #69e2e2;
+    --aquamarine-blue-400: #3dd0d3;
+    --aquamarine-blue-500: #22b3b8;
+    --aquamarine-blue-600: #1f919b;
+    --aquamarine-blue-700: #1f757f;
+    --aquamarine-blue-800: #225f68;
+    --aquamarine-blue-900: #205059;
+    --aquamarine-blue-950: #10353c;
 }
 
 
 body {
-    background-color: #effcfa;
+    background-color: var(--aquamarine-blue-50);
     margin: 0;
     padding: 0;
     font-family: 'Times New Roman', Times, serif;
 }
 
 button {
-    background-color: #22b3b8;
+    background-color:var(--aquamarine-blue-500);
     color: #fff;
     padding: 2vmin 2vmax;
     border: none;
@@ -38,8 +49,8 @@ button {
 }
 
 header {
-    background-color: #d5f8f7;
-    color: #205059;
+    background-color: var(--aquamarine-blue-100);
+    color: var(--aquamarine-blue-900);
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -80,7 +91,7 @@ header {
     position: absolute;
     top: 60px;
     left: 0;
-    background-color: #d5f8f7;
+    background-color: var(--aquamarine-blue-100);
     width: 100%;
     list-style: none;
     margin: 0;
@@ -95,7 +106,7 @@ header {
     position: absolute;
     top: 0;
     right: 3vw;
-    background-color: #22b3b8;
+    background-color: var(--aquamarine-blue-500);
     color: #fff;
     padding: 4vmin 5vmax;
     border: none;
@@ -117,16 +128,16 @@ header {
 }
 .landing-salutacio{
     font-size: 2em;
-    color: #205059;
+    color: var(--aquamarine-blue-900);
     margin-bottom: 20px;
 }
 .landing__informacio h1{
     font-size: 2em;
-    color: #205059;
+    color: var(--aquamarine-blue-900);
 }
 .landing__informacio h2{
     font-size: 1.3em;
-    color: #225f68;
+    color: var(--aquamarine-blue-800);
 }
 .landing__informacio p{
     font-size: 1.05em;
@@ -263,16 +274,16 @@ header {
 .botiga__quantitat {
     width: 30px;
     color: black;
-    font-size: px;
+    
 }
 
 input[type=button] {
     border-radius: 50%;
     width: 50px;
     height: 45px;
-    background-color: #22b3b8;
+    background-color: var(--aquamarine-blue-500);
     color: white;
-    border-color: #22b3b8;
+    border-color: var(--aquamarine-blue-500);
     font-size: 2em;
     margin-left: 5px;
     margin-right: 2px;
@@ -311,11 +322,7 @@ input {
     margin: 5px;
     padding-right: 2vh;
     border: 1px solid black;
-    background-color: #10353c;
-    /* 'foto titol titol titol stock-preu stock-preu'
-    'foto titol titol titol stock-preu stock-preu'
-    'foto titol titol titol stock-preu stock-preu'
-    'foto quantitat quantitat quantitat-preu quantitat-preu quantitat-preu'; */
+    background-color: var(--aquamarine-blue-950);
 }
 
 .productes__producte>div {
@@ -364,7 +371,7 @@ input {
 .total__preu-producte {
     text-align: center;
     font-size: 40px;
-    color: #1f757f;
+    color: var(--aquamarine-blue-700);
 }
 
 .formulari__usuari {
@@ -376,7 +383,7 @@ input {
 label {
     font-weight: bold;
     font-size: 32px;
-    color: #205059;
+    color: var(--aquamarine-blue-900);
     display: block;
 }
 
@@ -390,7 +397,7 @@ input[type="text"] {
 
 input[type="submit"] {
     align-items: center;
-    background-color: #22b3b8;
+    background-color: var(--aquamarine-blue-500);
     color: #fff;
     padding: 35px 60px;
     border: none;
@@ -485,41 +492,20 @@ p.estat__part {
 footer {
     margin-top: 25px;
     text-align: center;
-    background-color: #10353c;
+    background-color: var(--aquamarine-blue-950);
     color: white;
     padding: 15px 0;
 }
 
+.email input{
+    margin-bottom: 7vh;
+}
 
 footer p {
     color: white;
     text-decoration: none;
     font-size: 25px;
 }
-
-/* .item:hover{
-    box-shadow:  15px 15px 5px 0px rgba(0,0,0,0.75);
-} */
-
-/*.item:hover>.nom{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.808);
-    display: flex;
-    text-align: center;
-    justify-content: center;
-}
-*/
-/* .item:hover>.butons{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    position: absolute;
-    bottom: 10px;
-} */
 
 .ocult {
     display: none;

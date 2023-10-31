@@ -72,8 +72,7 @@
                         <div class="botiga__nom">{{producte.nom}}</div>
                         <div class="botiga__butons">
                             <input type="button" value="-" @click="disminuirDemanats(index)">
-                            <input class="botiga__quantitat" v-model="productes[index].counter" name="id{{index}}" min=0
-                                max=9>
+                            <input class="botiga__quantitat" v-model="productes[index].counter" name="id{{index}}" min={{producte.estoc}} max={{producte.pendent}} disabled>
                             <input type="button" value="+" @click="augmentarDemanats(index)">
                         </div>
                         <img class="botiga__imagen" :src="producte.img" alt="producte">
@@ -150,7 +149,7 @@
                 <p class="estat__part estat__part--2">Enviant-se</p>
                 <p class="estat__part estat__part--3">Repartint-se</p>
                 <p class="estat__part estat__part--4">Per recollir</p>
-                <img class="estat__part--marcador" :class="`part__marcador--${comanda.estat}`" src="progress__arrow.png" alt="fletxa" srcset="">
+                <img class="estat__part--marcador" :class="`part__marcador--${comanda.estat}`" src="./img/progress__arrow.png" alt="fletxa" srcset="">
 
                 <!-- :class="`part__marcador--` + comanda.estat " -->
             </div>
