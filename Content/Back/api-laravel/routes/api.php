@@ -34,6 +34,8 @@ Route::post('/comanda', [comandaController::class,'store']);
 
 Route::get('/comanda/{id}', [comandaController::class, 'show']);
 
+ Route::patch('/comanda/{id}', [comandaController::class, 'modificar']);
+
 Route::get('/categories', [categoriaController::class,'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

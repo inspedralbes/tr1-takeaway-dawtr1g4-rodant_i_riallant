@@ -70,7 +70,7 @@ export async function enviarComanda(objecte, modificar, idComanda) {
     const response = await fetch(url, options);
 
     const data = await response.json(); // Hacer algo con la respuesta del servidor
-
+    console.log(data);
     return data;
 }
 export async function agafarComanda(idComanda) {

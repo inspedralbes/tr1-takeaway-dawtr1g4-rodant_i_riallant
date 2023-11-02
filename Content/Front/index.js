@@ -179,6 +179,7 @@ createApp({
                 this.productes = this.productesCopia.filter((producte) => producte.categoria == categoria);
             } else {
                 this.productes = this.productesCopia;
+                this.busqueda = "";
             }
 
         },
