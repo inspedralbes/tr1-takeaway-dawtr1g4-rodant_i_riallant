@@ -1,7 +1,7 @@
 import { agafarPelicules } from "./ComunicationManager.js";
 import { agafarCategories } from "./ComunicationManager.js";
 import { enviarComanda } from "./ComunicationManager.js";
-import{agafarComanda} from "./ComunicationManager.js";
+import { agafarComanda } from "./ComunicationManager.js";
 
 
 const { createApp } = Vue
@@ -22,8 +22,9 @@ createApp({
             busqueda: "",
             mostrarCategories: false,
             productesCopia: [],
-            aplicarEfecte:false,
-            menuOpen: false
+            aplicarEfecte: false,
+            menuOpen: false,
+            comandaModificant: false,
         }
     },
     methods: {
@@ -32,8 +33,10 @@ createApp({
         },
         canviarPantalla(nova) {
             this.pantallaActual = nova;
-            if (nova == "botiga") {
+            if (nova == "botiga" && this.productes.length == 0) {
                 this.getProductes();
+            } else if(nova == 'checkout' && this.comandaModificant){
+                this.email = this.comanda.email;
             }
         },
         toggleMenu() {
@@ -49,27 +52,31 @@ createApp({
                     });
 
                     if (localStorage.getItem('compra') != null) {
-                        this.compra = [];
-                        let recuperarCompra = JSON.parse(localStorage.getItem('compra'));
-
-                        recuperarCompra.forEach(element => {
-                            this.productes.forEach(producte => {
-                                if (element.id == producte.id) {
-                                    producte.counter = element.counter;
-                                    this.afegirCompra(producte.id - 1);
-                                }
-                            });
-                        });
+                        this.recuperarCompra(JSON.parse(localStorage.getItem('compra')))
                     }
 
                 });
+        },
+        recuperarCompra(compraRecuperar) {
+            this.productes =this.productesCopia;
+            this.compra = [];
+            let recuperarCompra = compraRecuperar;
+
+            recuperarCompra.forEach(element => {
+                this.productes.forEach(producte => {
+                    if (element.id == producte.id) {
+                        producte.counter = element.counter;
+                        this.afegirCompra(producte.id - 1);
+                    }
+                });
+            });
         },
         augmentarDemanats(index) {
             if (this.productes[index].counter < this.productes[index].estoc) {
                 this.productes[index].counter++;
                 this.afegirCompra(index);
                 this.aplicarEfecte = true;
-                setTimeout(() => {this.aplicarEfecte = false;}, 500); 
+                setTimeout(() => { this.aplicarEfecte = false; }, 500);
 
             }
         },
@@ -78,7 +85,7 @@ createApp({
                 this.productes[index].counter--;
                 this.disminuirCompra(index);
                 this.aplicarEfecte = true;
-                setTimeout(() => {this.aplicarEfecte = false;}, 500); 
+                setTimeout(() => { this.aplicarEfecte = false; }, 500);
             }
         },
         afegirCompra(index) {
@@ -109,34 +116,8 @@ createApp({
             localStorage.setItem('compra', JSON.stringify(this.compra));
         },
         getTotal() {
-            if (localStorage.getItem('compra') != null) {
-                let compraTotal = JSON.parse(localStorage.getItem('compra'));
-
-                let preuTotal = 0;
-
-                compraTotal.forEach(element => {
-                    preuTotal += element.counter * element.preu;
-                })
-
-                let enviar = ((Math.round(preuTotal * 100) / 100).toFixed(2))
-
-                this.preuTotal = enviar;
-
-                enviar = enviar.toString();
-
-                enviar += '€';
-
-                enviar = 'Total: ' + enviar;
-
-                return enviar;
-
-            } else {
-                return `No s'ha fet cap compra`;
-            }
-        },
-        getTotalPreuProducte() {
-            if (localStorage.getItem('compra') != null) {
-                let compraTotal = JSON.parse(localStorage.getItem('compra'));
+            if (this.compra.length != 0) {
+                let compraTotal = this.compra;
 
                 let preuTotal = 0;
 
@@ -153,52 +134,55 @@ createApp({
                 enviar += '€';
 
                 return enviar;
+            } else{
+                return '0€';
+            }
+        },
+        getProducteTotalComprat() {
+            if (this.compra.length != 0) {
+                let comprarProducte = this.compra;
+                let numProducte = 0;
+                comprarProducte.forEach(element => {
+                    numProducte += element.counter;
+                })
+                return numProducte;
+            } else{
+                return 0;
             }
 
         },
-        getProducteTotalComprat(){
-            if (localStorage.getItem('compra') != null) {
-                let comprarProducte=JSON.parse(localStorage.getItem('compra'));
-                let numProducte=0;
-                comprarProducte.forEach(element=>{
-                        numProducte+=element.counter;  
-            })
-            return numProducte;
-            }
-        
-        },
 
-        mostrarFiltres(){
+        mostrarFiltres() {
             if (this.categories.length > 0) {
                 this.mostrarCategories = !this.mostrarCategories;
             } else {
-                agafarCategories().then(data => 
+                agafarCategories().then(data =>
                     this.categories = data
                 )
                 this.mostrarCategories = true;
             }
-            if (this.searchInput ==""){
+            if (this.searchInput == "") {
 
             }
         },
         elementosFiltrados() {
             if (this.filtroCategoria === -1) {
-              return this.elementos; // No hay filtro, muestra todos los elementos
+                return this.elementos; // No hay filtro, muestra todos los elementos
             } else {
-              return this.elementos.filter(item => item.categoria === this.filtroCategoria);
+                return this.elementos.filter(item => item.categoria === this.filtroCategoria);
             }
         },
 
-        filtrar(categoria){
+        filtrar(categoria) {
 
             if (categoria != -1) {
                 this.productes = this.productesCopia.filter((producte) => producte.categoria == categoria);
             } else {
                 this.productes = this.productesCopia;
             }
-            
+
         },
-        
+
         ferCompra() {
 
             const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -211,12 +195,14 @@ createApp({
                     'preuTotal': this.preuTotal
                 }
 
-                enviarComanda(enviarJSON).then(data => {
+                enviarComanda(enviarJSON, this.comandaModificant, this.comanda.id).then(data => {
                     this.comanda = data;
                 })
                 this.pantallaActual = `comanda`;
 
                 this.compra = [];
+
+                this.comandaModificant = false;
 
                 this.productes.forEach(producte => {
                     producte.counter = 0;
@@ -226,28 +212,27 @@ createApp({
                 alert("Escriu una adreça d'email vàlida");
             }
         },
-        afegirTransicio(){
-
-        },
         buscarComanda() {
             agafarComanda(this.comanda.id)
-              .then((data) => {
-                if (data) {                  
-                  this.comanda = data;
-                  this.pantallaActual = "comanda"
-                }
-              })
-            //   .catch((error) => {
-            //     console.error('Error al buscar la comanda:', error);
-            //     this.comandaEncontrada = null; // Limpiamos el resultado en caso de error
-            //   });
-            }
+                .then((data) => {
+                    if (data) {
+                        this.comanda = data;
+                        this.pantallaActual = "comanda"
+                    }
+                })
         },
-        computed: {
-            disponible(producte){
-                return producte.estoc - producte.pendent;
-            }
-          }
+        modificarComanda() {
+            this.recuperarCompra(JSON.parse(this.comanda.productes));
+            this.pantallaActual = 'botiga';
+            this.comandaModificant = true;
+        }
+
+    },
+    computed: {
+        disponible(producte) {
+            return producte.estoc - producte.pendent;
+        }
+    }
 
 }).mount('#app')
 

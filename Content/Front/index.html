@@ -97,7 +97,7 @@
                 <h2>Producte:</h2>
                 <p>{{getProducteTotalComprat()}}</p>
                 <h2>Total:</h2>
-                <p>{{getTotalPreuProducte()}}</p>
+                <p>{{getTotal()}}</p>
             </div>
         </div>
 
@@ -126,12 +126,12 @@
 
                 </div>
             </div>
-            <h2 class="total__preu-producte">{{getTotal()}}</h2>
-            <div class="formulari__usuari email">
+            <h2 class="total__preu-producte" :class="preuTotal==0?`total__preu-producte--sense-producte`:``">{{preuTotal==0?`No s'ha comprat cap producte`:`${preuTotal}€`}}</h2>
+            <div v-if="preuTotal!=0" class="formulari__usuari email">
                 <label for="email">Email </label>
                 <input v-model="email" id="email">
                 <button @click="ferCompra()">
-                    <h1>COMPRAR</h1>
+                    <h1>{{}}COMPRAR</h1>
                 </button>
             </div>
 
@@ -153,6 +153,11 @@
 
                 <!-- :class="`part__marcador--` + comanda.estat " -->
             </div>
+
+            <div v-if="comanda.estat == 0">
+                <button @click="modificarComanda()">Modificar comanda</button>
+            </div>
+
             <button @click="canviarPantalla(`botiga`)">Botiga</button>
         </div>
     </div>

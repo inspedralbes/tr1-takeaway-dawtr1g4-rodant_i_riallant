@@ -403,6 +403,11 @@ input {
     color: var(--aquamarine-blue-700);
 }
 
+.total__preu-producte--sense-producte{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+}
+
 .formulari__usuari {
     text-align: center;
     margin: 0 auto;
