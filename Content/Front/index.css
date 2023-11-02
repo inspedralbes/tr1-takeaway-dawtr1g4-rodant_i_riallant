@@ -443,7 +443,13 @@ input {
     margin: 0 auto;
     padding: 20px;
 }
+.formulari__usuari input{
+    width: 80%;
+    margin-top: 2vh;
+    padding: 10px;
+    font-size: 1.3em;
 
+}
 label {
     font-weight: bold;
     font-size: 32px;
