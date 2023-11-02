@@ -127,6 +127,20 @@ header h1{
     border-radius: 25px;
 
 }
+
+.filtre-botiga input{
+    margin-bottom: 5vh;
+    width: 75%;
+    background-color: var(--aquamarine-blue-300);
+    border: 1px solid var(--aquamarine-blue-900);
+}
+
+.filtre-botiga h3{
+    color: white;
+    font-size: 1.5em;
+
+}
+
 .cart-button {
     position: absolute;
     top: 2vh;

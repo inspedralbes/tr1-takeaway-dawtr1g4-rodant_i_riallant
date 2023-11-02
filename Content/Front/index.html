@@ -38,9 +38,11 @@
                                 <div>
                                     <li @click="filtrar(-1)">Reset</li>
                                 </div>
+                                <h3>Per categoria</h3>
                                 <div v-for="(categoria, index) in categories" @key="index">
                                     <li @click="filtrar(categoria.id)">{{categoria.nom}}</li>
                                 </div>
+                                <h3>Per nom</h3>
                                 <input v-model="busqueda">
                             </div>
                         </div>
