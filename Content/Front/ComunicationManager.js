@@ -18,7 +18,7 @@ PRODUCCIÓN: http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/pr
 
 */
 export async function agafarPelicules(){
-    const response = await fetch(`http://localhost:8000/api/productes`);
+    const response = await fetch(`http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/productes`);
 
     const productes = await response.json();
 
@@ -26,40 +26,54 @@ export async function agafarPelicules(){
 }
 
 export async function agafarCategories(){
-    const response = await fetch(`http://localhost:8000/api/categories`);
+    const response = await fetch(`http://preprod.rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/categories`);
     const categories = await response.json();
 
     return categories;
 }
 
 export async function enviarComanda(objecte){
-    const url = 'http://localhost:8000/api/comanda';
+    const url = 'http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/comanda';
 
-                // Datos que deseas enviar en formato de formulario
-                const formData = new URLSearchParams();
-                formData.append('productes', objecte.productes);
-                formData.append('email', objecte.email);
-                formData.append('preuTotal', objecte.preuTotal);
+    // Datos que deseas enviar en formato de formulario
+    const formData = new URLSearchParams();
+    formData.append('productes', objecte.productes);
+    formData.append('email', objecte.email);
+    formData.append('preuTotal', objecte.preuTotal);
 
-                // Configuración de la solicitud POST
-                const options = {
-                    method: 'POST',
-                    body: formData, // Usamos formData para enviar los datos en formato de formulario
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded', // Indicamos el tipo de contenido
-                    },
-                };
-                // Realizar la solicitud POST usando fetch
-                const response = await fetch(url, options);
+    // Configuración de la solicitud POST
+    let options;
 
-                const data = await response.json(); // Hacer algo con la respuesta del servidor
-                
-                return data;
+    if (modificar) {
+        options = {
+            method: 'PATCH',
+            body: formData, // Usamos formData para enviar los datos en formato de formulario
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', // Indicamos el tipo de contenido
+            },
+        };
+        console.log('holiwiri');
+    } else {
+        options = {
+            method: 'POST',
+            body: formData, // Usamos formData para enviar los datos en formato de formulario
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', // Indicamos el tipo de contenido
+            },
+        };
+    }
+
+    // Realizar la solicitud POST usando fetch
+    const response = await fetch(url, options);
+
+    const data = await response.json(); // Hacer algo con la respuesta del servidor
+    console.log(data);
+    return data;
 }
 export async function agafarComanda(idComanda) {
 
     console.log(idComanda)
-    const url = `http://localhost:8000/api/comanda/${idComanda}`;
+    const url = `http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/comanda/${idComanda}`;
 
     const response = await fetch(url);
     const comanda = await response.json();

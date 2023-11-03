@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\producte;
+use App\Models\Producte;
 use Illuminate\Support\Facades\Validator;
 
 class producteController extends Controller

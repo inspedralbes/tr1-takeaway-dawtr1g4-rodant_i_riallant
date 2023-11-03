@@ -97,5 +97,17 @@ class comandaController extends Controller
 
     }
 
+    public function modificar($id, Request $request){
+        $comanda = Comanda::find($id);
+
+        $comanda->productes = $request->productes;
+        $comanda->email = $request->email;
+        $comanda->preuTotal = $request->preuTotal;
+
+        $comanda->save();
+
+        return $comanda;
+    }
+
 
 }
