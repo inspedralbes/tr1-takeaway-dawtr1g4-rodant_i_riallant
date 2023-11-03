@@ -32,8 +32,8 @@ export async function agafarCategories(){
     return categories;
 }
 
-export async function enviarComanda(objecte){
-    const url = 'http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/comanda';
+export async function enviarComanda(objecte, modificar, idComanda){
+    let url = 'http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/comanda';
 
     // Datos que deseas enviar en formato de formulario
     const formData = new URLSearchParams();
@@ -52,7 +52,7 @@ export async function enviarComanda(objecte){
                 'Content-Type': 'application/x-www-form-urlencoded', // Indicamos el tipo de contenido
             },
         };
-        console.log('holiwiri');
+        url +=`/${idComanda}`;
     } else {
         options = {
             method: 'POST',
