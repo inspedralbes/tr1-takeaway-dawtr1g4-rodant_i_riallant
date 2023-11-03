@@ -122,17 +122,19 @@ header h1{
     margin-bottom: 1em;
   }
 .filtre-botiga li{
-    background-color: #1f919b;
-    border: 2px solid #69e2e2;
+    background-color: var(--aquamarine-blue-600);
+    border: 2px solid var(--aquamarine-blue-300);
     border-radius: 25px;
 
 }
 
 .filtre-botiga input{
     margin-bottom: 5vh;
-    width: 75%;
-    background-color: var(--aquamarine-blue-300);
-    border: 1px solid var(--aquamarine-blue-900);
+    width: 80%;
+    background-color: var(--aquamarine-blue-600);
+    border: 2px solid var(--aquamarine-blue-300);
+    font-size: 1.5em;
+    color: white;
 }
 
 .filtre-botiga h3{
