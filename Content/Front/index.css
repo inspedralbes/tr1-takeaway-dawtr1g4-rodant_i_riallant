@@ -574,8 +574,17 @@ p.estat__part {
     font-size: larger;
 }
 
+.wrapper{
+    margin: 50px;
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: var(--aquamarine-blue-100);
+}
 
-
+.wrapper img{
+    margin-top: 10px;
+}
 .email input{
     margin-bottom: 7vh;
 }

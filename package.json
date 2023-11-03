@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "html5-qrcode": "^2.3.8",
+    "vue-qr": "^4.0.9"
+  },
+  "name": "tr1-takeaway-dawtr1g4-rodant_i_riallant",
+  "description": "**Tota** la informació del vostre projecte ha de ser accessible a partir d'aquí",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inspedralbes/tr1-takeaway-dawtr1g4-rodant_i_riallant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inspedralbes/tr1-takeaway-dawtr1g4-rodant_i_riallant/issues"
+  },
+  "homepage": "https://github.com/inspedralbes/tr1-takeaway-dawtr1g4-rodant_i_riallant#readme"
+}
