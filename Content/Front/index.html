@@ -79,7 +79,7 @@
                                     min=0 max={{disponible(producte)}} disabled>
                                 <input type="button" value="+" @click="augmentarDemanats(index)">
                             </div>
-                            <img class="botiga__imagen" :src="producte.img" alt="producte">
+                            <img class="botiga__imagen" :src="`../Back/api-laravel/${producte.img}`" alt="producte">
                         </div>
                     </div>
 
@@ -110,7 +110,7 @@
             <div v-for="(producteComprar, index) in compra">
                 <div class="productes__producte producte">
                     <div class="producte__foto">
-                        <img :src="producteComprar.img" alt="producte">
+                        <img :src="`../Back/api-laravel/${producteComprar.img}`" alt="producte">
                     </div>
                     <div class="producte__titol">
                         <h2>{{producteComprar.nom}}</h2>

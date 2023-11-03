@@ -35,10 +35,10 @@ class producteController extends Controller
         $originalFileName = $img->getClientOriginalName();
         
         // Define la ruta donde deseas almacenar la imagen y utiliza el nombre original del archivo
-        $imgPath = 'public/img/' . $originalFileName;
+        $imgPath = 'public/storage/img/' . $originalFileName;
         
         // Mueve la imagen a la ubicación deseada con el nombre original
-        $img->move(public_path('storage/img'), $originalFileName);
+        $img->move(public_path('../public/storage/img/'), $originalFileName);
     
         // Asigna la ruta completa al atributo 'img' del modelo
         $producte->img = $imgPath;
