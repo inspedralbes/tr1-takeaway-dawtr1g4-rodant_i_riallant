@@ -48,6 +48,12 @@
                             </div>
                         </div>
                         <li @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
+                        <li @click="mostrarFeinaAdministrador()">Administrador</li>
+                        <div v-if="mostrarAdministrador" class="feina-adminitrador">
+                            <li>Afegir producte</li>
+                            <li>Afegir estoc</li>
+                            <li>Modificar comanda</li>
+                        </div>
                     </ul>
                 </nav>
                 <button v-if="getPantalla() == `botiga`" class="cart-button" @click="canviarPantalla('checkout')">

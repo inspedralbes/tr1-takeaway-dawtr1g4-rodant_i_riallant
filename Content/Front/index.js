@@ -28,6 +28,7 @@ createApp({
             comandaModificant: false,
             aplicarEfecte:false,
             menuOpen: false,
+            mostrarAdministrador: false,
             imagenQr:""
         }
     },
@@ -245,7 +246,10 @@ createApp({
             this.recuperarCompra(JSON.parse(this.comanda.productes));
             this.pantallaActual = 'botiga';
             this.comandaModificant = true;
-        }
+        },
+        mostrarFeinaAdministrador() {
+            this.mostrarAdministrador = !this.mostrarAdministrador;
+          },
 
     },
     computed: {
