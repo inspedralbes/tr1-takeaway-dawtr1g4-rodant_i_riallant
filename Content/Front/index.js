@@ -24,7 +24,8 @@ createApp({
             mostrarCategories: false,
             productesCopia: [],
             aplicarEfecte:false,
-            menuOpen: false
+            menuOpen: false,
+            imagenQr:""
         }
     },
     methods: {
@@ -242,7 +243,18 @@ createApp({
             //     console.error('Error al buscar la comanda:', error);
             //     this.comandaEncontrada = null; // Limpiamos el resultado en caso de error
             //   });
-            }
+        },
+        generarQr(){
+            let qrValue = "http://rirtr1g4.daw.inspedralbes.cat/Front/"
+            if(!qrValue || preValue === qrValue) return;
+            preValue = qrValue;
+            this.imagenQr = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
+            imagenQr.addEventListener("load", () => {
+                imagenQr.innerHtml = "Carregant...";
+                wrapper.classList.add("active");
+                generateBtn.innerText = "Generate QR Code";
+            });
+        }
         },
         computed: {
             disponible(producte){

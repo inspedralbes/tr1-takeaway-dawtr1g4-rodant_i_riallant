@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue-qr@4.0.9/dist/vue-qr.min.js"></script>
-    <link rel="stylesheet" href="index.css">
-
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="index.css">
+        
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        
     <link rel="shortcut icon" href="./img/beisbol.jpg">
     <title> Rodant i Riallant</title>
 </head>
@@ -152,13 +152,16 @@
                 <img class="estat__part--marcador" :class="`part__marcador--${comanda.estat}`"
                     src="./img/progress__arrow.png" alt="fletxa" srcset="">
 
-                <!-- :class="`part__marcador--` + comanda.estat " -->
-                <!-- Insertando codigo QR -->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" 
-                integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" 
-                crossorigin="anonymous" 
-                referrerpolicy="no-referrer"></script>
-                
+                <!-- :class="`part__marcador--` + comanda.estat " -->                
+            </div>
+            <!-- Insertando codigo QR -->
+            <div class="wrapper">
+                <div class="form">
+                    <button @click="generarQr">Veure QR</button>
+                </div>
+                <div id="qr-code">
+                    <img :src="imagenQr">
+                </div>
             </div>
             <button @click="canviarPantalla(`botiga`)">Botiga</button>
         </div>
@@ -166,6 +169,7 @@
     <footer>
         <p>&copy; 2023 Rodant i Riallant. Tots els seus drets reservats.</p>
     </footer>
+    <script src="qrGenerator.js"></script>
     <script type="module" src="index.js"></script>
 </body>
 
