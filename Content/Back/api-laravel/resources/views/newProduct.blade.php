@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('content')
-    <form action="{{ route('afegir') }}" method="POST">
+    <form action="{{ route('afegir') }}" method="POST" enctype="multipart/form-data">
+
       @csrf
       
       @if(session('success'))
@@ -27,7 +28,7 @@
         </div>
         <div class="form-group">
           <label for="img">Direcció de la imatge</label>
-          <input type="file" id="img" name="img">
+          <input type="file" id="img" name="img" accept="image/">
         </div>
         <div class="form-group">
           <label for="categoria">Categoria</label>
