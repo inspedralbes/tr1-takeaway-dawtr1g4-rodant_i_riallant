@@ -29,6 +29,7 @@ createApp({
             aplicarEfecte:false,
             menuOpen: false,
             mostrarAdministrador: false,
+            desplegador:false,
             imagenQr:""
         }
     },
@@ -37,6 +38,7 @@ createApp({
             return this.pantallaActual;
         },
         canviarPantalla(nova) {
+            this.desplegador=false;
             this.pantallaActual = nova;
             if (nova == "botiga" && this.productes.length == 0) {
                 this.getProductes();
