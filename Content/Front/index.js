@@ -121,9 +121,9 @@ createApp({
             localStorage.setItem('compra', JSON.stringify(this.compra));
         },
         getTotal() {
+            this.preuTotal=0;
             if (this.compra.length != 0) {
                 let compraTotal = this.compra;
-
                 let preuTotal = 0;
 
                 compraTotal.forEach(element => {
@@ -137,7 +137,6 @@ createApp({
                 enviar = enviar.toString();
 
                 enviar += '€';
-
                 return enviar;
             } else{
                 return '0€';
