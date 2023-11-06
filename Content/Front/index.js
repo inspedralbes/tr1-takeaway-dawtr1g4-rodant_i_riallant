@@ -38,8 +38,8 @@ createApp({
             return this.pantallaActual;
         },
         canviarPantalla(nova) {
-            this.desplegador=false;
             this.pantallaActual = nova;
+            this.desplegador=false;
             if (nova == "botiga" && this.productes.length == 0) {
                 this.getProductes();
             } else if(nova == 'checkout' && this.comandaModificant){
