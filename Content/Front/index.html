@@ -82,11 +82,12 @@
                     <div v-if="producte.nom.toLowerCase().includes(this.busqueda.toLowerCase().trim())">
                         <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
                             <div class="botiga__nom">{{producte.nom}}</div>
+                            <div class="botiga__preu">{{ producte.preu }}</div>
                             <div class="botiga__butons">
-                                <input type="button" value="-" @click="disminuirDemanats(index)">
+                                <input class="buttons__button" type="button" value="-" @click="disminuirDemanats(index)">
                                 <input class="botiga__quantitat" v-model="productes[index].counter" name="id{{index}}"
                                     min=0 max={{disponible(producte)}} disabled>
-                                <input type="button" value="+" @click="augmentarDemanats(index)">
+                                <input class="buttons__button" type="button" value="+" @click="augmentarDemanats(index)">
                             </div>
                             <img class="botiga__imagen" :src="producte.img" alt="producte">
                         </div>
