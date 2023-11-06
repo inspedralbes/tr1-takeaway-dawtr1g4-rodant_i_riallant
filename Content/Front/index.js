@@ -34,9 +34,8 @@ createApp({
         canviarPantalla(nova) {
             this.pantallaActual = nova;
             if (nova == "botiga") {
-                if (this.productes.length == 0) {
-                    this.getProductes();
-                } else if (this.comandaModificant) {
+                this.getProductes();
+                if (this.comandaModificant) {
                     this.augmentarEstocPossible();
                 }
 
@@ -69,7 +68,7 @@ createApp({
         augmentarEstocPossible() {
             let productesComanda = JSON.parse(this.comanda.productes)
             productesComanda.forEach(producteComanda => {
-                let augmentarEstoc = this.productes.find((element) => 
+                let augmentarEstoc = this.productes.find((element) =>
                     element.id == producteComanda.id
                 )
 

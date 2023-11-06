@@ -34,8 +34,7 @@ Route::post('/comanda', [comandaController::class,'store']);
 
 Route::get('/comanda/{id}', [comandaController::class, 'show']);
 
- Route::patch('/comanda/{id}', [comandaController::class, 'modificar
- ']);
+Route::patch('/comanda/{id}', [comandaController::class, 'modificar']);
 
 Route::get('/categories', [categoriaController::class,'index']);
 
