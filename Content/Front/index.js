@@ -117,7 +117,7 @@ createApp({
 
             if (this.compra[foundIndex].counter == 0) {
 
-                this.compra.splice(foundIndex, 1);
+                this.compra.splice(foundIndex, 0);
 
             }
             localStorage.setItem('compra', JSON.stringify(this.compra));
