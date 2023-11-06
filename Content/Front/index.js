@@ -10,15 +10,15 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            //pantallaActual: "titol",
-            pantallaActual: `comanda`,
+            pantallaActual: "titol",
+            // pantallaActual: `comanda`,
             productes: [],
             paginaActual: 1,
             compra: [],
             preuTotal: 0,
             email: "",
-            //comanda: {},
-             comanda: { productes: `[{"id":14,"nom":"Pilota de futbol americà","descripcio":"Pilota utilitzada en el futbol americà, és ovalada y punxeguda als extrems.","categoria":1,"img":"./img/football.jpg","estoc":20,"preu":23,"pendent":0,"created_at":null,"updated_at":null,"counter":2},{"id":22,"nom":"Pilota de paret (wall ball)","descripcio":"Utilitzada en l'entrenament creuat, és una pilota pesada que es llança contra una paret com a part d'un exercici.","categoria":2,"img":"./img/wallball.jpg","estoc":25,"preu":29,"pendent":0,"created_at":null,"updated_at":null,"counter":2},{"id":20,"nom":"Pilota suïssa (fitball)","descripcio":"Utilitzada en entrenament de pilates y exercicis d'estabilitat, és una pilota inflable gran.","categoria":2,"img":"./img/suiza.jpg","estoc":15,"preu":39,"pendent":0,"created_at":null,"updated_at":null,"counter":1},{"id":3,"nom":"Pilota de voleibol","descripcio":"Pilota utilitzada en el voleibol, és esfèrica i sovint està feta de cuir o material sintètic.","categoria":1,"img":"./img/volley.jpg","estoc":20,"preu":22,"pendent":0,"created_at":null,"updated_at":null,"counter":9},{"id":28,"nom":"Pilota de teràpia (therapy ball)","descripcio":"Utilitzada en fisioteràpia y teràpia ocupacional, és una pilota de goma utilitzada per millorar la força y la coordinació.","categoria":3,"img":"./img/terapia.jpg","estoc":15,"preu":21,"pendent":0,"created_at":null,"updated_at":null,"counter":7},{"id":10,"nom":"Pilota de softbol","descripcio":"Pilota utilitzada en el softbol, és similar a la pilota de beisbol però més gran y més suau.","categoria":1,"img":"./img/softbol.jpg","estoc":30,"preu":33,"pendent":0,"created_at":null,"updated_at":null,"counter":1},{"id":8,"nom":"Pilota de ping-pong (tenis de taula)","descripcio":"Pilota utilitzada en el tennis de taula, és petita i lleugera.","categoria":1,"img":"./img/pingpong.jpg","estoc":60,"preu":32,"pendent":0,"created_at":null,"updated_at":null,"counter":3}]`, email: "dfsgdgf@aasdf.com", preuTotal: "617.00", updated_at: "2023-10-26T07:25:38.000000Z", created_at: "2023-10-26T07:25:38.000000Z", id: 9, estat: 3 },
+            comanda: {},
+            //  comanda: { productes: `[{"id":14,"nom":"Pilota de futbol americà","descripcio":"Pilota utilitzada en el futbol americà, és ovalada y punxeguda als extrems.","categoria":1,"img":"./img/football.jpg","estoc":20,"preu":23,"pendent":0,"created_at":null,"updated_at":null,"counter":2},{"id":22,"nom":"Pilota de paret (wall ball)","descripcio":"Utilitzada en l'entrenament creuat, és una pilota pesada que es llança contra una paret com a part d'un exercici.","categoria":2,"img":"./img/wallball.jpg","estoc":25,"preu":29,"pendent":0,"created_at":null,"updated_at":null,"counter":2},{"id":20,"nom":"Pilota suïssa (fitball)","descripcio":"Utilitzada en entrenament de pilates y exercicis d'estabilitat, és una pilota inflable gran.","categoria":2,"img":"./img/suiza.jpg","estoc":15,"preu":39,"pendent":0,"created_at":null,"updated_at":null,"counter":1},{"id":3,"nom":"Pilota de voleibol","descripcio":"Pilota utilitzada en el voleibol, és esfèrica i sovint està feta de cuir o material sintètic.","categoria":1,"img":"./img/volley.jpg","estoc":20,"preu":22,"pendent":0,"created_at":null,"updated_at":null,"counter":9},{"id":28,"nom":"Pilota de teràpia (therapy ball)","descripcio":"Utilitzada en fisioteràpia y teràpia ocupacional, és una pilota de goma utilitzada per millorar la força y la coordinació.","categoria":3,"img":"./img/terapia.jpg","estoc":15,"preu":21,"pendent":0,"created_at":null,"updated_at":null,"counter":7},{"id":10,"nom":"Pilota de softbol","descripcio":"Pilota utilitzada en el softbol, és similar a la pilota de beisbol però més gran y més suau.","categoria":1,"img":"./img/softbol.jpg","estoc":30,"preu":33,"pendent":0,"created_at":null,"updated_at":null,"counter":1},{"id":8,"nom":"Pilota de ping-pong (tenis de taula)","descripcio":"Pilota utilitzada en el tennis de taula, és petita i lleugera.","categoria":1,"img":"./img/pingpong.jpg","estoc":60,"preu":32,"pendent":0,"created_at":null,"updated_at":null,"counter":3}]`, email: "dfsgdgf@aasdf.com", preuTotal: "617.00", updated_at: "2023-10-26T07:25:38.000000Z", created_at: "2023-10-26T07:25:38.000000Z", id: 9, estat: 3 },
             categories: [],
             busqueda: "",
             mostrarCategories: false,
@@ -28,6 +28,7 @@ createApp({
             comandaModificant: false,
             aplicarEfecte:false,
             menuOpen: false,
+            mostrarAdministrador: false,
             imagenQr:""
         }
     },
@@ -240,17 +241,19 @@ createApp({
                 wrapper.classList.add("active");
                 generateBtn.innerText = "Generate QR Code";
             });
-        }
         },
         modificarComanda() {
             this.recuperarCompra(JSON.parse(this.comanda.productes));
             this.pantallaActual = 'botiga';
             this.comandaModificant = true;
-        }
+        },
+        mostrarFeinaAdministrador() {
+            this.mostrarAdministrador = !this.mostrarAdministrador;
+          },
 
     },
     computed: {
-        disponible(producte) {
+        disponible(producte){
             return producte.estoc - producte.pendent;
         }
     }
