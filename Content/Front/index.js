@@ -40,9 +40,13 @@ createApp({
         canviarPantalla(nova) {
             this.pantallaActual = nova;
             this.desplegador=false;
-            if (nova == "botiga" && this.productes.length == 0) {
+            if (nova == "botiga") {
                 this.getProductes();
-            } else if(nova == 'checkout' && this.comandaModificant){
+                if (this.comandaModificant) {
+                    this.augmentarEstocPossible();
+                }
+
+            } else if (nova == 'checkout' && this.comandaModificant) {
                 this.email = this.comanda.email;
             }
         },
@@ -62,10 +66,28 @@ createApp({
                         this.recuperarCompra(JSON.parse(localStorage.getItem('compra')))
                     }
 
+                    if (this.comandaModificant) {
+                        this.augmentarEstocPossible();
+                    }
+
                 });
         },
+        augmentarEstocPossible() {
+            let productesComanda = JSON.parse(this.comanda.productes)
+            productesComanda.forEach(producteComanda => {
+                let augmentarEstoc = this.productes.find((element) =>
+                    element.id == producteComanda.id
+                )
+
+                if (augmentarEstoc != null) {
+                    augmentarEstoc.estoc += producteComanda.counter;
+                }
+
+
+            });
+        },
         recuperarCompra(compraRecuperar) {
-            this.productes =this.productesCopia;
+            this.productes = this.productesCopia;
             this.compra = [];
             let recuperarCompra = compraRecuperar;
 
@@ -117,7 +139,7 @@ createApp({
 
             if (this.compra[foundIndex].counter == 0) {
 
-                this.compra.splice(foundIndex, 1);
+                this.compra.splice(foundIndex, 0);
 
             }
             localStorage.setItem('compra', JSON.stringify(this.compra));
@@ -142,7 +164,7 @@ createApp({
                 enviar += '€';
 
                 return enviar;
-            } else{
+            } else {
                 return '0€';
             }
         },
@@ -154,12 +176,11 @@ createApp({
                     numProducte += element.counter;
                 })
                 return numProducte;
-            } else{
+            } else {
                 return 0;
             }
 
         },
-
         mostrarFiltres() {
             if (this.categories.length > 0) {
                 this.mostrarCategories = !this.mostrarCategories;
@@ -180,7 +201,6 @@ createApp({
                 return this.elementos.filter(item => item.categoria === this.filtroCategoria);
             }
         },
-
         filtrar(categoria) {
 
             if (categoria != -1) {
@@ -191,7 +211,6 @@ createApp({
             }
 
         },
-
         ferCompra() {
 
             const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -206,7 +225,10 @@ createApp({
 
                 enviarComanda(enviarJSON, this.comandaModificant, this.comanda.id).then(data => {
                     this.comanda = data;
-                })
+                });
+
+                localStorage.clear;
+
                 this.pantallaActual = `comanda`;
 
                 this.compra = [];
@@ -247,8 +269,10 @@ createApp({
         },
         modificarComanda() {
             this.recuperarCompra(JSON.parse(this.comanda.productes));
-            this.pantallaActual = 'botiga';
+
             this.comandaModificant = true;
+
+            this.canviarPantalla('botiga');
         },
         mostrarFeinaAdministrador() {
             this.mostrarAdministrador = !this.mostrarAdministrador;
@@ -256,9 +280,6 @@ createApp({
 
     },
     computed: {
-        disponible(producte){
-            return producte.estoc - producte.pendent;
-        }
     }
 
 }).mount('#app')
