@@ -29,6 +29,7 @@ createApp({
             aplicarEfecte:false,
             menuOpen: false,
             mostrarAdministrador: false,
+            desplegador:false,
             imagenQr:""
         }
     },
@@ -38,6 +39,7 @@ createApp({
         },
         canviarPantalla(nova) {
             this.pantallaActual = nova;
+            this.desplegador = false;
             if (nova == "botiga" && this.productes.length == 0) {
                 this.getProductes();
             } else if(nova == 'checkout' && this.comandaModificant){
