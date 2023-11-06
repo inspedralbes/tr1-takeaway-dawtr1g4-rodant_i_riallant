@@ -121,6 +121,7 @@ createApp({
             localStorage.setItem('compra', JSON.stringify(this.compra));
         },
         getTotal() {
+            this.preuTotal=0;
             if (this.compra.length != 0) {
                 let compraTotal = this.compra;
 
