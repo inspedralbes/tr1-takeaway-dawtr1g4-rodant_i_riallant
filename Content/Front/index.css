@@ -148,6 +148,11 @@ header h1{
     border: 2px solid var(--aquamarine-blue-300);
     border-radius: 25px;
 }
+.feina-adminitrador a {
+    color: white;
+    text-decoration: none;
+}
+
 .cart-button {
     position: absolute;
     top: 2vh;

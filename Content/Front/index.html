@@ -50,9 +50,9 @@
                         <li @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
                         <li @click="mostrarFeinaAdministrador()">Administrador</li>
                         <div v-if="mostrarAdministrador" class="feina-adminitrador">
-                            <li>Afegir producte</li>
-                            <li>Afegir estoc</li>
-                            <li>Modificar comanda</li>
+                            <li><a href="../Back/api-laravel/resources/views/newProduct.blade.php"> Afegir producte</a></li>
+                            <li><a href="../Back/api-laravel/resources/views/index.blade.php"> Afegir estoc</a></li>
+                            <li><a href="../Back/api-laravel/resources/views/comanda.blade.php">Modificar comanda</a></li>
                         </div>
                     </ul>
                 </nav>
