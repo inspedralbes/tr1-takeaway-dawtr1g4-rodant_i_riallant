@@ -12,6 +12,12 @@ class producteController extends Controller
         return Producte::all();
     }
 
+    public function indexView(){
+        $productes = Producte::all();
+
+        return view("productes")->with("productes",$productes);
+    }
+
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [

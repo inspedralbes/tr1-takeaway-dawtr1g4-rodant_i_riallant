@@ -20,10 +20,14 @@ h1{
     text-align: center;
 }
 
+a{
+    text-decoration: none; 
+    color: black;
+}
+
 .llistat{
     background-color: var(--aquamarine-blue-200);
     display: grid;
-    grid-template-rows: 1fr;
     margin-top: 5vh;
     margin-left: 5%;
     margin-right: 5%;

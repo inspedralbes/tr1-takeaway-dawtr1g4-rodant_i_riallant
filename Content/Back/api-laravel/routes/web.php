@@ -30,6 +30,7 @@ Route::patch('comanda/{id}', [ComandaController::class, 'update'])->name('comand
      return view('newProduct');
  })->name('afegir');
 Route::post('/afegir',  [ProducteController::class, 'store'])->name('afegir');
-Route::get('modificar', function(){
-    return view('productes')->name('modificar');
-});
+
+Route::get('/llistat-prod', [ProducteController::class,'indexView'])->name('llistat-prod');
+
+Route::get('/modificar/{id}', function(){ return 'hola';})->name('producte-modif');
