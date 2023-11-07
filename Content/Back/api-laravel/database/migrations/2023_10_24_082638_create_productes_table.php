@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('img');
             $table->integer('estoc');
             $table->decimal('preu', 8, 2);
-            $table->integer('pendent')->default(0);
             $table->timestamps();
         });
 
