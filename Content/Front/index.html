@@ -199,7 +199,7 @@
             <!-- Insertando codigo QR -->
             <div class="wrapper">
                 <div class="form">
-                    <button @click="generarQr">Veure QR</button>
+                    <button v-if="btnQR" @click="generarQr" >Veure QR</button>
                 </div>
                 <div id="qr-code">
                     <img :src="imagenQr">
@@ -210,7 +210,7 @@
                 <button @click="modificarComanda()">Modificar comanda</button>
             </div>
 
-            <button @click="canviarPantalla(`botiga`)">Botiga</button>
+            <button @click="canviarPantalla(`botiga`)" class="btn_Botiga">Botiga</button>
         </div>
     </div>
     <footer>
