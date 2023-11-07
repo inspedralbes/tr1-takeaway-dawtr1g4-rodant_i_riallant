@@ -138,9 +138,12 @@ createApp({
             });
             let foundIndex = codisproductesCompra.indexOf(this.productes[index].id);
 
-            if (this.compra[foundIndex].counter == 0) {
+            console.log(foundIndex);
 
-                this.compra.splice(foundIndex, 0);
+            if (this.compra[foundIndex].counter == 0) {
+                console.log("hola");
+
+                this.compra.splice(foundIndex, 1);
 
             }
             localStorage.setItem('compra', JSON.stringify(this.compra));
