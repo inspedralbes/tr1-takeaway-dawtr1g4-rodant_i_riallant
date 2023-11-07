@@ -50,9 +50,9 @@
                         <li @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
                         <li @click="mostrarFeinaAdministrador()">Administrador</li>
                         <div v-if="mostrarAdministrador" class="feina-adminitrador">
-                            <li><a href="../Back/api-laravel/resources/views/newProduct.blade.php"> Afegir producte</a></li>
-                            <li><a href="../Back/api-laravel/resources/views/index.blade.php"> Afegir estoc</a></li>
-                            <li><a href="../Back/api-laravel/resources/views/comanda.blade.php">Modificar comanda</a></li>
+                            <li><a href="../Back/api-laravel/public/"> Afegir producte</a></li>
+                            <li><a href="../Back/api-laravel/public/"> Afegir estoc</a></li>
+                            <li><a href="../Back/api-laravel/public/">Modificar comanda</a></li>
                         </div>
                     </ul>
                 </nav>
@@ -82,11 +82,11 @@
                     <div v-if="producte.nom.toLowerCase().includes(busqueda.toLowerCase().trim())">
                         <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
                             <div class="botiga__nom">{{producte.nom}}</div>
-                            <div class="botiga__preu">{{ producte.preu }}</div>
+                            <div class="botiga__preu">{{ producte.preu }}€</div>
                             <div class="botiga__butons">
-                                <input class="buttons__button" type="button" value="-" @click="disminuirDemanats(index)">
-                                <input class="botiga__quantitat" v-model="productes[index].counter" disabled>
-                                <input class="buttons__button" type="button" value="+" @click="augmentarDemanats(index)">
+                                <input class="buttons__button" type="button" value="-" @click="disminuirDemanats(producte)">
+                                <input class="botiga__quantitat" v-model="producte.counter" disabled>
+                                <input class="buttons__button" type="button" value="+" @click="augmentarDemanats(producte)">
                             </div>
                             <img class="botiga__imagen" :src="producte.img" alt="producte">
                         </div>
@@ -186,7 +186,7 @@
     <footer>
         <p>&copy; 2023 Rodant i Riallant. Tots els seus drets reservats.</p>
     </footer>
-    <script src="qrGenerator.js"></script>
+    <!-- <script src="qrGenerator.js"></script> -->
     <script type="module" src="index.js"></script>
 </body>
 

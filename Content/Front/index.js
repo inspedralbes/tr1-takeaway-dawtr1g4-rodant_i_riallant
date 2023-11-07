@@ -92,54 +92,66 @@ createApp({
             let recuperarCompra = compraRecuperar;
 
             recuperarCompra.forEach(element => {
-                this.productes.forEach(producte => {
-                    if (element.id == producte.id) {
-                        producte.counter = element.counter;
-                        this.afegirCompra(producte.id - 1);
-                    }
-                });
+                this.productes[element.id-1].counter = element.counter
+                this.afegirCompra(this.productes[element.id-1].id);
+                // this.productes.forEach(producte => {
+                //     if (element.id == producte.id) {
+                //         producte.counter = element.counter;
+                //         this.afegirCompra(producte.id);
+                //     }
+                // });
             });
         },
-        augmentarDemanats(index) {
-            if (this.productes[index].counter < this.productes[index].estoc) {
-                this.productes[index].counter++;
-                this.afegirCompra(index);
+        augmentarDemanats(producte) {
+            console.log(producte);
+            if (producte.counter < producte.estoc) {       
+                producte.counter++;
+                this.afegirCompra(producte.id);
                 this.aplicarEfecte = true;
                 setTimeout(() => { this.aplicarEfecte = false; }, 500);
 
             }
         },
-        disminuirDemanats(index) {
-            if (this.productes[index].counter > 0) {
-                this.productes[index].counter--;
-                this.disminuirCompra(index);
+        disminuirDemanats(producte) {
+            console.log(producte);
+
+            if (producte.counter > 0) {
+                producte.counter--;
+                this.disminuirCompra(producte.id);
                 this.aplicarEfecte = true;
                 setTimeout(() => { this.aplicarEfecte = false; }, 500);
             }
         },
-        afegirCompra(index) {
-            let codisproductesCompra = [];
-            this.compra.forEach(producteAComprar => {
-                codisproductesCompra.push(producteAComprar.id)
-            });
+        afegirCompra(idProd) {
+            // let codisproductesCompra = [];
+            // this.compra.forEach(producteAComprar => {
+            //     codisproductesCompra.push(producteAComprar.id)
+            // });
 
-            let foundIndex = codisproductesCompra.indexOf(this.productes[index].id);
+            let foundIndex = this.compra.find(producte => producte.id == idProd)
 
-            if (foundIndex == -1) {
-                this.compra.push(this.productes[index]);
+            console.log(foundIndex);
+
+            if (foundIndex == undefined) {
+                this.compra.push(this.productes.find(producte => producte.id = idProd));
             }
             localStorage.setItem('compra', JSON.stringify(this.compra));
         },
-        disminuirCompra(index) {
-            let codisproductesCompra = [];
-            this.compra.forEach(producteAComprar => {
-                codisproductesCompra.push(producteAComprar.id)
-            });
-            let foundIndex = codisproductesCompra.indexOf(this.productes[index].id);
+        disminuirCompra(idProd) {
+            // let codisproductesCompra = [];
+            // this.compra.forEach(producteAComprar => {
+            //     codisproductesCompra.push(producteAComprar.id)
+            // });
+            let foundIndex = this.compra.find(producte => producte.id == idProd)
 
-            if (this.compra[foundIndex].counter == 0) {
+            console.log(foundIndex);
+            //codisproductesCompra.indexOf(this.productes[index].id);
 
-                this.compra.splice(foundIndex, 0);
+            if (foundIndex.counter == 0) {
+
+                this.compra.splice(this.compra.indexOf(foundIndex), 0);
+
+                console.log('hola');
 
             }
             localStorage.setItem('compra', JSON.stringify(this.compra));

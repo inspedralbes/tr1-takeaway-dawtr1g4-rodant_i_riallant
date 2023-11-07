@@ -246,22 +246,12 @@ header h1{
     font-size: 1.25em;
 }
 
-.productes__producte {
-    margin: 5px;
-    border: 1px solid black;
-}
 .checkout-producte{
     text-align: center;
     margin-top: 3vh;
     margin-bottom: 3vh;
 }
-.producte {
-    display: grid;
-    grid-template-areas:
-        "foto titol titol"
-        "foto preu quantitat";
-        
-} 
+
 .producte__foto {
     grid-area: foto;
 }
@@ -306,7 +296,7 @@ header h1{
 
 .botiga__imagen {
     width: 100%; 
-    height: auto; 
+    height: 100%;
     object-fit: cover;
 }
 
@@ -334,7 +324,7 @@ header h1{
     background-color: #10353c;
     width: 100%;
     position: absolute;
-    bottom: 30px; 
+    bottom: 21%; 
     background-color: #3dd0d371;
     color: white;
     text-shadow: 1px 1px black;
@@ -405,11 +395,11 @@ input {
 
 .producte__titol {
     grid-area: titol;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.producte__preu-stock {
-    grid-area: stock-preu;
-}
 
 .producte__preu-quantitat {
     grid-area: quantitat-preu;
@@ -425,6 +415,7 @@ input {
         "foto titol"
         "foto preus";
     grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 1fr;
     margin: 5px;
     padding-right: 2vh;
     border: 1px solid black;
@@ -444,7 +435,7 @@ input {
 }
 
 .producte__titol h2 {
-    font-size: 1.6em;
+    font-size: 1.3em;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -460,16 +451,22 @@ input {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.preus>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .preus__quantitat p {
-    font-size: 1.7em;
+    font-size: 1.4em;
 }
 
 .preus__preu-unic p {
-    font-size: 1.7em;
+    font-size: 1.4em;
 }
 
 .preus__preu-quantitat p {
-    font-size: 1.7em;
+    font-size: 1.4em;
     font-weight: bold;
 }
 
