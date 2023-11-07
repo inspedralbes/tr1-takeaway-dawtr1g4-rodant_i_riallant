@@ -561,13 +561,17 @@ input[type="submit"] {
 }
 
 .app__comanda {
-    margin: 0;
+    margin: 65px;
     padding: 0;
     display: flex;
     flex-direction: column;
     height: 50vh;
     justify-content: space-around;
     align-items: center;
+}
+
+.btn_Botiga{
+    margin: 5px;
 }
 
 .app__comanda>* {
@@ -651,7 +655,9 @@ p.estat__part {
     border-radius: 5px; 
     background-color: var(--aquamarine-blue-100);
 }
-
+.btnQR_out{
+    display: none;
+}
 .wrapper img{
     margin-top: 10px;
 }
