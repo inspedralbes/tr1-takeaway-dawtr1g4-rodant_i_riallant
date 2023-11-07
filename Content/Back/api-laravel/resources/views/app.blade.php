@@ -9,17 +9,10 @@
 <body>
     <header>
         <nav class="header__navbar">
-            <h1>RODANT I RIALLANT</h1>
-            <div class="menu-icon">&#9776;</div>
-            <ul class="nav-list" id="nav-list">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-            <button class="cart-button" @click="canviarPantalla('checkout')">
-                <i class="fas fa-shopping-cart"></i> Carro
-            </button>
+        <a href="http://rirtr1g4.daw.inspedralbes.cat/Front/" style="text-decoration: none; color: black;">
+  <h1>RODANT I <br>RIALLANT</h1>
+</a>
+
         </nav>
     </header>
     <!-- header -->
