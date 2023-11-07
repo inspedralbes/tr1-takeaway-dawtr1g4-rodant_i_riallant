@@ -30,7 +30,8 @@ createApp({
             menuOpen: false,
             mostrarAdministrador: false,
             desplegador:false,
-            imagenQr:""
+            imagenQr:"",
+            mostrarTicket: false
         }
     },
     methods: {
@@ -276,7 +277,11 @@ createApp({
         },
         mostrarFeinaAdministrador() {
             this.mostrarAdministrador = !this.mostrarAdministrador;
-          },
+         },
+        aumentarTamano() {
+            console.log("hola");   
+                this.mostrarTicket = !this.mostrarTicket
+        }
 
     },
     computed: {

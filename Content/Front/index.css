@@ -227,28 +227,72 @@ header h1{
     color: white;
     position: sticky;
     bottom: 0;
-    height: 12vh;
+    height: 8vh;
     min-height: 75px;
-    width: 100%;
+    width: 80%;
     text-align: center;
+    margin-left: 10%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow: scroll;
+    transition: 2s;
+}
+.ticket__productes_desplegat{
+    background-color: var(--aquamarine-blue-950);
+    color: white;
+    position: sticky;
+    bottom: 0;
+    height: 50vh;
+    min-height: 75px;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow: scroll;
+    transition: 2s;
 }
 
-.ticket-producte{
+
+.ticket-productes-total{
+    margin: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: scroll;
 }
-.ticket-producte h2{
+.ticket-productes-total h2{
     color: white;
     font-size: 1.5em;
 }
-.ticket-producte p{
+.ticket-productes-total p{
     color: white;
     font-size: 1.25em;
 }
+.ticket-producte {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    
+    font-size: 12px;
+}
+.prodNom {
+    
+    font-size: 0.75em;
+}
+.ticket-producte img{
+    max-width: 40PX;
+    max-height: 40PX;
+}
+.productes__producte-producte{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
+}
 .productes__producte {
-    margin: 5px;
     border: 1px solid black;
+    margin: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: scroll;
 }
 .checkout-producte{
     text-align: center;
