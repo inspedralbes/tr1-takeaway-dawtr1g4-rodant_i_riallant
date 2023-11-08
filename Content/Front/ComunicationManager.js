@@ -102,6 +102,5 @@ export async function agafarComanda(idComanda) {
 
     const response = await fetch(url);
     const comanda = await response.json();
-    console.log(comanda);
     return comanda;
 }
