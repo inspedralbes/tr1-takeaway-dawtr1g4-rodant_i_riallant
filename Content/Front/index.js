@@ -31,7 +31,8 @@ createApp({
             mostrarAdministrador: false,
             desplegador:false,
             imagenQr:"",
-            mostrarTicket: false
+            mostrarTicket: false,
+            btnQR: true
         }
     },
     methods: {
@@ -265,11 +266,7 @@ createApp({
             if(!qrValue || preValue === qrValue) return;
             preValue = qrValue;
             this.imagenQr = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
-            imagenQr.addEventListener("load", () => {
-                imagenQr.innerHtml = "Carregant...";
-                wrapper.classList.add("active");
-                generateBtn.innerText = "Generate QR Code";
-            });
+            this.btnQR = false;
         },
         modificarComanda() {
             this.recuperarCompra(JSON.parse(this.comanda.productes));
