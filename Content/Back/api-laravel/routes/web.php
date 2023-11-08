@@ -15,10 +15,6 @@ use App\Http\Controllers\ComandaController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/comandes', [ComandaController::class,'index'])->name('comandes');
 
 Route::get('comanda/{id}', [ComandaController::class,'buscar'])->name('comanda-modif');
@@ -35,4 +31,4 @@ Route::get('/llistat-prod', [ProducteController::class,'indexView'])->name('llis
 
 Route::get('/modificar/{id}', [ProducteController::class, 'showView'])->name('producte-form');
 
-Route::get('/editar/{id}', [ProducteController::class,'editar'])->name('producte-editar');
+Route::patch('/modificar/{id}', [ProducteController::class,'editar'])->name('producte-editar');

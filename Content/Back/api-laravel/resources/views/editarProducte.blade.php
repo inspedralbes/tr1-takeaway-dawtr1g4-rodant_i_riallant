@@ -5,32 +5,39 @@
 <link rel="stylesheet" href="editarProducte.css">
 
 <h1>Modificar un producte</h1>
+
+@if(session('error'))
+
+    <div class="error">{{session('error')}}</div>
+
+@endif
+
     <form action="{{ route('producte-editar', ['id'=> $producte->id]) }}" method="post" class="form">
         @csrf
         @method("PATCH")
 
         <div class="form__nom">
-            <label for="nombre">Nom: </label>
-            <input type="text" name="nombre" id="nombre" value="{{$producte->nom}}" required>
+            <label for="nom">Nom: </label>
+            <input type="text" name="nom" id="nom" value="{{$producte->nom}}" required>
         </div>
         
         <div class="form__desc">
-            <label for="descripcion">Descripció:</label>
-            <textarea name="descripcion" id="descripcion" rows="4" cols="50" required>{{$producte->descripcio}}</textarea>
+            <label for="descripcio">Descripció:</label>
+            <textarea name="descripcio" id="descripcio" rows="4" cols="50" required>{{$producte->descripcio}}</textarea>
         </div>
         
         <div class="form__nom">
-            <label for="stock">Estoc Disponible:</label>
-            <input type="number" name="stock" id="stock" required value="{{$producte->estoc}}">
+            <label for="estoc">Estoc Disponible:</label>
+            <input type="number" name="estoc" id="estoc" required value="{{$producte->estoc}}">
         </div>
         
         <div class="form__nom">
-            <label for="precio">Preu:</label>
-            <input type="number" name="precio" id="precio" required value="{{$producte->preu}}">
+            <label for="preu">Preu:</label>
+            <input type="number" name="preu" id="preu" required value="{{$producte->preu}}">
         </div>
         
         <div class="form__nom">
-            <label for="categoria">Categoria:</label>
+            <label>Categoria:</label>
             <select name="categoria" id="categoria" required>
             @foreach($categories as $categoria)
 
@@ -42,7 +49,7 @@
         </div>
         
 
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Confirmar">
     </form>
 
 

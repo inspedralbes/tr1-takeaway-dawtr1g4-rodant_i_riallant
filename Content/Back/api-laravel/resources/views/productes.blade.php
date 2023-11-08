@@ -4,6 +4,12 @@
 
 <h1>LListat productes</h1>
 
+@if(session('success'))
+
+    <div class="success">{{session('success')}}</div>
+
+@endif
+
 <link rel="stylesheet" href="css/index.css">
 
 <div class="productes__llistat llistat">

@@ -1,4 +1,4 @@
-:root{
+:root {
     --aquamarine-blue-50: #effcfa;
     --aquamarine-blue-100: #d5f8f7;
     --aquamarine-blue-200: #b1f0ef;
@@ -16,16 +16,16 @@ body {
     background-color: var(--aquamarine-blue-50);
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-a{
-    text-decoration: none; 
+a {
+    text-decoration: none;
     color: black;
 }
 
-.llistat{
+.llistat {
     background-color: var(--aquamarine-blue-200);
     display: grid;
     margin-top: 5vh;
@@ -33,22 +33,24 @@ a{
     margin-right: 5%;
 }
 
-.titols, .comanda{
+.titols,
+.comanda {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
 }
 
-.comanda:nth-child(2n+1){
+.comanda:nth-child(2n+1) {
     background-color: var(--aquamarine-blue-400);
 }
 
 
 
-.comanda:last-child{
+.comanda:last-child {
     border-bottom: 1px solid var(--aquamarine-blue-950);
 }
 
-.titols *, .comanda * {
+.titols *,
+.comanda * {
     border-left: 1px solid var(--aquamarine-blue-950);
     border-top: 1px solid var(--aquamarine-blue-950);
     padding: 5px;
@@ -57,11 +59,27 @@ a{
     text-align: center;
 }
 
-.titols>*:last-child, .comanda>*:last-child{
+.titols>*:last-child,
+.comanda>*:last-child {
     border-right: 1px solid var(--aquamarine-blue-950);
 }
 
-.titols *{
+.titols * {
     margin: 0;
     padding: 3vh;
+}
+
+.success {
+
+    width: 80%;
+    padding: 5px;
+    background-color: rgb(124, 255, 107);
+    border: 2px rgb(3, 109, 26) solid;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 2em;
 }

@@ -52,7 +52,26 @@ label{
     max-width: 100px;
 }
 
+input[type=number]{
+    max-width: 100px;
+}
+
 input[type=submit]{
-    background-color: var(--aquamarine-blue-100);
+    background-color: var(--aquamarine-blue-300);
+    border: 1px solid black;
     margin-top: 5vh;
+}
+
+.error{
+    width: 80%;
+    padding: 5px;
+    background-color: rgb(255, 107, 107);
+    border: 2px rgb(109, 3, 3) solid;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 2em;
 }

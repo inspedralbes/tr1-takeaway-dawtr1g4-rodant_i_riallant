@@ -77,7 +77,7 @@ class producteController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return view('newProduct')->with('error', 'Error al formulari');
+            return redirect()->route('producte-form', ['id'=> $id])->with('error', 'Error al formulari');
         } else {
             $producte = Producte::find($id);
 
@@ -88,7 +88,9 @@ class producteController extends Controller
             $producte-> estoc = $request->estoc;
 
             $producte->save();
-            return view('newProduct')->with('success', 'Producto añadido correctamente');
+
+
+            return redirect()->route('llistat-prod')->with('success', 'Producte modificat correctament');
 
             //->with('success', 'Producto añadido correctamente')
         }
