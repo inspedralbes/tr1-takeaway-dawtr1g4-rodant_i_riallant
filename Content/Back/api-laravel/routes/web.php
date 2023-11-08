@@ -25,12 +25,14 @@ Route::get('comanda/{id}', [ComandaController::class,'buscar'])->name('comanda-m
 
 Route::patch('comanda/{id}', [ComandaController::class, 'update'])->name('comanda-editar-estat');
 
-//Route::get('/afegir', [FormController::class, 'show'])
  Route::get('/afegir', function(){
      return view('newProduct');
  })->name('afegir');
+
 Route::post('/afegir',  [ProducteController::class, 'store'])->name('afegir');
 
 Route::get('/llistat-prod', [ProducteController::class,'indexView'])->name('llistat-prod');
 
-Route::get('/modificar/{id}', function(){ return 'hola';})->name('producte-modif');
+Route::get('/modificar/{id}', [ProducteController::class, 'showView'])->name('producte-form');
+
+Route::get('/editar/{id}', [ProducteController::class,'editar'])->name('producte-editar');
