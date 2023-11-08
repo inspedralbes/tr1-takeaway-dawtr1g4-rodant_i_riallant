@@ -69,7 +69,7 @@ header {
 
 header h1 {
     font-family: 'Tilt Neon';
-    width: 30vw;
+    max-width: 40vw;
     cursor: pointer;
 }
 
@@ -294,12 +294,12 @@ header h1 {
 
 .ticket-productes-total h2 {
     color: white;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .ticket-productes-total p {
     color: white;
-    font-size: 1.25em;
+    font-size: 1.1em;
     background-color: var(--aquamarine-blue-400);
     margin: auto;
     padding: 10%;
