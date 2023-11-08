@@ -23,7 +23,7 @@
 
     <div id="app">
         <header>
-            <h1 @click="canviarPantalla(`titol`)">RODANT I <br>RIALLANT</h1>
+            <h1 @click="canviarPantalla(`titol`)">RODANT I RIALLANT</h1>
             <input type="checkbox" id="nav-toggler" v-model="desplegador">
             <div class="page-wrap">
                 <label for="nav-toggler" class="toggle">
@@ -82,16 +82,15 @@
             <div class="botiga__menu">
                 <div v-for="(producte, index) in productes">
                     <div v-if="producte.nom.toLowerCase().includes(busqueda.toLowerCase().trim())">
-                        <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
+                        <div :id="'id' + index" :class="['botiga__item']">
                             <div class="botiga__nom">{{producte.nom}}</div>
                             <div class="botiga__preu">{{ producte.preu }}€</div>
                             <div class="botiga__butons">
                                 <input class="buttons__button" type="button" value="-"
-                                    @click="disminuirDemanats(index)">
-                                <input class="botiga__quantitat" v-model="productes[index].counter" name="id{{index}}"
-                                    min=0 max={{disponible(producte)}} disabled>
+                                    @click="disminuirDemanats(index, $event)">
+                                <input class="botiga__quantitat" v-model="productes[index].counter" disabled>
                                 <input class="buttons__button" type="button" value="+"
-                                    @click="augmentarDemanats(index)">
+                                    @click="augmentarDemanats(index ,$event)">
                             </div>
                             <img class="botiga__imagen" @click="detallsProducte(producte)" :src="producte.img" alt="producte">
                         </div>
@@ -117,6 +116,23 @@
             </div>
             <div class="ticket-producte">
                 <div v-if="mostrarTicket" class="ticket-producte-producte">
+                    <div class="productes__producte-producte">
+                        <div>
+                            <h2></h2>
+                        </div>
+                        <div class="prodNom">
+                            <h2>Nom</h2>
+                        </div>
+                        <div class="prodpreus__preu-unic">
+                            <p>Preu</p>
+                        </div>
+                        <div class="prodpreus__quantitat">
+                            <p>Quantitat</p>
+                        </div>
+                        <div class="prodpreus__preu-quantitat">
+                            <p>Suma</p>
+                        </div>
+                    </div>
                     <div v-for="(producteComprar, index) in compra">
                         <div class="productes__producte-producte">
                             <div class="prodImg">
@@ -198,10 +214,10 @@
             </div>
             <!-- Insertando codigo QR -->
             <div class="wrapper">
-                <div class="form">
-                    <button v-if="btnQR" @click="generarQr" >Veure QR</button>
+                <div class="form" v-if="btnQR">
+                    <button  @click="generarQr" >Veure QR</button>
                 </div>
-                <div id="qr-code">
+                <div id="qr-code" v-if="!btnQR">
                     <img :src="imagenQr">
                 </div>
             </div>

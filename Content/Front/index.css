@@ -69,6 +69,8 @@ header {
 
 header h1 {
     font-family: 'Tilt Neon';
+    width: 30vw;
+    cursor: pointer;
 }
 
 .toggle {
@@ -80,7 +82,7 @@ header h1 {
     text-decoration: none;
     font-size: 3rem;
     transition: all .15s ease;
-
+    cursor: pointer;
 }
 
 #nav-toggler {
@@ -131,10 +133,8 @@ header h1 {
     font-size: 1.8rem;
     color: white;
     text-decoration: none;
-}
-
-.hidden-nav li {
     margin-bottom: 1em;
+    cursor: pointer;
 }
 
 .filtre-botiga li {
@@ -156,7 +156,7 @@ header h1 {
 .filtre-botiga h3 {
     color: white;
     font-size: 1.5em;
-
+    cursor: default;
 }
 
 .feina-adminitrador li {
@@ -211,6 +211,10 @@ header h1 {
 
 }
 
+.landing__informacio{
+    cursor: default;
+}
+
 .landing__informacio h1 {
     font-size: 2em;
     color: var(--aquamarine-blue-900);
@@ -260,7 +264,7 @@ header h1 {
     margin-left: 10%;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    transition: 2s;
+    transition: 1s;
 }
 
 .ticket__productes_desplegat {
@@ -276,7 +280,7 @@ header h1 {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     overflow: scroll;
-    transition: 2s;
+    transition: 1s;
 }
 
 
@@ -284,7 +288,7 @@ header h1 {
     padding: 20px;
     padding-top: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr 2fr 3fr;
     overflow: scroll;
 }
 
@@ -298,7 +302,7 @@ header h1 {
     font-size: 1.25em;
     background-color: var(--aquamarine-blue-400);
     margin: auto;
-    padding: 15%;
+    padding: 10%;
     border-radius: 10px;
 }
 
@@ -386,10 +390,15 @@ header h1 {
     text-align: center;
     transition: 0.5s;
     position: relative;
+    cursor: default;
 }
 
-.botiga__item-transition:hover {
+.botiga__item-transition--gran {
     transform: scale(1.15, 1.15);
+}
+
+.botiga__item-transition--petit {
+    transform: scale(0.85, 0.85);
 }
 
 .botiga__imagen {
@@ -438,6 +447,10 @@ header h1 {
     background-color: #3dd0d371;
 }
 
+.buttons__button {
+    cursor: pointer;
+}
+
 .botiga__quantitat {
     width: 30px;
     color: black;
@@ -453,7 +466,7 @@ input[type=button] {
     border-color: var(--aquamarine-blue-500);
     font-size: 1em;
     margin-left: 5px;
-    margin-right: 2px;
+    margin-right: 5px;
 }
 
 input {
@@ -716,10 +729,6 @@ p.estat__part {
     display: none;
 }
 
-.wrapper img {
-    margin-top: 10px;
-}
-
 .email input {
     margin-bottom: 7vh;
 }
@@ -732,6 +741,7 @@ footer {
     padding: 15px 0;
     margin-top: auto;
     font-family: 'Ubuntu';
+    cursor: default;
 }
 
 footer p {

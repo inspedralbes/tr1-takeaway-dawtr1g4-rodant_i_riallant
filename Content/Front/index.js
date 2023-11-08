@@ -23,16 +23,15 @@ createApp({
             busqueda: "",
             mostrarCategories: false,
             productesCopia: [],
-            aplicarEfecte: false,
-            menuOpen: false,
             comandaModificant: false,
-            aplicarEfecte:false,
+            aplicarEfecteGran:false,
+            aplicarEfectePetit:false,
             menuOpen: false,
             mostrarAdministrador: false,
             desplegador:false,
             imagenQr:"",
             mostrarTicket: false,
-            btnQR: true
+            btnQR: true,
         }
     },
     methods: {
@@ -106,21 +105,21 @@ createApp({
                 });
             });
         },
-        augmentarDemanats(index) {
+        augmentarDemanats(index, event) {
             if (this.productes[index].counter < this.productes[index].estoc) {
                 this.productes[index].counter++;
                 this.afegirCompra(index);
-                this.aplicarEfecte = true;
-                setTimeout(() => { this.aplicarEfecte = false; }, 500);
+                event.target.parentElement.parentElement.classList.add('botiga__item-transition--gran');
+                setTimeout(() => { event.target.parentElement.parentElement.classList.remove('botiga__item-transition--gran'); }, 500);
 
             }
         },
-        disminuirDemanats(index) {
+        disminuirDemanats(index, event) {
             if (this.productes[index].counter > 0) {
                 this.productes[index].counter--;
                 this.disminuirCompra(index);
-                this.aplicarEfecte = true;
-                setTimeout(() => { this.aplicarEfecte = false; }, 500);
+                event.target.parentElement.parentElement.classList.add('botiga__item-transition--petit');
+                setTimeout(() => { event.target.parentElement.parentElement.classList.remove('botiga__item-transition--petit'); }, 500);
             }
         },
         afegirCompra(index) {
@@ -143,10 +142,8 @@ createApp({
             });
             let foundIndex = codisproductesCompra.indexOf(this.productes[index].id);
 
-            console.log(foundIndex);
 
             if (this.compra[foundIndex].counter == 0) {
-                console.log("hola");
 
                 this.compra.splice(foundIndex, 1);
 
