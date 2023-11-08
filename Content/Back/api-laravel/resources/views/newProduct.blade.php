@@ -30,7 +30,7 @@
         </div>
         <div class="direccio formulari_direccio">
           <label for="img">Direcció</label>
-          <input type="text" class="form-control" id="img" name="img" placeholder="Ex: './img/nomFitxer.jpg'">
+         
         </div>
         <div class="categoria formulari_categoria">
           <label for="categoria">Categoria</label>
