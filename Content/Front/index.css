@@ -1,8 +1,8 @@
-
 @font-face {
     font-family: 'Tilt Neon';
     src: url('./fonts/TiltNeon-Regular.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'Ubuntu';
     src: url('./fonts/Ubuntu-Bold.ttf');
@@ -14,6 +14,7 @@
     src: url('./fonts/Ubuntu-MediumItalic.ttf');
     src: url('./fonts/Ubuntu-Regular.ttf');
 }
+
 :root {
     --mida-item: 200px;
     --mida-primera-barra: -9vw;
@@ -40,95 +41,110 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    
+
 }
 
-h1{
+h1 {
     margin: 0;
 }
 
 button {
-    background-color:var(--aquamarine-blue-500);
+    background-color: var(--aquamarine-blue-500);
     color: #fff;
     padding: 2vmin 2vmax;
     border: none;
     border-radius: 5px;
     font-size: 1.4em;
 }
-header{
+
+header {
     top: 0;
     background-color: var(--aquamarine-blue-100);
     height: 16vh;
+    min-height: 150px;
     position: relative;
     padding-top: 2vh;
     padding-left: 5vw;
 }
-header h1{
+
+header h1 {
     font-family: 'Tilt Neon';
 }
+
 .toggle {
-    color:var(--aquamarine-blue-900);
+    color: var(--aquamarine-blue-900);
     position: absolute;
-    top: 3vh;
+    top: 3.5vh;
     left: 2vw;
     z-index: 2;
     text-decoration: none;
     font-size: 3rem;
     transition: all .15s ease;
-  
-  }
-#nav-toggler{
+
+}
+
+#nav-toggler {
     display: none;
-  }
-  #nav-toggler:checked + .page-wrap .hidden-nav {
-    left:0;
-  }
-  #nav-toggler:checked + .page-wrap .toggle {
+}
+
+#nav-toggler:checked+.page-wrap .hidden-nav {
+    left: 0;
+}
+
+#nav-toggler:checked+.page-wrap .toggle {
     top: 0;
     color: white;
     left: 25%;
     position: fixed;
-  }
-  #nav-toggler:checked + .page-wrap .main-content {
+}
+
+#nav-toggler:checked+.page-wrap .main-content {
     padding-left: 0;
     transform: scale(.7);
-  }
-  .hidden-nav{
+}
+
+.hidden-nav {
     position: fixed;
     top: 0;
     bottom: 0;
-    left: -60%;
+    left: -100%;
     z-index: 1;
     width: 50%;
     padding: 20px;
-    background-color: var( --aquamarine-blue-800);
+    background-color: var(--aquamarine-blue-800);
     transition: all .15s ease;
     height: 100%;
-    
-  }
-.hidden-nav ul{
+    max-height: 98vh;
+    overflow: auto;
+}
+
+.hidden-nav ul {
     margin-block: 0;
     padding-inline: 0;
-    margin-top: 13vh;
+    margin-top: 100px;
     text-align: center;
-  }
+
+}
+
 .hidden-nav li {
     list-style-type: none;
     font-size: 1.8rem;
     color: white;
     text-decoration: none;
-  }
+}
+
 .hidden-nav li {
     margin-bottom: 1em;
-  }
-.filtre-botiga li{
+}
+
+.filtre-botiga li {
     background-color: var(--aquamarine-blue-600);
     border: 2px solid var(--aquamarine-blue-300);
     border-radius: 25px;
 
 }
 
-.filtre-botiga input{
+.filtre-botiga input {
     margin-bottom: 5vh;
     width: 80%;
     background-color: var(--aquamarine-blue-600);
@@ -137,17 +153,19 @@ header h1{
     color: white;
 }
 
-.filtre-botiga h3{
+.filtre-botiga h3 {
     color: white;
     font-size: 1.5em;
 
 }
-.feina-adminitrador li{
+
+.feina-adminitrador li {
     font-size: 1.6em;
     background-color: var(--aquamarine-blue-600);
     border: 2px solid var(--aquamarine-blue-300);
     border-radius: 25px;
 }
+
 .feina-adminitrador a {
     color: white;
     text-decoration: none;
@@ -170,45 +188,52 @@ header h1{
     margin-right: 5px;
     font-size: 30px;
 }
-.landing-botiga{
-   text-align: center;
-   margin: 20px;
-   font-family: 'Ubuntu';
-   line-height: 1.5em;
-   color: black;
+
+.landing-botiga {
+    text-align: center;
+    margin: 20px;
+    font-family: 'Ubuntu';
+    line-height: 1.5em;
+    color: black;
 }
-.landing-salutacio{
+
+.landing-salutacio {
     font-size: 2em;
     color: var(--aquamarine-blue-900);
     margin-bottom: 20px;
 }
+
 .informacio {
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
     background-color: var(--aquamarine-blue-100);
     margin-top: 15px;
 
-  }
-  
-.landing__informacio h1{
+}
+
+.landing__informacio h1 {
     font-size: 2em;
     color: var(--aquamarine-blue-900);
     line-height: 1.5;
 }
-.landing__informacio h2{
+
+.landing__informacio h2 {
     font-size: 1.3em;
     color: var(--aquamarine-blue-800);
     text-decoration: underline;
 }
-.landing__informacio p{
+
+.landing__informacio p {
     font-size: 1.05em;
 }
-.landing__informacio a{
+
+.landing__informacio a {
     font-size: 1.05em;
     text-decoration: none;
     color: black;
 }
-.landing__informacio img{
+
+.landing__informacio img {
     height: 25vh;
     object-fit: cover;
     width: 85%;
@@ -219,10 +244,11 @@ header h1{
     padding-bottom: 25px;
 }
 
-.botiga__superior>button{
+.botiga__superior>button {
     display: block;
 }
-.ticket__productes{
+
+.ticket__productes {
     background-color: var(--aquamarine-blue-950);
     color: white;
     position: sticky;
@@ -234,10 +260,10 @@ header h1{
     margin-left: 10%;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    overflow: scroll;
     transition: 2s;
 }
-.ticket__productes_desplegat{
+
+.ticket__productes_desplegat {
     background-color: var(--aquamarine-blue-950);
     color: white;
     position: sticky;
@@ -254,39 +280,53 @@ header h1{
 }
 
 
-.ticket-productes-total{
-    margin: 20px;
+.ticket-productes-total {
+    padding: 20px;
+    padding-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     overflow: scroll;
 }
-.ticket-productes-total h2{
+
+.ticket-productes-total h2 {
     color: white;
     font-size: 1.5em;
 }
-.ticket-productes-total p{
+
+.ticket-productes-total p {
     color: white;
     font-size: 1.25em;
+    background-color: var(--aquamarine-blue-400);
+    margin: auto;
+    padding: 15%;
+    border-radius: 10px;
 }
+
 .ticket-producte {
     margin-top: 3vh;
     margin-bottom: 3vh;
-    
+
     font-size: 12px;
 }
+
 .prodNom {
-    
+
     font-size: 0.75em;
+    max-height: 43px;
+    overflow: hidden;
 }
-.ticket-producte img{
+
+.ticket-producte img {
     max-width: 40PX;
     max-height: 40PX;
 }
-.productes__producte-producte{
+
+.productes__producte-producte {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
 }
+
 .productes__producte {
     border: 1px solid black;
     margin: 20%;
@@ -294,18 +334,21 @@ header h1{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     overflow: scroll;
 }
-.checkout-producte{
+
+.checkout-producte {
     text-align: center;
     margin-top: 3vh;
     margin-bottom: 3vh;
 }
+
 .producte {
     display: grid;
     grid-template-areas:
         "foto titol titol"
         "foto preu quantitat";
-        
-} 
+
+}
+
 .producte__foto {
     grid-area: foto;
 }
@@ -328,6 +371,7 @@ header h1{
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .botiga__item {
     position: relative;
     margin: 25px;
@@ -341,7 +385,7 @@ header h1{
     align-items: center;
     text-align: center;
     transition: 0.5s;
-    position: relative; 
+    position: relative;
 }
 
 .botiga__item-transition:hover {
@@ -349,8 +393,8 @@ header h1{
 }
 
 .botiga__imagen {
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -378,7 +422,7 @@ header h1{
     background-color: #10353c;
     width: 100%;
     position: absolute;
-    bottom: 30px; 
+    bottom: 21%;
     background-color: #3dd0d371;
     color: white;
     text-shadow: 1px 1px black;
@@ -393,10 +437,11 @@ header h1{
     bottom: 0;
     background-color: #3dd0d371;
 }
+
 .botiga__quantitat {
     width: 30px;
     color: black;
-    
+
 }
 
 input[type=button] {
@@ -414,25 +459,30 @@ input[type=button] {
 input {
     text-align: center;
 }
-.buscar-comanda label{
+
+.buscar-comanda label {
     font-size: 2em;
     margin-bottom: 3vh;
 }
+
 .buscar-comanda {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    text-align: center; 
-    margin-top: 50%; 
-    
+    align-items: center;
+    text-align: center;
+    margin-top: 50%;
+
 }
+
 .buscar-comanda input[type="number"] {
     padding: 10px;
     font-size: 1.7em;
-    border: 1px solid var(--aquamarine-blue-400);;
+    border: 1px solid var(--aquamarine-blue-400);
+    ;
     border-radius: 4px;
-    width: 60%; 
+    width: 60%;
 }
+
 .buscar-comanda input[type="submit"] {
     margin-top: 3vh;
     background-color: var(--aquamarine-blue-500);
@@ -524,7 +574,7 @@ input {
     color: var(--aquamarine-blue-700);
 }
 
-.total__preu-producte--sense-producte{
+.total__preu-producte--sense-producte {
     margin-top: 20vh;
     margin-bottom: 20vh;
 }
@@ -570,7 +620,7 @@ input[type="submit"] {
     align-items: center;
 }
 
-.btn_Botiga{
+.btn_Botiga {
     margin: 5px;
 }
 
@@ -612,11 +662,11 @@ p.estat__part {
 
 .estat__part--4 {
     background-color: rgb(0, 255, 242);
-    border-bottom-right-radius: 10px; 
-    border-top-right-radius: 10px; 
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.estat__part--marcador{
+.estat__part--marcador {
     height: 15vw;
     rotate: 180deg;
     position: absolute;
@@ -625,51 +675,55 @@ p.estat__part {
     transition: transform 3s ease-in-out 1s;
 }
 
-.part__marcador--0{
+.part__marcador--0 {
     transform: translateX(var(--mida-primera-barra));
 }
 
-.part__marcador--1{
+.part__marcador--1 {
     transform: translateX(calc(var(--mida-primera-barra) - var(--mida-total-part)));
 }
 
-.part__marcador--2{
+.part__marcador--2 {
     transform: translateX(calc(var(--mida-primera-barra) - var(--mida-total-part) * 2));
 }
 
-.part__marcador--3{
+.part__marcador--3 {
     transform: translateX(calc(var(--mida-primera-barra) - var(--mida-total-part) * 3));
 }
 
-.part__marcador--4{
+.part__marcador--4 {
     transform: translateX(calc(var(--mida-primera-barra) - var(--mida-total-part) * 4));
 }
 
-.comanda__estat{
+.comanda__estat {
     display: flex;
 }
 
-.arrow_test{
+.arrow_test {
     font-weight: bolder;
     font-size: larger;
 }
 
-.wrapper{
+.wrapper {
     margin: 50px;
     padding: 10px;
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
     background-color: var(--aquamarine-blue-100);
 }
-.btnQR_out{
+
+.btnQR_out {
     display: none;
 }
-.wrapper img{
+
+.wrapper img {
     margin-top: 10px;
 }
-.email input{
+
+.email input {
     margin-bottom: 7vh;
 }
+
 footer {
     bottom: 0;
     text-align: center;
@@ -679,6 +733,7 @@ footer {
     margin-top: auto;
     font-family: 'Ubuntu';
 }
+
 footer p {
     color: white;
     text-decoration: none;

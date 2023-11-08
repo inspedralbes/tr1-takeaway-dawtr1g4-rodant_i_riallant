@@ -42,6 +42,7 @@ createApp({
         canviarPantalla(nova) {
             this.pantallaActual = nova;
             this.desplegador=false;
+            this.busqueda = "";
             if (nova == "botiga") {
                 this.getProductes();
                 if (this.comandaModificant) {
@@ -73,6 +74,9 @@ createApp({
                     }
 
                 });
+        },
+        detallsProducte(producte){
+
         },
         augmentarEstocPossible() {
             let productesComanda = JSON.parse(this.comanda.productes)
@@ -279,7 +283,6 @@ createApp({
             this.mostrarAdministrador = !this.mostrarAdministrador;
          },
         aumentarTamano() {
-            console.log("hola");   
                 this.mostrarTicket = !this.mostrarTicket
         }
 

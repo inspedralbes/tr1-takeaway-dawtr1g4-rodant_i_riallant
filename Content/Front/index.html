@@ -84,7 +84,7 @@
                     <div v-if="producte.nom.toLowerCase().includes(busqueda.toLowerCase().trim())">
                         <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
                             <div class="botiga__nom">{{producte.nom}}</div>
-                            <div class="botiga__preu">{{ producte.preu }}</div>
+                            <div class="botiga__preu">{{ producte.preu }}€</div>
                             <div class="botiga__butons">
                                 <input class="buttons__button" type="button" value="-"
                                     @click="disminuirDemanats(index)">
@@ -93,7 +93,7 @@
                                 <input class="buttons__button" type="button" value="+"
                                     @click="augmentarDemanats(index)">
                             </div>
-                            <img class="botiga__imagen" :src="producte.img" alt="producte">
+                            <img class="botiga__imagen" @click="detallsProducte(producte)" :src="producte.img" alt="producte">
                         </div>
                     </div>
 
@@ -108,15 +108,15 @@
                 <input type="submit" value="Enviar" @click="buscarComanda" />
             </div>
         </div>
-        <div v-if="getPantalla() == `botiga`" :class="{ ticket__productes : !mostrarTicket , ticket__productes_desplegat : mostrarTicket}" >
-            <div class="ticket-productes-total" @click="aumentarTamano">
+        <div v-if="getPantalla() == `botiga`" @click="aumentarTamano" :class="{ ticket__productes : !mostrarTicket , ticket__productes_desplegat : mostrarTicket}" >
+            <div class="ticket-productes-total" >
                 <h2>Producte:</h2>
                 <p>{{getProducteTotalComprat()}}</p>
                 <h2>Total:</h2>
                 <p>{{getTotal()}}</p>
             </div>
             <div class="ticket-producte">
-                <div class="ticket-producte-producte">
+                <div v-if="mostrarTicket" class="ticket-producte-producte">
                     <div v-for="(producteComprar, index) in compra">
                         <div class="productes__producte-producte">
                             <div class="prodImg">
