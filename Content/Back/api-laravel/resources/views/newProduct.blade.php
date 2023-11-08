@@ -29,8 +29,8 @@
           <input type="number" class="form-control" id="estoc" name="estoc">
         </div>
         <div class="direccio formulari_direccio">
-          <label for="img">Direcció</label>
-         
+          <label for="img">Imatge</label>
+          <input type="file" class="form-control" id="img" name="img" accept="image/">
         </div>
         <div class="categoria formulari_categoria">
           <label for="categoria">Categoria</label>
