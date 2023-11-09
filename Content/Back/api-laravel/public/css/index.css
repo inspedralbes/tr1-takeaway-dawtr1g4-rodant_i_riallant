@@ -1,19 +1,18 @@
-
 @font-face {
     font-family: 'Tilt Neon';
-    src: url('../../../../Front/fonts/TiltNeon-Regular-VariableFont_XROT\,YROT.ttf') format('truetype');
+    src: url('../fonts/TiltNeon-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Ubuntu';
-    src: url('../../../../Front/fonts//Ubuntu-Bold.ttf');
-    src: url('../../../../Front/fonts//Ubuntu-BoldItalic.ttf');
-    src: url('../../../../Front/fonts//Ubuntu-Italic.ttf');
-    src: url('../../../../Front/fonts/Ubuntu-Light.ttf');
-    src: url('../../../../Front/fonts/Ubuntu-LightItalic.ttf');
-    src: url('../../../../Front/fonts/Ubuntu-Medium.ttf');
-    src: url('../../../../Front/fonts/Ubuntu-MediumItalic.ttf');
-    src: url('../../../../Front/fonts/Ubuntu-Regular.ttf');
+    src: url('../fonts/Ubuntu-Bold.ttf');
+    src: url('../fonts/Ubuntu-BoldItalic.ttf');
+    src: url('../fonts//Ubuntu-Italic.ttf');
+    src: url('..fonts/Ubuntu-Light.ttf');
+    src: url('../fonts/Ubuntu-LightItalic.ttf');
+    src: url('../fonts/Ubuntu-Medium.ttf');
+    src: url('../fonts/Ubuntu-MediumItalic.ttf');
+    src: url('../fonts/Ubuntu-Regular.ttf');
 }
 
 :root {
