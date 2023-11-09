@@ -2,6 +2,7 @@ import { agafarPelicules } from "./ComunicationManager.js";
 import { agafarCategories } from "./ComunicationManager.js";
 import { enviarComanda } from "./ComunicationManager.js";
 import { agafarComanda } from "./ComunicationManager.js";
+import { url_prefix } from "./ComunicationManager.js";
 
 
 
@@ -32,6 +33,8 @@ createApp({
             imagenQr:"",
             mostrarTicket: false,
             btnQR: true,
+            canviarMarcador: false,
+            prefixComunicacio: url_prefix(),
         }
     },
     methods: {
@@ -39,8 +42,10 @@ createApp({
             return this.pantallaActual;
         },
         canviarPantalla(nova) {
+            console.log(this.prefixComunicacio);
             this.pantallaActual = nova;
             this.desplegador=false;
+            this.canviarMarcador = false;
             this.busqueda = "";
             if (nova == "botiga") {
                 this.getProductes();
@@ -237,6 +242,8 @@ createApp({
 
                 this.pantallaActual = `comanda`;
 
+                this.canviarMarcador = true;
+
                 this.compra = [];
 
                 this.comandaModificant = false;
@@ -255,6 +262,7 @@ createApp({
                 if (data) {                  
                   this.comanda = data;
                   this.pantallaActual = "comanda"
+                  setTimeout(() => {this.canviarMarcador = true;}, 100);
                 }
               })
             //   .catch((error) => {
@@ -264,8 +272,6 @@ createApp({
         },
         generarQr(){
             let qrValue = "http://rirtr1g4.daw.inspedralbes.cat/Front/"
-            if(!qrValue || preValue === qrValue) return;
-            preValue = qrValue;
             this.imagenQr = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
             this.btnQR = false;
         },

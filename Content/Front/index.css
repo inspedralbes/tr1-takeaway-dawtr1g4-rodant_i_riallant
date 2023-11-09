@@ -19,6 +19,9 @@
     --mida-item: 200px;
     --mida-primera-barra: -9vw;
     --mida-total-part: 18vw;
+    --black: #000;
+    --white: #fff;
+    --light-gray: #ccc;
     --aquamarine-blue-50: #effcfa;
     --aquamarine-blue-100: #d5f8f7;
     --aquamarine-blue-200: #b1f0ef;
@@ -26,10 +29,17 @@
     --aquamarine-blue-400: #3dd0d3;
     --aquamarine-blue-500: #22b3b8;
     --aquamarine-blue-600: #1f919b;
+    --aquamarine-blue-650: #3dd0d371;
     --aquamarine-blue-700: #1f757f;
     --aquamarine-blue-800: #225f68;
     --aquamarine-blue-900: #205059;
     --aquamarine-blue-950: #10353c;
+    --pure-cyan: #00fff2;
+    --lime-green: #00ff40;
+    --yellow: #eeff00;
+    --orange: #ff9900;
+    --red: #ff0000;
+    
 }
 
 
@@ -50,7 +60,7 @@ h1 {
 
 button {
     background-color: var(--aquamarine-blue-500);
-    color: #fff;
+    color: var(--white);
     padding: 2vmin 2vmax;
     border: none;
     border-radius: 5px;
@@ -65,6 +75,7 @@ header {
     position: relative;
     padding-top: 2vh;
     padding-left: 5vw;
+    min-height: 150px;
 }
 
 header h1 {
@@ -95,7 +106,7 @@ header h1 {
 
 #nav-toggler:checked+.page-wrap .toggle {
     top: 0;
-    color: white;
+    color: var(--white);
     left: 25%;
     position: fixed;
 }
@@ -131,7 +142,7 @@ header h1 {
 .hidden-nav li {
     list-style-type: none;
     font-size: 1.8rem;
-    color: white;
+    color: var(--white);
     text-decoration: none;
     margin-bottom: 1em;
     cursor: pointer;
@@ -150,11 +161,11 @@ header h1 {
     background-color: var(--aquamarine-blue-600);
     border: 2px solid var(--aquamarine-blue-300);
     font-size: 1.5em;
-    color: white;
+    color: var(--white);
 }
 
-.filtre-botiga h3 {
-    color: white;
+.filtre-botiga h3{
+    color: var(--white);
     font-size: 1.5em;
     cursor: default;
 }
@@ -167,7 +178,7 @@ header h1 {
 }
 
 .feina-adminitrador a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -176,7 +187,7 @@ header h1 {
     top: 2vh;
     right: 5vw;
     background-color: var(--aquamarine-blue-500);
-    color: #fff;
+    color: var(--white);
     padding: 4vmin 5vmax;
     border: none;
     border-radius: 5px;
@@ -194,7 +205,7 @@ header h1 {
     margin: 20px;
     font-family: 'Ubuntu';
     line-height: 1.5em;
-    color: black;
+    color: var(--black);
 }
 
 .landing-salutacio {
@@ -204,7 +215,7 @@ header h1 {
 }
 
 .informacio {
-    border: 1px solid #ccc;
+    border: 1px solid var(--light-gray);
     border-radius: 5px;
     background-color: var(--aquamarine-blue-100);
     margin-top: 15px;
@@ -234,7 +245,7 @@ header h1 {
 .landing__informacio a {
     font-size: 1.05em;
     text-decoration: none;
-    color: black;
+    color: var(--black);
 }
 
 .landing__informacio img {
@@ -254,7 +265,7 @@ header h1 {
 
 .ticket__productes {
     background-color: var(--aquamarine-blue-950);
-    color: white;
+    color: var(--white);
     position: sticky;
     bottom: 0;
     height: 8vh;
@@ -269,7 +280,7 @@ header h1 {
 
 .ticket__productes_desplegat {
     background-color: var(--aquamarine-blue-950);
-    color: white;
+    color: var(--white);
     position: sticky;
     bottom: 0;
     height: 50vh;
@@ -293,12 +304,12 @@ header h1 {
 }
 
 .ticket-productes-total h2 {
-    color: white;
+    color: var(--white);
     font-size: 1.2em;
 }
 
 .ticket-productes-total p {
-    color: white;
+    color: var(--white);
     font-size: 1.1em;
     background-color: var(--aquamarine-blue-400);
     margin: auto;
@@ -332,7 +343,7 @@ header h1 {
 }
 
 .productes__producte {
-    border: 1px solid black;
+    border: 1px solid var(--black);
     margin: 20%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -410,17 +421,17 @@ header h1 {
 .botiga__nom {
     font-size: 1.25em;
     font-variant: small-caps;
-    color: white;
+    color: var(--white);
     position: absolute;
     top: 0;
     width: 100%;
     padding-top: 5px;
     padding-bottom: 10px;
-    background-color: #3dd0d371;
+    background-color: var(--aquamarine-blue-650);
     display: flex;
     text-align: center;
     justify-content: center;
-    text-shadow: 1px 1px black;
+    text-shadow: 1px 1px var(--black);
 }
 
 .botiga__preu {
@@ -428,13 +439,13 @@ header h1 {
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: #10353c;
+    background-color: var(--aquamarine-blue-950);
     width: 100%;
     position: absolute;
     bottom: 21%;
-    background-color: #3dd0d371;
-    color: white;
-    text-shadow: 1px 1px black;
+    background-color: var(--aquamarine-blue-650);
+    color: var(--white);
+    text-shadow: 1px 1px var(--black);
 }
 
 .botiga__butons {
@@ -444,16 +455,15 @@ header h1 {
     height: 21%;
     position: absolute;
     bottom: 0;
-    background-color: #3dd0d371;
+    background-color: var(--aquamarine-blue-650);
 }
 
 .buttons__button {
     cursor: pointer;
 }
-
 .botiga__quantitat {
     width: 30px;
-    color: black;
+    color: var(--black);
 
 }
 
@@ -462,7 +472,7 @@ input[type=button] {
     width: 30px;
     height: 30px;
     background-color: var(--aquamarine-blue-500);
-    color: white;
+    color: var(--white);
     border-color: var(--aquamarine-blue-500);
     font-size: 1em;
     margin-left: 5px;
@@ -499,7 +509,7 @@ input {
 .buscar-comanda input[type="submit"] {
     margin-top: 3vh;
     background-color: var(--aquamarine-blue-500);
-    color: #fff;
+    color: var(--white);
     padding: 35px 60px;
     border: none;
     font-size: 28px;
@@ -534,13 +544,13 @@ input {
     grid-template-columns: 2fr 3fr;
     margin: 5px;
     padding-right: 2vh;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     background-color: var(--aquamarine-blue-950);
 }
 
 .productes__producte>div {
     text-align: center;
-    color: white;
+    color: var(--white);
 }
 
 .producte__foto img {
@@ -616,7 +626,7 @@ input[type="text"] {
 input[type="submit"] {
     align-items: center;
     background-color: var(--aquamarine-blue-500);
-    color: #fff;
+    color: var(--white);
     padding: 35px 60px;
     border: none;
     font-size: 28px;
@@ -643,7 +653,7 @@ input[type="submit"] {
 
 .comanda__estat {
     position: relative;
-    border: 2px solid #ccc;
+    border: 2px solid var(--light-gray);
     border-radius: 10px;
 }
 
@@ -656,25 +666,25 @@ p.estat__part {
 }
 
 .estat__part--0 {
-    background-color: rgb(255, 0, 0);
+    background-color: var(--red);
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
 }
 
 .estat__part--1 {
-    background-color: rgb(255, 153, 0);
+    background-color: var(--orange);
 }
 
 .estat__part--2 {
-    background-color: rgb(238, 255, 0);
+    background-color: var(--yellow);
 }
 
 .estat__part--3 {
-    background-color: rgb(0, 255, 64);
+    background-color: var(--lime-green);
 }
 
 .estat__part--4 {
-    background-color: rgb(0, 255, 242);
+    background-color: var(--pure-cyan);
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -720,16 +730,12 @@ p.estat__part {
 .wrapper {
     margin: 50px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--light-gray);
     border-radius: 5px;
     background-color: var(--aquamarine-blue-100);
 }
 
-.btnQR_out {
-    display: none;
-}
-
-.email input {
+.email input{
     margin-bottom: 7vh;
 }
 
@@ -737,7 +743,7 @@ footer {
     bottom: 0;
     text-align: center;
     background-color: var(--aquamarine-blue-950);
-    color: white;
+    color: var(--white);
     padding: 15px 0;
     margin-top: auto;
     font-family: 'Ubuntu';
@@ -745,7 +751,7 @@ footer {
 }
 
 footer p {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-size: 1.5em;
 }

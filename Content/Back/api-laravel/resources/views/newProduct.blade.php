@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="{{URL::asset('css/newProdForm.css') }}">
 
 
-    <form action="{{ route('afegir') }}" method="POST" class="formulari">
+  <form action="{{ route('afegir') }}" method="POST" enctype="multipart/form-data" class="formulari">
+
       @csrf
       
       @if(session('success'))
@@ -29,8 +30,8 @@
           <input type="number" class="form-control" id="estoc" name="estoc">
         </div>
         <div class="direccio formulari_direccio">
-          <label for="img">Direcció</label>
-          <input type="text" class="form-control" id="img" name="img" placeholder="Ex: './img/nomFitxer.jpg'">
+        <label for="img">Direcció</label>
+          <input type="file" class="form-control" id="img" name="img" accept="image/">
         </div>
         <div class="categoria formulari_categoria">
           <label for="categoria">Categoria</label>
