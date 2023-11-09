@@ -34,20 +34,20 @@
     --aquamarine-blue-800: #225f68;
     --aquamarine-blue-900: #205059;
     --aquamarine-blue-950: #10353c;
-    --pure-cyan: #00fff2;
-    --lime-green: #00ff40;
-    --yellow: #eeff00;
-    --orange: #ff9900;
-    --red: #ff0000;
+    --vermell-estat:#FF0000;
+    --taronja-estat:#FF9900;
+    --groc-estat:#EEFF00;
+    --verd-estat:#00FF40;
+    --blau-estat:#00FFF2;
+    --gris-border:#ccc;
+
+
     
 }
-
-
 body {
     background-color: var(--aquamarine-blue-50);
     margin: 0;
     padding: 0;
-    font-family: 'Ubuntu';
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -57,19 +57,19 @@ body {
 h1 {
     margin: 0;
 }
-
 button {
-    background-color: var(--aquamarine-blue-500);
-    color: var(--white);
+    font-family: 'Tilt Neon';
+    background-color:var(--aquamarine-blue-500);
+    color: white;
     padding: 2vmin 2vmax;
     border: none;
     border-radius: 5px;
     font-size: 1.4em;
 }
-
-header {
-    top: 0;
+header{
+    font-family: 'Ubuntu';
     background-color: var(--aquamarine-blue-100);
+    top: 0;
     height: 16vh;
     min-height: 150px;
     position: relative;
@@ -98,13 +98,11 @@ header h1 {
 
 #nav-toggler {
     display: none;
-}
-
-#nav-toggler:checked+.page-wrap .hidden-nav {
-    left: 0;
-}
-
-#nav-toggler:checked+.page-wrap .toggle {
+  }
+  #nav-toggler:checked + .page-wrap .hidden-nav {
+    left:0;
+  }
+  #nav-toggler:checked + .page-wrap .toggle {
     top: 0;
     color: var(--white);
     left: 25%;
@@ -114,9 +112,8 @@ header h1 {
 #nav-toggler:checked+.page-wrap .main-content {
     padding-left: 0;
     transform: scale(.7);
-}
-
-.hidden-nav {
+  }
+  .hidden-nav{
     position: fixed;
     top: 0;
     bottom: 0;
@@ -140,6 +137,7 @@ header h1 {
 }
 
 .hidden-nav li {
+    font-family: 'Ubuntu';
     list-style-type: none;
     font-size: 1.8rem;
     color: var(--white);
@@ -152,27 +150,26 @@ header h1 {
     background-color: var(--aquamarine-blue-600);
     border: 2px solid var(--aquamarine-blue-300);
     border-radius: 25px;
-
 }
 
 .filtre-botiga input {
     margin-bottom: 5vh;
     width: 80%;
-    background-color: var(--aquamarine-blue-600);
     border: 2px solid var(--aquamarine-blue-300);
     font-size: 1.5em;
     color: var(--white);
 }
-
 .filtre-botiga h3{
     color: var(--white);
+    font-family: 'Ubuntu';
+    color: white;
     font-size: 1.5em;
     cursor: default;
 }
-
-.feina-adminitrador li {
-    font-size: 1.6em;
+.feina-adminitrador li{
+    font-family: 'Ubuntu';
     background-color: var(--aquamarine-blue-600);
+    font-size: 1.6em;
     border: 2px solid var(--aquamarine-blue-300);
     border-radius: 25px;
 }
@@ -181,8 +178,8 @@ header h1 {
     color: var(--white);
     text-decoration: none;
 }
-
 .cart-button {
+    background-color: var(--aquamarine-blue-500);
     position: absolute;
     top: 2vh;
     right: 5vw;
@@ -192,57 +189,49 @@ header h1 {
     border: none;
     border-radius: 5px;
     margin-left: auto;
-    font-size: 30px;
 }
-
 .cart-button i.fa-shopping-cart {
     margin-right: 5px;
     font-size: 30px;
 }
-
-.landing-botiga {
-    text-align: center;
-    margin: 20px;
+.landing-botiga{
     font-family: 'Ubuntu';
-    line-height: 1.5em;
-    color: var(--black);
+   text-align: center;
+   margin: 20px;
+   line-height: 1.5em;
+   color: black;
 }
-
-.landing-salutacio {
+.landing-salutacio{
     font-size: 2em;
     color: var(--aquamarine-blue-900);
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
 .informacio {
-    border: 1px solid var(--light-gray);
-    border-radius: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
     background-color: var(--aquamarine-blue-100);
+    border: 1px solid var(--gris-border); 
+    border-radius: 5px; 
     margin-top: 15px;
 
-}
-
-.landing__informacio{
-    cursor: default;
-}
-
-.landing__informacio h1 {
+  }
+  
+.landing__informacio h1{
     font-size: 2em;
     color: var(--aquamarine-blue-900);
     line-height: 1.5;
 }
-
-.landing__informacio h2 {
+.landing__informacio h2{
     font-size: 1.3em;
     color: var(--aquamarine-blue-800);
     text-decoration: underline;
 }
-
-.landing__informacio p {
+.landing__informacio p{
     font-size: 1.05em;
 }
-
-.landing__informacio a {
+.landing__informacio a{
     font-size: 1.05em;
     text-decoration: none;
     color: var(--black);
@@ -259,7 +248,7 @@ header h1 {
     padding-bottom: 25px;
 }
 
-.botiga__superior>button {
+.botiga__superior>button{
     display: block;
 }
 
@@ -294,10 +283,7 @@ header h1 {
     transition: 1s;
 }
 
-
-.ticket-productes-total {
-    padding: 20px;
-    padding-top: 10px;
+.ticket-producte{
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 3fr;
     overflow: scroll;
@@ -330,56 +316,43 @@ header h1 {
     max-height: 43px;
     overflow: hidden;
 }
-
-.ticket-producte img {
-    max-width: 40PX;
-    max-height: 40PX;
+.ticket-producte h2{
+    color: white;
+    font-size: 1.5em;
 }
-
-.productes__producte-producte {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
+.ticket-producte p{
+    color: white;
+    font-size: 1.25em;
 }
 
 .productes__producte {
-    border: 1px solid var(--black);
-    margin: 20%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    overflow: scroll;
+    margin: 5px;
+    border: 1px solid black;
 }
-
-.checkout-producte {
+.checkout-producte{
     text-align: center;
     margin-top: 3vh;
     margin-bottom: 3vh;
 }
-
 .producte {
     display: grid;
     grid-template-areas:
         "foto titol titol"
         "foto preu quantitat";
-
-}
-
+        
+} 
 .producte__foto {
     grid-area: foto;
 }
-
 .producte__titol {
     grid-area: titol;
 }
-
 .producte__preu {
     grid-area: preu;
 }
-
 .producte__quantitat {
     grid-area: quantitat;
 }
-
 .botiga__menu {
     grid-area: menu;
     display: flex;
@@ -400,26 +373,20 @@ header h1 {
     align-items: center;
     text-align: center;
     transition: 0.5s;
-    position: relative;
-    cursor: default;
+    position: relative; 
 }
 
-.botiga__item-transition--gran {
+.botiga__item-transition:hover {
     transform: scale(1.15, 1.15);
 }
 
-.botiga__item-transition--petit {
-    transform: scale(0.85, 0.85);
-}
-
 .botiga__imagen {
-    width: 100%;
-    height: 100%;
+    width: 100%; 
+    height: auto; 
     object-fit: cover;
 }
-
 .botiga__nom {
-    font-size: 1em;
+    font-size: 1.25em;
     font-variant: small-caps;
     color: var(--white);
     position: absolute;
@@ -427,27 +394,27 @@ header h1 {
     width: 100%;
     padding-top: 5px;
     padding-bottom: 10px;
-    background-color: var(--aquamarine-blue-650);
+    background-color: #3dd0d371;
     display: flex;
     text-align: center;
     justify-content: center;
     text-shadow: 1px 1px var(--black);
 }
-
 .botiga__preu {
+    font-family: 'Ubuntu';
+    background-color: var(--aquamarine-blue-950);
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: var(--aquamarine-blue-950);
+    background-color: #10353c;
     width: 100%;
     position: absolute;
-    bottom: 21%;
-    background-color: var(--aquamarine-blue-650);
-    color: var(--white);
-    text-shadow: 1px 1px var(--black);
+    bottom: 30px; 
+    background-color: #3dd0d371;
+    color: white;
+    text-shadow: 1px 1px black;
 }
-
 .botiga__butons {
     display: flex;
     justify-content: center;
@@ -455,30 +422,25 @@ header h1 {
     height: 21%;
     position: absolute;
     bottom: 0;
-    background-color: var(--aquamarine-blue-650);
-}
-
-.buttons__button {
-    cursor: pointer;
+    background-color: #3dd0d371;
 }
 .botiga__quantitat {
     width: 30px;
-    color: var(--black);
-
+    color: black;
+    
 }
-
 input[type=button] {
+    background-color: var(--aquamarine-blue-500);
     border-radius: 50%;
     width: 30px;
     height: 30px;
     background-color: var(--aquamarine-blue-500);
-    color: var(--white);
+    color: white;
     border-color: var(--aquamarine-blue-500);
     font-size: 1em;
     margin-left: 5px;
     margin-right: 5px;
 }
-
 input {
     text-align: center;
 }
@@ -491,10 +453,10 @@ input {
 .buscar-comanda {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 50%;
-
+    align-items: center; 
+    text-align: center; 
+    margin-top: 50%; 
+    
 }
 
 .buscar-comanda input[type="number"] {
@@ -509,112 +471,113 @@ input {
 .buscar-comanda input[type="submit"] {
     margin-top: 3vh;
     background-color: var(--aquamarine-blue-500);
-    color: var(--white);
+    color: #fff;
     padding: 35px 60px;
     border: none;
     font-size: 28px;
     display: block;
 }
-
 .producte__foto {
     grid-area: foto;
 }
-
 .producte__titol {
+    font-family: 'Ubuntu';
     grid-area: titol;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.producte__preu-stock {
-    grid-area: stock-preu;
-}
-
 .producte__preu-quantitat {
+    font-family: 'Ubuntu';
     grid-area: quantitat-preu;
 }
-
 .producte__quantitat {
+    font-family: 'Ubuntu';
     grid-area: quantitat;
 }
-
 .productes__producte {
+    background-color: var(--aquamarine-blue-950);
     display: grid;
     grid-template-areas:
         "foto titol"
         "foto preus";
     grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 1fr;
     margin: 5px;
     padding-right: 2vh;
-    border: 1px solid var(--black);
+    border: 1px solid black;
     background-color: var(--aquamarine-blue-950);
 }
-
 .productes__producte>div {
     text-align: center;
     color: var(--white);
 }
-
 .producte__foto img {
     height: 20vh;
     object-fit: cover;
     width: 80%;
     margin-top: 5%;
 }
-
 .producte__titol h2 {
-    font-size: 1.6em;
+    font-family: 'Ubuntu';
+    font-size: 1.3em;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     max-width: 55vw;
 }
-
 .producte__preus {
     grid-area: preus;
 }
-
 .preus {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.preus>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .preus__quantitat p {
-    font-size: 1.7em;
+    font-family: 'Ubuntu';
+    font-size: 1.4em;
 }
 
 .preus__preu-unic p {
-    font-size: 1.7em;
+    font-family: 'Ubuntu';
+    font-size: 1.4em;
 }
 
 .preus__preu-quantitat p {
-    font-size: 1.7em;
+    font-size: 1.4em;
     font-weight: bold;
 }
 
-
 .total__preu-producte {
     text-align: center;
+    font-family: 'Ubuntu';
     font-size: 40px;
     color: var(--aquamarine-blue-700);
 }
 
-.total__preu-producte--sense-producte {
+.total__preu-producte--sense-producte{
     margin-top: 20vh;
     margin-bottom: 20vh;
 }
-
 .formulari__usuari {
     text-align: center;
     margin: 0 auto;
     padding: 20px;
 }
-
 label {
+    font-family: 'Ubuntu';
     font-weight: bold;
     font-size: 32px;
     color: var(--aquamarine-blue-900);
     display: block;
 }
-
 input[type="text"] {
     text-align: justify;
     width: 70%;
@@ -624,9 +587,9 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-    align-items: center;
+    font-family: 'Ubuntu';
     background-color: var(--aquamarine-blue-500);
-    color: var(--white);
+    color: #fff;
     padding: 35px 60px;
     border: none;
     font-size: 28px;
@@ -665,27 +628,23 @@ p.estat__part {
 }
 
 .estat__part--0 {
-    background-color: var(--red);
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+    background-color: rgb(255, 0, 0);
 }
 
 .estat__part--1 {
-    background-color: var(--orange);
+    background-color: rgb(255, 153, 0);
 }
 
 .estat__part--2 {
-    background-color: var(--yellow);
+    background-color: rgb(238, 255, 0);
 }
 
 .estat__part--3 {
-    background-color: var(--lime-green);
+    background-color: rgb(0, 255, 64);
 }
 
 .estat__part--4 {
-    background-color: var(--pure-cyan);
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
+    background-color: rgb(0, 255, 242);
 }
 
 .estat__part--marcador {
@@ -729,8 +688,8 @@ p.estat__part {
 .wrapper {
     margin: 50px;
     padding: 10px;
-    border: 1px solid var(--light-gray);
-    border-radius: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
     background-color: var(--aquamarine-blue-100);
 }
 

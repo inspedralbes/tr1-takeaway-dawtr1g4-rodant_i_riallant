@@ -1,5 +1,32 @@
+@font-face {
+    font-family: 'Tilt Neon';
+    src: url('../fonts/TiltNeon-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Bold.ttf');
+    src: url('../fonts/Ubuntu-BoldItalic.ttf');
+    src: url('../fonts//Ubuntu-Italic.ttf');
+    src: url('..fonts/Ubuntu-Light.ttf');
+    src: url('../fonts/Ubuntu-LightItalic.ttf');
+    src: url('../fonts/Ubuntu-Medium.ttf');
+    src: url('../fonts/Ubuntu-MediumItalic.ttf');
+    src: url('../fonts/Ubuntu-Regular.ttf');
+}
 :root{
-    --lletra: 'Times New Roman', Times, serif;
+    --aquamarine-blue-50: #effcfa;
+    --aquamarine-blue-100: #d5f8f7;
+    --aquamarine-blue-200: #b1f0ef;
+    --aquamarine-blue-300: #69e2e2;
+    --aquamarine-blue-400: #3dd0d3;
+    --aquamarine-blue-500: #22b3b8;
+    --aquamarine-blue-600: #1f919b;
+    --aquamarine-blue-700: #1f757f;
+    --aquamarine-blue-800: #225f68;
+    --aquamarine-blue-900: #205059;
+    --aquamarine-blue-950: #10353c;
+    --button: #22B3B8;
     --tamany: 1.4em;
     --borde: 1px solid #ccc;
     --black: #000;
@@ -10,12 +37,12 @@
     --very-dark-cyan: #205059;
     }
 body{
-    background-color: var(--light-grayish-cyan1);
+    background-color: var(--aquamarine-blue-50);
 }
 form{
+    font-family: 'Ubuntu';
     padding-top: 20px;
     text-align: center;
-    font-family: var(--lletra);
     font-size: var(--tamany);
 }
 input {
@@ -62,8 +89,9 @@ select option{
     font-size: 1.4em;
 }
 header {
-    background-color: var(--light-grayish-cyan2);
-    color: var(--very-dark-cyan);
+    font-family: 'Ubuntu';
+    background-color: var(--aquamarine-blue-100);
+    color: var(--aquamarine-blue-900);
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -94,7 +122,6 @@ header {
 
 .menu-icon {
     font-size: 44px;
-
     display: block;
 }
 
@@ -104,7 +131,7 @@ header {
     position: absolute;
     top: 60px;
     left: 0;
-    background-color: var(--white);
+    background-color:var(--aquamarine-blue-100);
     width: 100%;
     list-style: none;
     margin: 0;
@@ -119,16 +146,11 @@ header {
     position: absolute;
     top: 0;
     right: 3vw;
-    background-color: var(--strong-cyan);
-    color: var(--white);
+    background-color: var( --aquamarine-blue-500);
+    color: white;
     padding: 4vmin 5vmax;
     border: none;
     border-radius: 5px;
     margin-left: auto;
-    font-size: 30px;
-}
-
-.cart-button i.fa-shopping-cart {
-    margin-right: 5px;
     font-size: 30px;
 }

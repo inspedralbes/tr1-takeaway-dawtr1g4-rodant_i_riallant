@@ -50,11 +50,9 @@
                         <li @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
                         <li @click="mostrarFeinaAdministrador()">Administrador</li>
                         <div v-if="mostrarAdministrador" class="feina-adminitrador">
-                            <li><a :href="`${prefixComunicacio}/afegir`"> Afegir producte</a>
-                            </li>
-                            <li><a :href="`${prefixComunicacio}/llistat-prod`"> Modificar producte</a></li>
-                            <li><a :href="`${prefixComunicacio}/comandes`">Modificar comanda</a>
-                            </li>
+                            <li><a href="../Back/api-laravel/resources/views/newProduct.blade.php"> Afegir producte</a></li>
+                            <li><a href="../Back/api-laravel/resources/views/index.blade.php"> Afegir estoc</a></li>
+                            <li><a href="../Back/api-laravel/resources/views/comanda.blade.php">Modificar comanda</a></li>
                         </div>
                     </ul>
                 </nav>
@@ -86,11 +84,9 @@
                             <div class="botiga__nom">{{producte.nom}}</div>
                             <div class="botiga__preu">{{ producte.preu }}€</div>
                             <div class="botiga__butons">
-                                <input class="buttons__button" type="button" value="-"
-                                    @click="disminuirDemanats(index, $event)">
+                                <input class="buttons__button" type="button" value="-" @click="disminuirDemanats(index)">
                                 <input class="botiga__quantitat" v-model="productes[index].counter" disabled>
-                                <input class="buttons__button" type="button" value="+"
-                                    @click="augmentarDemanats(index ,$event)">
+                                <input class="buttons__button" type="button" value="+" @click="augmentarDemanats(index)">
                             </div>
                             <img class="botiga__imagen" @click="detallsProducte(producte)" :src="producte.img" alt="producte">
                         </div>
@@ -231,7 +227,7 @@
     <footer>
         <p>&copy; 2023 Rodant i Riallant. Tots els seus drets reservats.</p>
     </footer>
-    <script src="qrGenerator.js"></script>
+    <!-- <script src="qrGenerator.js"></script> -->
     <script type="module" src="index.js"></script>
 </body>
 

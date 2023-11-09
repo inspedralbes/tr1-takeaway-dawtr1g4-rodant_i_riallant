@@ -1,3 +1,20 @@
+@font-face {
+    font-family: 'Tilt Neon';
+    src: url('../fonts/TiltNeon-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Bold.ttf');
+    src: url('../fonts/Ubuntu-BoldItalic.ttf');
+    src: url('../fonts//Ubuntu-Italic.ttf');
+    src: url('..fonts/Ubuntu-Light.ttf');
+    src: url('../fonts/Ubuntu-LightItalic.ttf');
+    src: url('../fonts/Ubuntu-Medium.ttf');
+    src: url('../fonts/Ubuntu-MediumItalic.ttf');
+    src: url('../fonts/Ubuntu-Regular.ttf');
+}
+
 :root {
     --aquamarine-blue-50: #effcfa;
     --aquamarine-blue-100: #d5f8f7;
@@ -19,16 +36,22 @@ body {
     background-color: var(--aquamarine-blue-50);
 }
 
-h1 {
+.header__navbar h1 {
+    font-family: 'Tilt Neon';
+    text-align: center;
+    font-size: 2em;
+}
+h1{
+    font-family: 'Ubuntu';
     text-align: center;
 }
-
 a {
     text-decoration: none;
     color: var(--black);
 }
 
 .llistat {
+    font-family: 'Ubuntu';
     background-color: var(--aquamarine-blue-200);
     display: grid;
     margin-top: 5vh;
@@ -65,22 +88,7 @@ a {
     border-right: 1px solid var(--aquamarine-blue-950);
 }
 
-.titols * {
+.titols *{
     margin: 0;
     padding: 3vh;
-}
-
-.success {
-
-    width: 80%;
-    padding: 5px;
-    background-color: var(--very-light-lime);
-    border: 2px solid var(--very-dark-lime);
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5vh;
-    margin-top: 5vh;
-    text-align: center;
-    font-size: 2em;
 }
