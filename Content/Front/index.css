@@ -209,7 +209,6 @@ header h1 {
 }
 
 .informacio {
-    border: 1px solid #ccc; 
     border-radius: 5px; 
     background-color: var(--aquamarine-blue-100);
     border: 1px solid var(--gris-border); 
