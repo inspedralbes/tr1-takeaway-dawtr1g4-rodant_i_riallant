@@ -177,16 +177,15 @@ header h1 {
   text-decoration: none;
 }
 .cart-button {
-  background-color: var(--aquamarine-blue-500);
-  position: absolute;
-  top: 2vh;
-  right: 5vw;
-  background-color: var(--aquamarine-blue-500);
-  color: var(--white);
-  padding: 4vmin 5vmax;
-  border: none;
-  border-radius: 5px;
-  margin-left: auto;
+    background-color: var(--aquamarine-blue-500);
+    position: absolute;
+    top: 2vh;
+    right: 5vw;
+    color: var(--white);
+    padding: 4vmin 5vmax;
+    border: none;
+    border-radius: 5px;
+    margin-left: auto;
 }
 .cart-button i.fa-shopping-cart {
   margin-right: 5px;
