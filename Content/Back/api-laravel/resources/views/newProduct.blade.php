@@ -3,7 +3,7 @@
 @section('content')
 <link rel="stylesheet" href="{{URL::asset('css/newProdForm.css') }}">
 
-
+  <!-- Formulari per a afegir un nou producte -->
   <form action="{{ route('afegir') }}" method="POST" enctype="multipart/form-data" class="formulari">
 
       @csrf

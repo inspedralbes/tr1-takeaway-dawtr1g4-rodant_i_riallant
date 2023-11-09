@@ -3,7 +3,7 @@
 @section('content')
 
 <link rel="stylesheet" href="css/index.css">
-
+<!-- LListat comandes obertes -->
 <h1>LListat comandes obertes</h1>
 
 <div class="llistat">

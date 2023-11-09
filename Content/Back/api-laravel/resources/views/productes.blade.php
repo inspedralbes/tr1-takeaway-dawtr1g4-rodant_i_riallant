@@ -11,7 +11,7 @@
 @endif
 
 <link rel="stylesheet" href="css/index.css">
-
+<!-- Llista els productes de la web -->
 <div class="productes__llistat llistat">
     <div class="llistat__titols titols">
         <h2 class="titols__id">ID</h2>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<!-- Contingut del mail que s'envia al client -->
 <body>
     <p>Estimat/da client,</p>
     <p>Li escribim per a avisar-li que la seva comanda avança correctament</p>
