@@ -10,6 +10,9 @@
     --aquamarine-blue-800: #225f68;
     --aquamarine-blue-900: #205059;
     --aquamarine-blue-950: #10353c;
+    --black: #000;
+    --very-light-lime: #7cff6b;
+    --very-dark-lime: #036d1a ;
 }
 
 body {
@@ -22,7 +25,7 @@ h1 {
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--black);
 }
 
 .llistat {
@@ -54,8 +57,6 @@ a {
     border-left: 1px solid var(--aquamarine-blue-950);
     border-top: 1px solid var(--aquamarine-blue-950);
     padding: 5px;
-    /* padding-left: 5px;
-    padding-right: 5px; */
     text-align: center;
 }
 
@@ -73,8 +74,8 @@ a {
 
     width: 80%;
     padding: 5px;
-    background-color: rgb(124, 255, 107);
-    border: 2px rgb(3, 109, 26) solid;
+    background-color: var(--very-light-lime);
+    border: 2px solid var(--very-dark-lime);
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
