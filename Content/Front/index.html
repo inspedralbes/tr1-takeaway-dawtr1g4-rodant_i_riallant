@@ -37,7 +37,7 @@
                             <li @click="mostrarFiltres()">Filtres</li>
                             <div v-if="mostrarCategories" class="filtre-botiga">
                                 <div>
-                                    <li @click="filtrar(-1)">Treure</li>
+                                    <li @click="filtrar(-1)">Reset</li>
                                 </div>
                                 <h3>Per categoria</h3>
                                 <div v-for="(categoria, index) in categories" @key="index">
@@ -163,7 +163,7 @@
 
         <div v-if="getPantalla() == `checkout`">
             <div class="checkout-producte">
-                <button @click="canviarPantalla(`botiga`)">Seguir comprant</button>
+                <button @click="canviarPantalla(`botiga`)">Botiga</button>
             </div>
             <div v-for="(producteComprar, index) in compra">
                 <div class="productes__producte producte">
@@ -236,6 +236,7 @@
     <footer>
         <p>&copy; 2023 Rodant i Riallant. Tots els seus drets reservats.</p>
     </footer>
+    <script src="qrGenerator.js"></script>
     <script type="module" src="index.js"></script>
 </body>
 

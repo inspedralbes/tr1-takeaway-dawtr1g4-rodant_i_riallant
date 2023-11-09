@@ -96,7 +96,7 @@ createApp({
         detallsProducte(producte){            
             this.producteDetalls = producte;
 
-            document.querySelector("dialog").showModal()
+            setTimeout(() => document.querySelector("dialog").showModal(),1)
         },
         augmentarEstocPossible() {
             let productesComanda = JSON.parse(this.comanda.productes)
