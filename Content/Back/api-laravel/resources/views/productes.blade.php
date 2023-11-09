@@ -2,6 +2,8 @@
 
 @section('content')
 
+<link rel="stylesheet" href="css/index.css">
+
 <h1>LListat productes</h1>
 
 @if(session('success'))
@@ -10,7 +12,7 @@
 
 @endif
 
-<link rel="stylesheet" href="css/index.css">
+
 
 <div class="productes__llistat llistat">
     <div class="llistat__titols titols">

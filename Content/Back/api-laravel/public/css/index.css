@@ -92,3 +92,21 @@ a {
     margin: 0;
     padding: 3vh;
 }
+
+.success{
+    width: 85%;
+    background-color: rgb(118, 255, 105);
+    border: 2px solid hsl(120, 100%, 18%);
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.error{
+    width: 85%;
+    background-color: rgb(255, 105, 105);
+    border: 2px solid hsl(0, 100%, 18%);
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}

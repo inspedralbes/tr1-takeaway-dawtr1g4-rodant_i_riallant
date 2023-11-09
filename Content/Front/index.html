@@ -84,9 +84,9 @@
                             <div class="botiga__nom">{{producte.nom}}</div>
                             <div class="botiga__preu">{{ producte.preu }}€</div>
                             <div class="botiga__butons">
-                                <input class="buttons__button" type="button" value="-" @click="disminuirDemanats(index)">
+                                <input class="buttons__button" type="button" value="-" @click="disminuirDemanats(index, $event)">
                                 <input class="botiga__quantitat" v-model="productes[index].counter" disabled>
-                                <input class="buttons__button" type="button" value="+" @click="augmentarDemanats(index)">
+                                <input class="buttons__button" type="button" value="+" @click="augmentarDemanats(index, $event)">
                             </div>
                             <img class="botiga__imagen" @click="detallsProducte(producte)" :src="producte.img" alt="producte">
                         </div>
@@ -227,7 +227,7 @@
             </div>
 
             <div v-if="comanda.estat == 0">
-                <button @click="modificarComanda()">Modificar comanda</button>
+                <button @click="modificarComanda()" class="comanda__modificar">Modificar comanda</button>
             </div>
 
             <button @click="canviarPantalla(`botiga`)" class="btn_Botiga">Botiga</button>
