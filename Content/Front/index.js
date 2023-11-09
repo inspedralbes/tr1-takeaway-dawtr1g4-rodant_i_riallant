@@ -206,7 +206,7 @@ createApp({
         },
         elementosFiltrados() {
             if (this.filtroCategoria === -1) {
-                return this.elementos; // No hay filtro, muestra todos los elementos
+                return this.elementos; 
             } else {
                 return this.elementos.filter(item => item.categoria === this.filtroCategoria);
             }
