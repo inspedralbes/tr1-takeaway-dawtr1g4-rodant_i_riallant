@@ -419,7 +419,7 @@ header h1 {
 }
 
 .botiga__nom {
-    font-size: 1.25em;
+    font-size: 1em;
     font-variant: small-caps;
     color: var(--white);
     position: absolute;
