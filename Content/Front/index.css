@@ -393,7 +393,7 @@ header h1 {
     width: 100%;
     padding-top: 5px;
     padding-bottom: 10px;
-    background-color: #3dd0d371;
+    background-color: var( --aquamarine-blue-650);
     display: flex;
     text-align: center;
     justify-content: center;
@@ -406,11 +406,9 @@ header h1 {
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: #10353c;
     width: 100%;
     position: absolute;
     bottom: 30px; 
-    background-color: #3dd0d371;
     color: white;
     text-shadow: 1px 1px black;
 }
@@ -421,7 +419,7 @@ header h1 {
     height: 21%;
     position: absolute;
     bottom: 0;
-    background-color: #3dd0d371;
+    background-color: var( --aquamarine-blue-650);
 }
 .botiga__quantitat {
     width: 30px;
@@ -433,7 +431,6 @@ input[type=button] {
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    background-color: var(--aquamarine-blue-500);
     color: white;
     border-color: var(--aquamarine-blue-500);
     font-size: 1em;
@@ -470,7 +467,7 @@ input {
 .buscar-comanda input[type="submit"] {
     margin-top: 3vh;
     background-color: var(--aquamarine-blue-500);
-    color: #fff;
+    color: var(--white);
     padding: 35px 60px;
     border: none;
     font-size: 28px;
@@ -588,7 +585,7 @@ input[type="text"] {
 input[type="submit"] {
     font-family: 'Ubuntu';
     background-color: var(--aquamarine-blue-500);
-    color: #fff;
+    color: var(--white);
     padding: 35px 60px;
     border: none;
     font-size: 28px;
@@ -687,7 +684,7 @@ p.estat__part {
 .wrapper {
     margin: 50px;
     padding: 10px;
-    border: 1px solid #ccc; 
+    border: 1px solid var(--gris-border); 
     border-radius: 5px; 
     background-color: var(--aquamarine-blue-100);
 }
