@@ -411,6 +411,43 @@ header h1 {
     color: white;
     text-shadow: 1px 1px black;
 }
+
+.botiga__modal{
+    width: 90vw;
+}
+
+.modal{
+    display: grid;
+    grid-template-areas: 
+            "nom img"
+            "desc img"
+            "preu preu";
+}
+
+dialog:not([open]){
+    display:none;
+  }
+
+::backdrop{
+    background-color: #3dd0d371;
+}
+
+.modal__nom{
+    grid-area: nom;
+}
+
+.modal__descripcio{
+    grid-area: desc;
+}
+
+.modal__imatge{
+    grid-area: img;
+    margin-left: 10px;
+}
+
+.modal__preu{
+    grid-area: preu;
+}
 .botiga__butons {
     display: flex;
     justify-content: center;

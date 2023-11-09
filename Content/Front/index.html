@@ -37,7 +37,7 @@
                             <li @click="mostrarFiltres()">Filtres</li>
                             <div v-if="mostrarCategories" class="filtre-botiga">
                                 <div>
-                                    <li @click="filtrar(-1)">Reset</li>
+                                    <li @click="filtrar(-1)">Treure</li>
                                 </div>
                                 <h3>Per categoria</h3>
                                 <div v-for="(categoria, index) in categories" @key="index">
@@ -94,7 +94,16 @@
                 </div>
             </div>
 
+            <dialog class="botiga__modal modal" >
+                <button autofocus @click="tancarModal()" class="modal__tancar">Tancar</button>
+                <h3 class="modal__nom">{{producteDetalls.nom}}</h3>
+                <p class="modal__descripcio">{{producteDetalls.descripcio}}</p>
+
+                <p class="modal__preu">Preu: {{producteDetalls.preu}}€</p>
+                <img :src="producteDetalls.img" alt="imatge" class="modal__imatge">
+            </dialog>              
         </div>
+
         <div v-if="getPantalla() == 'BuscarComanda'">
             <div class="buscar-comanda">
                 <label for="numComanda">Numero de la comanda:</label>
@@ -102,7 +111,7 @@
                 <input type="submit" value="Enviar" @click="buscarComanda" />
             </div>
         </div>
-        <div v-if="getPantalla() == `botiga`" @click="aumentarTamano" :class="{ ticket__productes : !mostrarTicket , ticket__productes_desplegat : mostrarTicket}" >
+        <div v-if="getPantalla() == `botiga`" @click="augmentarTamany" :class="{ ticket__productes : !mostrarTicket , ticket__productes_desplegat : mostrarTicket}" >
             <div class="ticket-productes-total" >
                 <h2>Producte:</h2>
                 <p>{{getProducteTotalComprat()}}</p>
@@ -154,7 +163,7 @@
 
         <div v-if="getPantalla() == `checkout`">
             <div class="checkout-producte">
-                <button @click="canviarPantalla(`botiga`)">Botiga</button>
+                <button @click="canviarPantalla(`botiga`)">Seguir comprant</button>
             </div>
             <div v-for="(producteComprar, index) in compra">
                 <div class="productes__producte producte">
@@ -227,7 +236,6 @@
     <footer>
         <p>&copy; 2023 Rodant i Riallant. Tots els seus drets reservats.</p>
     </footer>
-    <!-- <script src="qrGenerator.js"></script> -->
     <script type="module" src="index.js"></script>
 </body>
 
