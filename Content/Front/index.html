@@ -20,16 +20,17 @@
 
 
 <body>
-
+<!-- Contingut de l'aplicacio amb les diferents pantalles que es mostren mitjançant css -->
     <div id="app">
         <header>
+            <!-- Header de l'aplicacio -->
             <h1 @click="canviarPantalla(`titol`)">RODANT I <br>RIALLANT</h1>
             <input type="checkbox" id="nav-toggler" v-model="desplegador">
             <div class="page-wrap">
                 <label for="nav-toggler" class="toggle">
                     <p class="toggle">☰</p>
                 </label>
-                <!-- This is the corresponding nav to the nav toggler above.-->
+                <!-- Menu de l'aplicacio-->
                 <nav class="hidden-nav">
                     <ul>
                         <li @click="canviarPantalla(`titol`)">Rodant i Riallant</li>
@@ -62,6 +63,7 @@
                     <i class="fas fa-shopping-cart"></i></button>
 
         </header>
+        <!-- Mostra la LandingPage de la web -->
         <div v-if="getPantalla() == `titol`" class="app__landing landing">
             <div class="landing-botiga">
                 <button @click="canviarPantalla(`botiga`)">Botiga</button>
@@ -77,7 +79,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Mostra la pantalla on es mostren tots els productes venuts en la web -->
         <div v-if="getPantalla() == `botiga`">
             <div class="botiga__menu">
                 <div v-for="(producte, index) in productes">
@@ -100,6 +102,7 @@
             </div>
 
         </div>
+        <!-- Mostra la pantalla on es cerquen les comandes per la seva id -->
         <div v-if="getPantalla() == 'BuscarComanda'">
             <div class="buscar-comanda">
                 <label for="numComanda">Numero de la comanda:</label>
@@ -107,6 +110,7 @@
                 <input type="submit" value="Enviar" @click="buscarComanda" />
             </div>
         </div>
+        <!-- Mostra el tiquet de la comanda que s'esta fent -->
         <div v-if="getPantalla() == `botiga`" :class="{ ticket__productes : !mostrarTicket , ticket__productes_desplegat : mostrarTicket}" >
             <div class="ticket-productes-total" @click="aumentarTamano">
                 <h2>Producte:</h2>
@@ -114,6 +118,7 @@
                 <h2>Total:</h2>
                 <p>{{getTotal()}}</p>
             </div>
+            <!-- Mostra tots els productes que s'han afegit al carro -->
             <div class="ticket-producte">
                 <div class="ticket-producte-producte">
                     <div v-for="(producteComprar, index) in compra">
@@ -139,11 +144,12 @@
                 </div>
             </div>
         </div>
-
+        <!-- Mostra la pantalla de compra -->
         <div v-if="getPantalla() == `checkout`">
             <div class="checkout-producte">
                 <button @click="canviarPantalla(`botiga`)">Botiga</button>
             </div>
+            <!-- Mostra tots els productes que s'han afegit al carro -->
             <div v-for="(producteComprar, index) in compra">
                 <div class="productes__producte producte">
                     <div class="producte__foto">
@@ -178,6 +184,7 @@
             </div>
 
         </div>
+        <!-- Mostra la pantalla d'informacio d'una comanda -->
         <div v-if="getPantalla() == `comanda`" class="app__comanda comanda">
             <h1 class="comanda__numero">Comanda nº{{comanda.id}}</h1>
             <!-- <h2 class="comanda__estat" :class="'comanda__estat--' + comanda.estat">Estat: {{comanda.estat}}</h2> -->
@@ -212,6 +219,7 @@
             <button @click="canviarPantalla(`botiga`)" class="btn_Botiga">Botiga</button>
         </div>
     </div>
+    <!-- Footer de l'aplicacio -->
     <footer>
         <p>&copy; 2023 Rodant i Riallant. Tots els seus drets reservats.</p>
     </footer>
