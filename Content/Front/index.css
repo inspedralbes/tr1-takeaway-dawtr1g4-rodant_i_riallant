@@ -672,15 +672,11 @@ p.estat__part {
     border-radius: 5px; 
     background-color: var(--aquamarine-blue-100);
 }
-.btnQR_out{
-    display: none;
-}
-.wrapper img{
-    margin-top: 10px;
-}
+
 .email input{
     margin-bottom: 7vh;
 }
+
 footer {
     bottom: 0;
     text-align: center;
