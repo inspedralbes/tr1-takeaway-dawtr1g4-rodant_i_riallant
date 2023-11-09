@@ -624,23 +624,23 @@ p.estat__part {
 }
 
 .estat__part--0 {
-    background-color: rgb(255, 0, 0);
+    background-color:var(--vermell-estat);
 }
 
 .estat__part--1 {
-    background-color: rgb(255, 153, 0);
+    background-color: var(--taronja-estat);
 }
 
 .estat__part--2 {
-    background-color: rgb(238, 255, 0);
+    background-color: var(--groc-estat);
 }
 
 .estat__part--3 {
-    background-color: rgb(0, 255, 64);
+    background-color: var(--verd-estat);
 }
 
 .estat__part--4 {
-    background-color: rgb(0, 255, 242);
+    background-color: var(--blau-estat);
 }
 
 .estat__part--marcador {
