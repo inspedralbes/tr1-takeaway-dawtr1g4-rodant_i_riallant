@@ -2,6 +2,7 @@ import { agafarPelicules } from "./ComunicationManager.js";
 import { agafarCategories } from "./ComunicationManager.js";
 import { enviarComanda } from "./ComunicationManager.js";
 import { agafarComanda } from "./ComunicationManager.js";
+import { url_prefix } from "./ComunicationManager.js";
 
 
 
@@ -33,7 +34,8 @@ createApp({
             imagenQr:"",
             mostrarTicket: false,
             btnQR: true,
-            canviarMarcador: false
+            canviarMarcador: false,
+            prefixComunicacio: url_prefix(),
         }
     },
     methods: {
@@ -41,6 +43,7 @@ createApp({
             return this.pantallaActual;
         },
         canviarPantalla(nova) {
+            console.log(this.prefixComunicacio);
             this.pantallaActual = nova;
             this.desplegador=false;
             this.canviarMarcador = false;
