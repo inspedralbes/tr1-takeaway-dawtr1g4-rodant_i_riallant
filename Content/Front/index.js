@@ -35,6 +35,7 @@ createApp({
             btnQR: true,
             canviarMarcador: false,
             prefixComunicacio: url_prefix(),
+            producteDetalls: {},
         }
     },
     methods: {
@@ -79,7 +80,17 @@ createApp({
 
                 });
         },
+        obrirModal(){
+            document.querySelector("dialog").showModal();
+        },
+        tancarModal(){
+            document.querySelector("dialog").close();
+        },
         detallsProducte(producte){
+            this.producteDetalls = producte;
+
+            document.querySelector("dialog").showModal();
+
 
         },
         augmentarEstocPossible() {

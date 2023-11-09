@@ -98,7 +98,19 @@
                 </div>
             </div>
 
+            <dialog class="botiga__modal">
+                <button autofocus @click="tancarModal()">Close</button>
+                <h3>{{producteDetalls.nom}}</h3>
+                <p>{{producteDetalls.descripcio}}</p>
+                <p>{{producteDetalls.estoc}}</p>
+                <p>{{producteDetalls.preu}}</p>
+                <img :src="producteDetalls.img" alt="imatge">
+                <p>This modal dialog has a groovy backdrop!</p>
+            </dialog>
+            <button @click="obrirModal()">Show the dialog</button>
+              
         </div>
+
         <div v-if="getPantalla() == 'BuscarComanda'">
             <div class="buscar-comanda">
                 <label for="numComanda">Numero de la comanda:</label>

@@ -448,6 +448,10 @@ header h1 {
     text-shadow: 1px 1px var(--black);
 }
 
+.botiga__modal{
+    width: 90vw;
+}
+
 .botiga__butons {
     display: flex;
     justify-content: center;
