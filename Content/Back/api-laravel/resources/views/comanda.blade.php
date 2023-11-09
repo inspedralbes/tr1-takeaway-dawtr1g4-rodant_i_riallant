@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+<link rel="stylesheet" href="comanda.css">
 
 <div class="comanda"> 
     <div class="comanda__id">Comanda #{{ $comanda->id }}</div>

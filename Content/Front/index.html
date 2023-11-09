@@ -37,7 +37,7 @@
                             <li @click="mostrarFiltres()">Filtres</li>
                             <div v-if="mostrarCategories" class="filtre-botiga">
                                 <div>
-                                    <li @click="filtrar(-1)">Reset</li>
+                                    <li @click="filtrar(-1)">Treure</li>
                                 </div>
                                 <h3>Per categoria</h3>
                                 <div v-for="(categoria, index) in categories" @key="index">
@@ -111,51 +111,48 @@
                 <input type="submit" value="Enviar" @click="buscarComanda" />
             </div>
         </div>
-        <div v-if="getPantalla() == `botiga`" @click="augmentarTamany" :class="{ ticket__productes : !mostrarTicket , ticket__productes_desplegat : mostrarTicket}" >
-            <div class="ticket-productes-total" >
+        <div v-if="getPantalla() == `botiga`" @click="augmentarTamany" :class="{ ticket__productes : !mostrarTicket , ticket__productes_desplegat : mostrarTicket}">
+            <div class="ticket-productes-total">
                 <h2>Producte:</h2>
                 <p>{{getProducteTotalComprat()}}</p>
                 <h2>Total:</h2>
                 <p>{{getTotal()}}</p>
             </div>
-            <div class="ticket-producte">
-                <div v-if="mostrarTicket" class="ticket-producte-producte">
-                    <div class="productes__producte-producte">
-                        <div>
-                            <h2></h2>
-                        </div>
-                        <div class="prodNom">
-                            <h2>Nom</h2>
-                        </div>
-                        <div class="prodpreus__preu-unic">
-                            <p>Preu</p>
-                        </div>
-                        <div class="prodpreus__quantitat">
-                            <p>Quantitat</p>
-                        </div>
-                        <div class="prodpreus__preu-quantitat">
-                            <p>Suma</p>
-                        </div>
+            <div class="productes__llista llista">
+                <div v-if="mostrarTicket" class="llista__producte llista__titols">
+                    <div>
+                        <h2></h2>
                     </div>
-                    <div v-for="(producteComprar, index) in compra">
-                        <div class="productes__producte-producte">
-                            <div class="prodImg">
-                                <img :src="producteComprar.img" alt="producte">
-                            </div>
-                            <div class="prodNom">
-                                <h2>{{producteComprar.nom}}</h2>
-                            </div>
-                            <div class="prodpreus__preu-unic">
-                                <p>{{producteComprar.preu}}€</p>
-                            </div>
-                            <div class="prodpreus__quantitat">
-                                <p>{{producteComprar.counter}}</p>
-                            </div>
-                            <div class="prodpreus__preu-quantitat">
-                                <p>{{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
-                                </p>
-                            </div>
-                        </div>
+                    <div class="titols__prodNom">
+                        <h2>Nom</h2>
+                    </div>
+                    <div class="titols__preu-unic">
+                        <p>Preu</p>
+                    </div>
+                    <div class="titols__quantitat">
+                        <p>Quantitat</p>
+                    </div>
+                    <div class="titols__preu-quantitat">
+                        <p>Suma</p>
+                    </div>
+                </div>
+                <div v-for="(producteComprar, index) in compra" class="llista__producte">
+
+                    <div class="producte__prodImg">
+                        <img :src="producteComprar.img" alt="producte">
+                    </div>
+                    <div class="producte__prodNom">
+                        <h2>{{producteComprar.nom}}</h2>
+                    </div>
+                    <div class="producte__preu-unic">
+                        <p>{{producteComprar.preu}}€</p>
+                    </div>
+                    <div class="producte__quantitat">
+                        <p>{{producteComprar.counter}}</p>
+                    </div>
+                    <div class="producte__preu-suma">
+                        <p>{{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
+                        </p>
                     </div>
                 </div>
             </div>
@@ -163,7 +160,7 @@
 
         <div v-if="getPantalla() == `checkout`">
             <div class="checkout-producte">
-                <button @click="canviarPantalla(`botiga`)">Botiga</button>
+                <button @click="canviarPantalla(`botiga`)">Seguir comprant</button>
             </div>
             <div v-for="(producteComprar, index) in compra">
                 <div class="productes__producte producte">
@@ -236,7 +233,6 @@
     <footer>
         <p>&copy; 2023 Rodant i Riallant. Tots els seus drets reservats.</p>
     </footer>
-    <script src="qrGenerator.js"></script>
     <script type="module" src="index.js"></script>
 </body>
 
