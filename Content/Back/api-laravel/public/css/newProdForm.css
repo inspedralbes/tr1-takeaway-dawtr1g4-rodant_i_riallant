@@ -1,12 +1,16 @@
 :root{
-    --fons: #effcfa;
-    --button: #22B3B8;
     --lletra: 'Times New Roman', Times, serif;
     --tamany: 1.4em;
     --borde: 1px solid #ccc;
+    --black: #000;
+    --white: #fff;
+    --light-grayish-cyan1: #effcfa;
+    --light-grayish-cyan2: #d5f8f7;
+    --strong-cyan: #22B3B8;
+    --very-dark-cyan: #205059;
     }
 body{
-    background-color: var(--fons);
+    background-color: var(--light-grayish-cyan1);
 }
 form{
     padding-top: 20px;
@@ -38,7 +42,7 @@ select option{
     border-radius: 5px;
     width: 200px; 
     padding: 5px; 
-    color: #000;
+    color: var(--black);
 }
 .descripcio.formulari_descripcio label {
     flex: 1;
@@ -51,15 +55,15 @@ select option{
 .formulari_btn{
     margin-top: 25px;
     background-color: var(--button);
-    color: #fff;
+    color: var(--white);
     padding: 2vmin 2vmax;
     border: none;
     border-radius: 5px;
     font-size: 1.4em;
 }
 header {
-    background-color: #d5f8f7;
-    color: #205059;
+    background-color: var(--light-grayish-cyan2);
+    color: var(--very-dark-cyan);
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -100,7 +104,7 @@ header {
     position: absolute;
     top: 60px;
     left: 0;
-    background-color: #d5f8f7;
+    background-color: var(--white);
     width: 100%;
     list-style: none;
     margin: 0;
@@ -115,8 +119,8 @@ header {
     position: absolute;
     top: 0;
     right: 3vw;
-    background-color: #22b3b8;
-    color: #fff;
+    background-color: var(--strong-cyan);
+    color: var(--white);
     padding: 4vmin 5vmax;
     border: none;
     border-radius: 5px;
