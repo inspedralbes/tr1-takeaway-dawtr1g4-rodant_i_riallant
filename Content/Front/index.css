@@ -661,23 +661,23 @@ p.estat__part {
 }
 
 .estat__part--0 {
-    background-color:var(--vermell-estat);
+    background-color: rgb(255, 0, 0);
 }
 
 .estat__part--1 {
-    background-color: var(--taronja-estat);
+    background-color: rgb(255, 153, 0);
 }
 
 .estat__part--2 {
-    background-color: var(--groc-estat);
+    background-color: rgb(238, 255, 0);
 }
 
 .estat__part--3 {
-    background-color: var(--verd-estat);
+    background-color: rgb(0, 255, 64);
 }
 
 .estat__part--4 {
-    background-color: var(--blau-estat);
+    background-color: rgb(0, 255, 242);
 }
 
 .estat__part--marcador {
