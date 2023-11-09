@@ -56,6 +56,7 @@ createApp({
             } else if (nova == 'checkout' && this.comandaModificant) {
                 this.email = this.comanda.email;
             }
+            this.btnQR = true;
         },
         toggleMenu() {
             this.menuOpen = !this.menuOpen;
@@ -102,45 +103,41 @@ createApp({
             let recuperarCompra = compraRecuperar;
 
             recuperarCompra.forEach(element => {
-                this.productes[element.id-1].counter = element.counter
-                this.afegirCompra(this.productes[element.id-1].id);
-                // this.productes.forEach(producte => {
-                //     if (element.id == producte.id) {
-                //         producte.counter = element.counter;
-                //         this.afegirCompra(producte.id);
-                //     }
-                // });
+                this.productes.forEach(producte => {
+                    if (element.id == producte.id) {
+                        producte.counter = element.counter;
+                        this.afegirCompra(producte.id - 1);
+                    }
+                });
             });
         },
-        augmentarDemanats(index) {
+        augmentarDemanats(index, event) {
             if (this.productes[index].counter < this.productes[index].estoc) {
                 this.productes[index].counter++;
                 this.afegirCompra(index);
-                this.aplicarEfecte = true;
-                setTimeout(() => { this.aplicarEfecte = false; }, 500);
+                event.target.parentElement.parentElement.classList.add('botiga__item-transition--gran');
+                setTimeout(() => { event.target.parentElement.parentElement.classList.remove('botiga__item-transition--gran'); }, 500);
 
             }
         },
-        disminuirDemanats(index) {
+        disminuirDemanats(index, event) {
             if (this.productes[index].counter > 0) {
                 this.productes[index].counter--;
                 this.disminuirCompra(index);
-                this.aplicarEfecte = true;
-                setTimeout(() => { this.aplicarEfecte = false; }, 500);
+                event.target.parentElement.parentElement.classList.add('botiga__item-transition--petit');
+                setTimeout(() => { event.target.parentElement.parentElement.classList.remove('botiga__item-transition--petit'); }, 500);
             }
         },
-        afegirCompra(idProd) {
-            // let codisproductesCompra = [];
-            // this.compra.forEach(producteAComprar => {
-            //     codisproductesCompra.push(producteAComprar.id)
-            // });
+        afegirCompra(index) {
+            let codisproductesCompra = [];
+            this.compra.forEach(producteAComprar => {
+                codisproductesCompra.push(producteAComprar.id)
+            });
 
-            let foundIndex = this.compra.find(producte => producte.id == idProd)
+            let foundIndex = codisproductesCompra.indexOf(this.productes[index].id);
 
-            console.log(foundIndex);
-
-            if (foundIndex == undefined) {
-                this.compra.push(this.productes.find(producte => producte.id = idProd));
+            if (foundIndex == -1) {
+                this.compra.push(this.productes[index]);
             }
             localStorage.setItem('compra', JSON.stringify(this.compra));
         },
@@ -151,9 +148,10 @@ createApp({
             });
             let foundIndex = codisproductesCompra.indexOf(this.productes[index].id);
 
-                this.compra.splice(this.compra.indexOf(foundIndex), 0);
 
-                this.compra.splice(foundIndex, 0);
+            if (this.compra[foundIndex].counter == 0) {
+
+                this.compra.splice(foundIndex, 1);
 
             }
             localStorage.setItem('compra', JSON.stringify(this.compra));
@@ -275,7 +273,7 @@ createApp({
         },
         generarQr(){
             let qrValue = "http://rirtr1g4.daw.inspedralbes.cat/Front/"
-            this.imagenQr = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
+            this.imagenQr = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrValue}`;
             this.btnQR = false;
         },
         modificarComanda() {
@@ -284,6 +282,7 @@ createApp({
             this.comandaModificant = true;
 
             this.canviarPantalla('botiga');
+            this.btnQR = true;
         },
         mostrarFeinaAdministrador() {
             this.mostrarAdministrador = !this.mostrarAdministrador;
