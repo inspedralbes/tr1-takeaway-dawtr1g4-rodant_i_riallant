@@ -88,69 +88,9 @@ select option{
     border-radius: 5px;
     font-size: 1.4em;
 }
-header {
-    font-family: 'Ubuntu';
-    background-color: var(--aquamarine-blue-100);
-    color: var(--aquamarine-blue-900);
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-    height: 15vh;
-    margin-bottom: 25px;
-}
 
-.header__navbar {
-    display: flex;
-    flex-direction: column;
-    margin-left: 22px;
-    position: sticky;
-    top: 0;
-}
-
-.header__navbar h1{
+.header__navbar h1 {
     font-family: 'Tilt Neon';
-}
-
-.header__navbar p {
-    font-size: 74px;
-    margin: 0;
-    margin-bottom: 15px;
-    display: block;
-    
-}
-
-.menu-icon {
-    font-size: 44px;
-    display: block;
-}
-
-.nav-list {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color:var(--aquamarine-blue-100);
-    width: 100%;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-list.active {
-    display: flex;
-}
-
-.cart-button {
-    position: absolute;
-    top: 0;
-    right: 3vw;
-    background-color: var( --aquamarine-blue-500);
-    color: white;
-    padding: 4vmin 5vmax;
-    border: none;
-    border-radius: 5px;
-    margin-left: auto;
-    font-size: 30px;
+    text-align: center;
+    font-size: 2em;
 }
