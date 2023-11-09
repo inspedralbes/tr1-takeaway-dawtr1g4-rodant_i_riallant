@@ -35,14 +35,14 @@ createApp({
             btnQR: true,
             canviarMarcador: false,
             prefixComunicacio: url_prefix(),
-            producteDetalls        }
+            producteDetalls: {},
+        }
     },
     methods: {
         getPantalla() {
             return this.pantallaActual;
         },
         canviarPantalla(nova) {
-            console.log(this.prefixComunicacio);
             this.pantallaActual = nova;
             this.desplegador=false;
             this.canviarMarcador = false;
@@ -85,7 +85,7 @@ createApp({
         detallsProducte(producte){            
             this.producteDetalls = producte;
 
-            setTimeout(() => document.querySelector("dialog").showModal(),1)
+            document.querySelector("dialog").showModal()
         },
         augmentarEstocPossible() {
             let productesComanda = JSON.parse(this.comanda.productes)
