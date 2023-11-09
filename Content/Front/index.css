@@ -283,7 +283,7 @@ header h1 {
 }
 
 .producte__prodNom {
-  max-height: 69px;
+  max-height: 67px;
   text-overflow: ellipsis;
   overflow: hidden;
   padding: 2px;
