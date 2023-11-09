@@ -15,21 +15,20 @@ use App\Http\Controllers\ComandaController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/comandes', [ComandaController::class,'index'])->name('comandes');
 
 Route::get('comanda/{id}', [ComandaController::class,'buscar'])->name('comanda-modif');
 
 Route::patch('comanda/{id}', [ComandaController::class, 'update'])->name('comanda-editar-estat');
 
-//Route::get('/afegir', [FormController::class, 'show'])
  Route::get('/afegir', function(){
      return view('newProduct');
  })->name('afegir');
+
 Route::post('/afegir',  [ProducteController::class, 'store'])->name('afegir');
-Route::get('modificar', function(){
-    return view('productes')->name('modificar');
-});
+
+Route::get('/llistat-prod', [ProducteController::class,'indexView'])->name('llistat-prod');
+
+Route::get('/modificar/{id}', [ProducteController::class, 'showView'])->name('producte-form');
+
+Route::patch('/modificar/{id}', [ProducteController::class,'editar'])->name('producte-editar');

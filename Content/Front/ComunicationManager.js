@@ -25,11 +25,11 @@ PRODUCCIÓN: http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/pr
 
 */
 
-const _IS_DEV = true;
-const _HOST_DEV = "http://localhost:8000";
-const _HOST_PRE = "/Back/api-laravel/public";
+export const _IS_DEV = true;
+export const _HOST_DEV = "http://localhost:8000";
+export const _HOST_PRE = "/Back/api-laravel/public";
 
-function url_prefix(){
+export function url_prefix(){
     var prefix = "";
     if(_IS_DEV){
         prefix += _HOST_DEV;
@@ -91,17 +91,14 @@ export async function enviarComanda(objecte, modificar, id){
     const response = await fetch(url, options);
 
     const data = await response.json(); // Hacer algo con la respuesta del servidor
-    console.log(data);
     return data;
 }
 
 export async function agafarComanda(idComanda) {
 
-    console.log(idComanda)
     const url = `${url_prefix()}/api/comanda/${idComanda}`;
 
     const response = await fetch(url);
     const comanda = await response.json();
-    console.log(comanda);
     return comanda;
 }

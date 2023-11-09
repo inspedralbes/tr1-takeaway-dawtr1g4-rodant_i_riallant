@@ -25,6 +25,8 @@
     --aquamarine-blue-800: #225f68;
     --aquamarine-blue-900: #205059;
     --aquamarine-blue-950: #10353c;
+    --black: #000;
+    --white: #fff;
 }
 
 body{
@@ -124,7 +126,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .estat{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--black);
 }
 
 .estat__dreta, .modificacio__dreta{
@@ -152,7 +154,7 @@ h1, h2, h3, h4, h5, h6{
     border-radius: 10px;
     width: 70%;
     background-color: var(--aquamarine-blue-800);
-    color: white;
+    color: var(--white);
 
     transform: scale(1.2);
 }
@@ -181,7 +183,7 @@ h1, h2, h3, h4, h5, h6{
 
 .formulari__input__active{
     background-color: var(--aquamarine-blue-400);
-    color: black;
+    color: var(--black);
 }
 header {
     font-family: 'Ubuntu';

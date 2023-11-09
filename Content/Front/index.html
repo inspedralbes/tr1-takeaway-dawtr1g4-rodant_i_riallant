@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="stylesheet" href="index.css">
-        
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <link rel="shortcut icon" href="./img/beisbol.jpg">
     <title> Rodant i Riallant</title>
 </head>
@@ -23,7 +23,7 @@
 
     <div id="app">
         <header>
-            <h1 @click="canviarPantalla(`titol`)">RODANT I <br>RIALLANT</h1>
+            <h1 @click="canviarPantalla(`titol`)">RODANT I RIALLANT</h1>
             <input type="checkbox" id="nav-toggler" v-model="desplegador">
             <div class="page-wrap">
                 <label for="nav-toggler" class="toggle">
@@ -50,9 +50,9 @@
                         <li @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
                         <li @click="mostrarFeinaAdministrador()">Administrador</li>
                         <div v-if="mostrarAdministrador" class="feina-adminitrador">
-                            <li><a href="../Back/api-laravel/public/"> Afegir producte</a></li>
-                            <li><a href="../Back/api-laravel/public/"> Afegir estoc</a></li>
-                            <li><a href="../Back/api-laravel/public/">Modificar comanda</a></li>
+                            <li><a href="../Back/api-laravel/resources/views/newProduct.blade.php"> Afegir producte</a></li>
+                            <li><a href="../Back/api-laravel/resources/views/index.blade.php"> Afegir estoc</a></li>
+                            <li><a href="../Back/api-laravel/resources/views/comanda.blade.php">Modificar comanda</a></li>
                         </div>
                     </ul>
                 </nav>
@@ -80,18 +80,17 @@
             <div class="botiga__menu">
                 <div v-for="(producte, index) in productes">
                     <div v-if="producte.nom.toLowerCase().includes(busqueda.toLowerCase().trim())">
-                        <div :id="'id' + index" :class="['botiga__item', { 'botiga__item-transition': aplicarEfecte }]">
+                        <div :id="'id' + index" :class="['botiga__item']">
                             <div class="botiga__nom">{{producte.nom}}</div>
                             <div class="botiga__preu">{{ producte.preu }}€</div>
                             <div class="botiga__butons">
-                                <input class="buttons__button" type="button" value="-" @click="disminuirDemanats(producte)">
-                                <input class="botiga__quantitat" v-model="producte.counter" disabled>
-                                <input class="buttons__button" type="button" value="+" @click="augmentarDemanats(producte)">
+                                <input class="buttons__button" type="button" value="-" @click="disminuirDemanats(index)">
+                                <input class="botiga__quantitat" v-model="productes[index].counter" disabled>
+                                <input class="buttons__button" type="button" value="+" @click="augmentarDemanats(index)">
                             </div>
-                            <img class="botiga__imagen" :src="producte.img" alt="producte">
+                            <img class="botiga__imagen" @click="detallsProducte(producte)" :src="producte.img" alt="producte">
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -103,12 +102,53 @@
                 <input type="submit" value="Enviar" @click="buscarComanda" />
             </div>
         </div>
-        <div v-if="getPantalla() == `botiga`" class="ticket__productes">
-            <div class="ticket-producte">
+        <div v-if="getPantalla() == `botiga`" @click="aumentarTamano" :class="{ ticket__productes : !mostrarTicket , ticket__productes_desplegat : mostrarTicket}" >
+            <div class="ticket-productes-total" >
                 <h2>Producte:</h2>
                 <p>{{getProducteTotalComprat()}}</p>
                 <h2>Total:</h2>
                 <p>{{getTotal()}}</p>
+            </div>
+            <div class="ticket-producte">
+                <div v-if="mostrarTicket" class="ticket-producte-producte">
+                    <div class="productes__producte-producte">
+                        <div>
+                            <h2></h2>
+                        </div>
+                        <div class="prodNom">
+                            <h2>Nom</h2>
+                        </div>
+                        <div class="prodpreus__preu-unic">
+                            <p>Preu</p>
+                        </div>
+                        <div class="prodpreus__quantitat">
+                            <p>Quantitat</p>
+                        </div>
+                        <div class="prodpreus__preu-quantitat">
+                            <p>Suma</p>
+                        </div>
+                    </div>
+                    <div v-for="(producteComprar, index) in compra">
+                        <div class="productes__producte-producte">
+                            <div class="prodImg">
+                                <img :src="producteComprar.img" alt="producte">
+                            </div>
+                            <div class="prodNom">
+                                <h2>{{producteComprar.nom}}</h2>
+                            </div>
+                            <div class="prodpreus__preu-unic">
+                                <p>{{producteComprar.preu}}€</p>
+                            </div>
+                            <div class="prodpreus__quantitat">
+                                <p>{{producteComprar.counter}}</p>
+                            </div>
+                            <div class="prodpreus__preu-quantitat">
+                                <p>{{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -139,7 +179,8 @@
 
                 </div>
             </div>
-            <h2 class="total__preu-producte" :class="preuTotal==0?`total__preu-producte--sense-producte`:``">{{preuTotal==0?`No s'ha comprat cap producte`:`${preuTotal}€`}}</h2>
+            <h2 class="total__preu-producte" :class="preuTotal==0?`total__preu-producte--sense-producte`:``">
+                {{preuTotal==0?`No s'ha comprat cap producte`:`${preuTotal}€`}}</h2>
             <div v-if="preuTotal!=0" class="formulari__usuari email">
                 <label for="email">Email </label>
                 <input v-model="email" id="email">
@@ -157,21 +198,21 @@
             <div class="comanda__estat estat">
 
                 <p class="estat__part estat__part--0">Pendent</p>
-                <p class="estat__part estat__part--1">Preparant-se</p>
-                <p class="estat__part estat__part--2">Enviant-se</p>
-                <p class="estat__part estat__part--3">Repartint-se</p>
+                <p class="estat__part estat__part--1">Per preparar</p>
+                <p class="estat__part estat__part--2">Per enviar</p>
+                <p class="estat__part estat__part--3">Per repartir</p>
                 <p class="estat__part estat__part--4">Per recollir</p>
-                <img class="estat__part--marcador" :class="`part__marcador--${comanda.estat}`"
+                <img class="estat__part--marcador" :class="[canviarMarcador?`part__marcador--`+comanda.estat:'']"
                     src="./img/progress__arrow.png" alt="fletxa" srcset="">
 
-                <!-- :class="`part__marcador--` + comanda.estat " -->                
+                <!-- :class="`part__marcador--` + comanda.estat " -->
             </div>
             <!-- Insertando codigo QR -->
             <div class="wrapper">
-                <div class="form">
-                    <button @click="generarQr">Veure QR</button>
+                <div class="form" v-if="btnQR">
+                    <button  @click="generarQr" >Veure QR</button>
                 </div>
-                <div id="qr-code">
+                <div id="qr-code" v-if="!btnQR">
                     <img :src="imagenQr">
                 </div>
             </div>
@@ -180,7 +221,7 @@
                 <button @click="modificarComanda()">Modificar comanda</button>
             </div>
 
-            <button @click="canviarPantalla(`botiga`)">Botiga</button>
+            <button @click="canviarPantalla(`botiga`)" class="btn_Botiga">Botiga</button>
         </div>
     </div>
     <footer>

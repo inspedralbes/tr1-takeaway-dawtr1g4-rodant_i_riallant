@@ -2,7 +2,7 @@
 
 @section('content')
 
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="css/index.css">
 
 <h1>LListat comandes obertes</h1>
 
@@ -15,7 +15,7 @@
     <div class="llistat__comandes comandes">
         @foreach ($comandes as $comanda)
             <div class="comandes__comanda comanda">
-                <a href="{{ route('comanda-modif', ['id' => $comanda->id]) }}" class="" style="text-decoration: none; color: black;">{{ $comanda->id }}</a>
+                <a href="{{ route('comanda-modif', ['id' => $comanda->id]) }}" class="" >{{ $comanda->id }}</a>
                 <div class="">{{ $comanda->email }}</div>
                 <div class="">{{ $comanda->estat }}</div>
             </div>

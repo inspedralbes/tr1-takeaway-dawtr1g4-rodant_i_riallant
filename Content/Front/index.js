@@ -2,6 +2,7 @@ import { agafarPelicules } from "./ComunicationManager.js";
 import { agafarCategories } from "./ComunicationManager.js";
 import { enviarComanda } from "./ComunicationManager.js";
 import { agafarComanda } from "./ComunicationManager.js";
+import { url_prefix } from "./ComunicationManager.js";
 
 
 
@@ -23,14 +24,17 @@ createApp({
             busqueda: "",
             mostrarCategories: false,
             productesCopia: [],
-            aplicarEfecte: false,
-            menuOpen: false,
             comandaModificant: false,
-            aplicarEfecte:false,
+            aplicarEfecteGran:false,
+            aplicarEfectePetit:false,
             menuOpen: false,
             mostrarAdministrador: false,
             desplegador:false,
-            imagenQr:""
+            imagenQr:"",
+            mostrarTicket: false,
+            btnQR: true,
+            canviarMarcador: false,
+            prefixComunicacio: url_prefix(),
         }
     },
     methods: {
@@ -38,8 +42,11 @@ createApp({
             return this.pantallaActual;
         },
         canviarPantalla(nova) {
+            console.log(this.prefixComunicacio);
             this.pantallaActual = nova;
             this.desplegador=false;
+            this.canviarMarcador = false;
+            this.busqueda = "";
             if (nova == "botiga") {
                 this.getProductes();
                 if (this.comandaModificant) {
@@ -72,6 +79,9 @@ createApp({
 
                 });
         },
+        detallsProducte(producte){
+
+        },
         augmentarEstocPossible() {
             let productesComanda = JSON.parse(this.comanda.productes)
             productesComanda.forEach(producteComanda => {
@@ -102,22 +112,19 @@ createApp({
                 // });
             });
         },
-        augmentarDemanats(producte) {
-            console.log(producte);
-            if (producte.counter < producte.estoc) {       
-                producte.counter++;
-                this.afegirCompra(producte.id);
+        augmentarDemanats(index) {
+            if (this.productes[index].counter < this.productes[index].estoc) {
+                this.productes[index].counter++;
+                this.afegirCompra(index);
                 this.aplicarEfecte = true;
                 setTimeout(() => { this.aplicarEfecte = false; }, 500);
 
             }
         },
-        disminuirDemanats(producte) {
-            console.log(producte);
-
-            if (producte.counter > 0) {
-                producte.counter--;
-                this.disminuirCompra(producte.id);
+        disminuirDemanats(index) {
+            if (this.productes[index].counter > 0) {
+                this.productes[index].counter--;
+                this.disminuirCompra(index);
                 this.aplicarEfecte = true;
                 setTimeout(() => { this.aplicarEfecte = false; }, 500);
             }
@@ -137,21 +144,16 @@ createApp({
             }
             localStorage.setItem('compra', JSON.stringify(this.compra));
         },
-        disminuirCompra(idProd) {
-            // let codisproductesCompra = [];
-            // this.compra.forEach(producteAComprar => {
-            //     codisproductesCompra.push(producteAComprar.id)
-            // });
-            let foundIndex = this.compra.find(producte => producte.id == idProd)
-
-            console.log(foundIndex);
-            //codisproductesCompra.indexOf(this.productes[index].id);
-
-            if (foundIndex.counter == 0) {
+        disminuirCompra(index) {
+            let codisproductesCompra = [];
+            this.compra.forEach(producteAComprar => {
+                codisproductesCompra.push(producteAComprar.id)
+            });
+            let foundIndex = codisproductesCompra.indexOf(this.productes[index].id);
 
                 this.compra.splice(this.compra.indexOf(foundIndex), 0);
 
-                console.log('hola');
+                this.compra.splice(foundIndex, 0);
 
             }
             localStorage.setItem('compra', JSON.stringify(this.compra));
@@ -243,6 +245,8 @@ createApp({
 
                 this.pantallaActual = `comanda`;
 
+                this.canviarMarcador = true;
+
                 this.compra = [];
 
                 this.comandaModificant = false;
@@ -261,6 +265,7 @@ createApp({
                 if (data) {                  
                   this.comanda = data;
                   this.pantallaActual = "comanda"
+                  setTimeout(() => {this.canviarMarcador = true;}, 100);
                 }
               })
             //   .catch((error) => {
@@ -270,14 +275,8 @@ createApp({
         },
         generarQr(){
             let qrValue = "http://rirtr1g4.daw.inspedralbes.cat/Front/"
-            if(!qrValue || preValue === qrValue) return;
-            preValue = qrValue;
             this.imagenQr = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
-            imagenQr.addEventListener("load", () => {
-                imagenQr.innerHtml = "Carregant...";
-                wrapper.classList.add("active");
-                generateBtn.innerText = "Generate QR Code";
-            });
+            this.btnQR = false;
         },
         modificarComanda() {
             this.recuperarCompra(JSON.parse(this.comanda.productes));
@@ -288,7 +287,10 @@ createApp({
         },
         mostrarFeinaAdministrador() {
             this.mostrarAdministrador = !this.mostrarAdministrador;
-          },
+         },
+        aumentarTamano() {
+                this.mostrarTicket = !this.mostrarTicket
+        }
 
     },
     computed: {

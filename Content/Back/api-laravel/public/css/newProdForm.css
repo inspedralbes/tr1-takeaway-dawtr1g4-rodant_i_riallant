@@ -28,6 +28,12 @@
     --button: #22B3B8;
     --tamany: 1.4em;
     --borde: 1px solid #ccc;
+    --black: #000;
+    --white: #fff;
+    --light-grayish-cyan1: #effcfa;
+    --light-grayish-cyan2: #d5f8f7;
+    --strong-cyan: #22B3B8;
+    --very-dark-cyan: #205059;
     }
 body{
     background-color: var(--aquamarine-blue-50);
@@ -62,7 +68,7 @@ select option{
     border-radius: 5px;
     width: 200px; 
     padding: 5px; 
-    color: black;
+    color: var(--black);
 }
 .descripcio.formulari_descripcio label {
     flex: 1;
@@ -75,7 +81,7 @@ select option{
 .formulari_btn{
     margin-top: 25px;
     background-color: var(--button);
-    color: white;
+    color: var(--white);
     padding: 2vmin 2vmax;
     border: none;
     border-radius: 5px;

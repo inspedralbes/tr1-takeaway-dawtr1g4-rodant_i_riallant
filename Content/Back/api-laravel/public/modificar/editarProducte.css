@@ -1,0 +1,77 @@
+:root{
+    --aquamarine-blue-50: #effcfa;
+    --aquamarine-blue-100: #d5f8f7;
+    --aquamarine-blue-200: #b1f0ef;
+    --aquamarine-blue-300: #69e2e2;
+    --aquamarine-blue-400: #3dd0d3;
+    --aquamarine-blue-500: #22b3b8;
+    --aquamarine-blue-600: #1f919b;
+    --aquamarine-blue-700: #1f757f;
+    --aquamarine-blue-800: #225f68;
+    --aquamarine-blue-900: #205059;
+    --aquamarine-blue-950: #10353c;
+}
+
+.form{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--aquamarine-blue-200);
+    text-align: center;
+}
+
+.form>*{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 80%;
+    margin: auto;
+    margin-top: 5vh;
+    background-color: var(--aquamarine-blue-400);
+    border-radius: 10px;
+}
+
+label{
+    font-size: 1.3em;
+    margin-bottom: 1vh;
+}
+
+.form input, .form textarea, .form select{
+    width: 50vw;
+    margin: auto;
+    margin-bottom: 1vh;
+}
+
+.form input{
+    max-width: 200px;
+}
+
+.form textarea{
+    max-width: 500px;
+}
+
+.form select{ 
+    max-width: 100px;
+}
+
+input[type=number]{
+    max-width: 100px;
+}
+
+input[type=submit]{
+    background-color: var(--aquamarine-blue-300);
+    border: 1px solid black;
+    margin-top: 5vh;
+}
+
+.error{
+    width: 80%;
+    padding: 5px;
+    background-color: rgb(255, 107, 107);
+    border: 2px rgb(109, 3, 3) solid;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 2em;
+}
