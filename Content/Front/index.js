@@ -35,18 +35,26 @@ createApp({
             btnQR: true,
             canviarMarcador: false,
             prefixComunicacio: url_prefix(),
+            producteDetalls: {},
+            interval: null,
         }
     },
     methods: {
+        reiniciarVariables(){
+            this.desplegador=false;
+            this.canviarMarcador = false;
+            this.busqueda = "";
+            if(this.interval != null){
+                clearInterval(this.interval);
+            }
+            
+        },
         getPantalla() {
             return this.pantallaActual;
         },
         canviarPantalla(nova) {
-            console.log(this.prefixComunicacio);
+            this.reiniciarVariables();
             this.pantallaActual = nova;
-            this.desplegador=false;
-            this.canviarMarcador = false;
-            this.busqueda = "";
             if (nova == "botiga") {
                 this.getProductes();
                 if (this.comandaModificant) {
@@ -55,6 +63,8 @@ createApp({
 
             } else if (nova == 'checkout' && this.comandaModificant) {
                 this.email = this.comanda.email;
+            } else if (nova == 'comanda') {
+                this.demanarComandaConstant();
             }
             this.btnQR = true;
         },
@@ -80,8 +90,13 @@ createApp({
 
                 });
         },
-        detallsProducte(producte){
+        tancarModal(){
+            document.querySelector("dialog").close();
+        },
+        detallsProducte(producte){            
+            this.producteDetalls = producte;
 
+            document.querySelector("dialog").showModal()
         },
         augmentarEstocPossible() {
             let productesComanda = JSON.parse(this.comanda.productes)
@@ -202,9 +217,6 @@ createApp({
                 )
                 this.mostrarCategories = true;
             }
-            if (this.searchInput == "") {
-
-            }
         },
         elementosFiltrados() {
             if (this.filtroCategoria === -1) {
@@ -258,16 +270,13 @@ createApp({
             }
         },
         buscarComanda() {
-            agafarComanda(this.comanda.id)
-              .then((data) => {
-                if (data) {                  
-                  this.comanda = data;
-                  this.pantallaActual = "comanda"
-                  setTimeout(() => {this.canviarMarcador = true;}, 100);
-                }
-              })
+            this.demanarComanda();
+
+            this.canviarPantalla("comanda");;
+            
+            setTimeout(() => {this.canviarMarcador = true;}, 100);
+            
             //   .catch((error) => {
-            //     console.error('Error al buscar la comanda:', error);
             //     this.comandaEncontrada = null; // Limpiamos el resultado en caso de error
             //   });
         },
@@ -287,10 +296,28 @@ createApp({
         mostrarFeinaAdministrador() {
             this.mostrarAdministrador = !this.mostrarAdministrador;
          },
-        aumentarTamano() {
+        augmentarTamany() {
                 this.mostrarTicket = !this.mostrarTicket
+        },
+        demanarComanda(){
+            agafarComanda(this.comanda.id)
+              .then((data) => {
+                if (data) {                  
+                  this.comanda = data;
+                }
+              })
+        },
+        demanarComandaConstant(){
+            this.interval = setInterval(() => {
+                this.demanarComanda();
+            }, 2000);     
         }
 
+    },
+    created() {
+        agafarCategories().then(data =>
+            this.categories = data
+        )
     },
     computed: {
     }
