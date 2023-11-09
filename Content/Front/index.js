@@ -66,6 +66,7 @@ createApp({
             } else if (nova == 'comanda') {
                 this.demanarComandaConstant();
             }
+            this.btnQR = true;
         },
         toggleMenu() {
             this.menuOpen = !this.menuOpen;
@@ -281,7 +282,7 @@ createApp({
         },
         generarQr(){
             let qrValue = "http://rirtr1g4.daw.inspedralbes.cat/Front/"
-            this.imagenQr = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
+            this.imagenQr = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrValue}`;
             this.btnQR = false;
         },
         modificarComanda() {
@@ -290,6 +291,7 @@ createApp({
             this.comandaModificant = true;
 
             this.canviarPantalla('botiga');
+            this.btnQR = true;
         },
         mostrarFeinaAdministrador() {
             this.mostrarAdministrador = !this.mostrarAdministrador;
