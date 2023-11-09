@@ -36,17 +36,25 @@ createApp({
             canviarMarcador: false,
             prefixComunicacio: url_prefix(),
             producteDetalls: {},
+            interval: null,
         }
     },
     methods: {
+        reiniciarVariables(){
+            this.desplegador=false;
+            this.canviarMarcador = false;
+            this.busqueda = "";
+            if(this.interval != null){
+                clearInterval(this.interval);
+            }
+            
+        },
         getPantalla() {
             return this.pantallaActual;
         },
         canviarPantalla(nova) {
+            this.reiniciarVariables();
             this.pantallaActual = nova;
-            this.desplegador=false;
-            this.canviarMarcador = false;
-            this.busqueda = "";
             if (nova == "botiga") {
                 this.getProductes();
                 if (this.comandaModificant) {
@@ -55,6 +63,8 @@ createApp({
 
             } else if (nova == 'checkout' && this.comandaModificant) {
                 this.email = this.comanda.email;
+            } else if (nova == 'comanda') {
+                this.demanarComandaConstant();
             }
         },
         toggleMenu() {
@@ -259,16 +269,13 @@ createApp({
             }
         },
         buscarComanda() {
-            agafarComanda(this.comanda.id)
-              .then((data) => {
-                if (data) {                  
-                  this.comanda = data;
-                  this.pantallaActual = "comanda"
-                  setTimeout(() => {this.canviarMarcador = true;}, 100);
-                }
-              })
+            this.demanarComanda();
+
+            this.canviarPantalla("comanda");;
+            
+            setTimeout(() => {this.canviarMarcador = true;}, 100);
+            
             //   .catch((error) => {
-            //     console.error('Error al buscar la comanda:', error);
             //     this.comandaEncontrada = null; // Limpiamos el resultado en caso de error
             //   });
         },
@@ -287,8 +294,21 @@ createApp({
         mostrarFeinaAdministrador() {
             this.mostrarAdministrador = !this.mostrarAdministrador;
          },
-        aumentarTamano() {
+        augmentarTamany() {
                 this.mostrarTicket = !this.mostrarTicket
+        },
+        demanarComanda(){
+            agafarComanda(this.comanda.id)
+              .then((data) => {
+                if (data) {                  
+                  this.comanda = data;
+                }
+              })
+        },
+        demanarComandaConstant(){
+            this.interval = setInterval(() => {
+                this.demanarComanda();
+            }, 2000);     
         }
 
     },

@@ -115,7 +115,7 @@
                 <input type="submit" value="Enviar" @click="buscarComanda" />
             </div>
         </div>
-        <div v-if="getPantalla() == `botiga`" @click="aumentarTamano" :class="{ ticket__productes : !mostrarTicket , ticket__productes_desplegat : mostrarTicket}" >
+        <div v-if="getPantalla() == `botiga`" @click="augmentarTamany" :class="{ ticket__productes : !mostrarTicket , ticket__productes_desplegat : mostrarTicket}" >
             <div class="ticket-productes-total" >
                 <h2>Producte:</h2>
                 <p>{{getProducteTotalComprat()}}</p>
