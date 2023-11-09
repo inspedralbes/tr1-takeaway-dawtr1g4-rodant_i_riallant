@@ -254,7 +254,7 @@ createApp({
                     this.comanda = data;
                 });
 
-                localStorage.clear;
+                localStorage.removeItem('compra');
 
                 this.pantallaActual = `comanda`;
 
