@@ -3,7 +3,7 @@
 @section('content')
 
 <link rel="stylesheet" href="editarProducte.css">
-
+<!-- Plantilla de modificar l'informacio d'un producte -->
 <h1>Modificar un producte</h1>
 
 @if(session('error'))
@@ -11,7 +11,7 @@
     <div class="error">{{session('error')}}</div>
 
 @endif
-
+    <!-- Formulari de la modificacio -->
     <form action="{{ route('producte-editar', ['id'=> $producte->id]) }}" method="post" class="form">
         @csrf
         @method("PATCH")
