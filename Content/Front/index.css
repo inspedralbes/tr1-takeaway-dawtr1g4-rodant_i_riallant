@@ -40,10 +40,8 @@
     --verd-estat:#00FF40;
     --blau-estat:#00FFF2;
     --gris-border:#ccc;
-
-
-    
 }
+
 body {
     background-color: var(--aquamarine-blue-50);
     margin: 0;
@@ -54,9 +52,10 @@ body {
 
 }
 
-h1 {
+h1, h2 {
     margin: 0;
 }
+
 button {
     font-family: 'Tilt Neon';
     background-color:var(--aquamarine-blue-500);
@@ -281,11 +280,30 @@ header h1 {
     overflow: scroll;
     transition: 1s;
 }
+.ticket__productes_desplegat h2, .ticket__productes h2 {
+    font-size: 1.2em;
+}
+
+.producte__prodNom {
+    max-height: 69px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 2px;
+}
 
 .ticket-productes-total{
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 3fr;
     overflow: scroll;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    padding-top: 1.5vh;
+}
+
+.ticket-productes-total>*{
+    display: flex;
+    align-items: center;
+    margin: auto;
 }
 
 .ticket-productes-total h2 {
@@ -297,14 +315,41 @@ header h1 {
     color: var(--white);
     font-size: 1.1em;
     background-color: var(--aquamarine-blue-400);
-    margin: auto;
     padding: 10%;
     border-radius: 10px;
 }
 
-.llista>*{
+.llista__producte{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "img nom preu quant total";
+    margin-left: 5px;
+}
+
+.titols__prodNom{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.llista__producte>*:nth-child(1){
+    grid-area: img;
+}
+
+.llista__producte>*:nth-child(2){
+    grid-area: nom;
+}
+
+.llista__producte>*:nth-child(3){
+    grid-area: preu;
+}
+
+.llista__producte>*:nth-child(4){
+    grid-area: quant;
+}
+
+.llista__producte>*:nth-child(5){
+    grid-area: total;
 }
 
 .llista img{
@@ -414,14 +459,14 @@ header h1 {
 }
 .botiga__preu {
     font-family: 'Ubuntu';
-    background-color: var(--aquamarine-blue-950);
+    background-color: var(--aquamarine-blue-650);
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     width: 100%;
     position: absolute;
-    bottom: 30px; 
+    bottom: 21%; 
     color: white;
     text-shadow: 1px 1px black;
 }

@@ -25,9 +25,9 @@ PRODUCCIÓN: http://rirtr1g4.daw.inspedralbes.cat/Back/api-laravel/public/api/pr
 
 */
 
-export const _IS_DEV = true;
-export const _HOST_DEV = "http://localhost:8000";
-export const _HOST_PRE = "/Back/api-laravel/public";
+const _IS_DEV = true;
+const _HOST_DEV = "http://localhost:8000";
+const _HOST_PRE = "/Back/api-laravel/public";
 
 export function url_prefix(){
     var prefix = "";

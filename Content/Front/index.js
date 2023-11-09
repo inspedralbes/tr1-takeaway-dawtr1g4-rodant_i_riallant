@@ -40,6 +40,9 @@ createApp({
         }
     },
     methods: {
+        agafarUrl(){
+            return url_prefix();
+        },
         reiniciarVariables(){
             this.desplegador=false;
             this.canviarMarcador = false;

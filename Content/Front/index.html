@@ -50,9 +50,9 @@
                         <li @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
                         <li @click="mostrarFeinaAdministrador()">Administrador</li>
                         <div v-if="mostrarAdministrador" class="feina-adminitrador">
-                            <li><a href="../Back/api-laravel/resources/views/newProduct.blade.php"> Afegir producte</a></li>
-                            <li><a href="../Back/api-laravel/resources/views/index.blade.php"> Afegir estoc</a></li>
-                            <li><a href="../Back/api-laravel/resources/views/comanda.blade.php">Modificar comanda</a></li>
+                            <li><a :href="`${agafarUrl()}/afegir`"> Afegir producte</a></li>
+                            <li><a :href="`${agafarUrl()}/llistat-prod`"> Afegir estoc</a></li>
+                            <li><a :href="`${agafarUrl()}/comandes`">Modificar comanda</a></li>
                         </div>
                     </ul>
                 </nav>
@@ -136,24 +136,27 @@
                         <p>Suma</p>
                     </div>
                 </div>
-                <div v-for="(producteComprar, index) in compra" class="llista__producte">
+                <div v-for="(producteComprar, index) in compra" >
+                    <div class="llista__producte" v-if="mostrarTicket">
+                        <div class="producte__prodImg">
+                            <img :src="producteComprar.img" alt="producte">
+                        </div>
+                        <div class="producte__prodNom">
+                            <h2>{{producteComprar.nom}}</h2>
+                        </div>
+                        <div class="producte__preu--unic">
+                            <p>{{producteComprar.preu}}€</p>
+                        </div>
+                        <div class="producte__quantitat">
+                            <p>{{producteComprar.counter}}</p>
+                        </div>
+                        <div class="producte__preu--suma">
+                            <p>{{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
+                            </p>
+                        </div>
+                    </div>
 
-                    <div class="producte__prodImg">
-                        <img :src="producteComprar.img" alt="producte">
-                    </div>
-                    <div class="producte__prodNom">
-                        <h2>{{producteComprar.nom}}</h2>
-                    </div>
-                    <div class="producte__preu-unic">
-                        <p>{{producteComprar.preu}}€</p>
-                    </div>
-                    <div class="producte__quantitat">
-                        <p>{{producteComprar.counter}}</p>
-                    </div>
-                    <div class="producte__preu-suma">
-                        <p>{{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
-                        </p>
-                    </div>
+                    
                 </div>
             </div>
         </div>
