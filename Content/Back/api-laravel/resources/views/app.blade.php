@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Administració</title>
 </head>
 <body>
@@ -17,9 +16,6 @@
                 <li><a href="#">Servicios</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
-            <button class="cart-button" @click="canviarPantalla('checkout')">
-                <i class="fas fa-shopping-cart"></i> Carro
-            </button>
         </nav>
     </header>
     <!-- header -->
