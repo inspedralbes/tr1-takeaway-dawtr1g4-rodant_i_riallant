@@ -8,6 +8,7 @@
 
     <div class="comanda__email">Email del client: {{ $comanda->email }}</div>
 
+    <!-- Mostra el total de productes amb el preu total i per producte -->
     <div class="comanda__productes productes">
         <h3 class="productes__titol">Productes:</h3>
 
@@ -28,6 +29,7 @@
         </ol>
     </div>
 
+    <!-- Son els diferents estats que por tindre una comanda -->
     <div class="comanda__estat estat">Estat: 
         <span class="estat__dreta">
             @switch($comanda->estat)
@@ -49,7 +51,7 @@
             @endswitch
         </span>
     </div>
-
+    <!-- Canvia el missatge de l'estat de la comanda -->
     <div class="comanda__modificacions modificacions">
         <div class="modificacions__modificacio">Comanda creada a: <span class="modificacio__dreta">{{ $comanda->created_at }}</span></div>
 
@@ -68,7 +70,7 @@
     </div>
     
     
-
+    <!-- Controlador dels estats de la comanda -->
     <form class="comanda__formulari formulari" id="myForm" action="{{ route('comanda-editar-estat', ['id'=> $comanda->id]) }}" method="post">
         @method('PATCH') 
         @csrf 
@@ -89,7 +91,7 @@
     </form>
 </div>
 
-
+<!-- Controlador JavaScript del formulari de canviar estat -->
 <script>
 
     const radios = document.querySelectorAll('input[name="estat"]');
