@@ -36,6 +36,7 @@ createApp({
             canviarMarcador: false,
             prefixComunicacio: url_prefix(),
             producteDetalls: {},
+            mostrarModal: false,
         }
     },
     methods: {
@@ -80,18 +81,17 @@ createApp({
 
                 });
         },
-        obrirModal(){
-            document.querySelector("dialog").showModal();
-        },
         tancarModal(){
             document.querySelector("dialog").close();
+
+            this.mostrarModal = false;
         },
         detallsProducte(producte){
+            this.mostrarModal = true;
+            
             this.producteDetalls = producte;
 
-            document.querySelector("dialog").showModal();
-
-
+            setTimeout(() => document.querySelector("dialog").showModal(),1)
         },
         augmentarEstocPossible() {
             let productesComanda = JSON.parse(this.comanda.productes)
@@ -212,9 +212,6 @@ createApp({
                 )
                 this.mostrarCategories = true;
             }
-            if (this.searchInput == "") {
-
-            }
         },
         elementosFiltrados() {
             if (this.filtroCategoria === -1) {
@@ -300,6 +297,11 @@ createApp({
                 this.mostrarTicket = !this.mostrarTicket
         }
 
+    },
+    created() {
+        agafarCategories().then(data =>
+            this.categories = data
+        )
     },
     computed: {
     }
