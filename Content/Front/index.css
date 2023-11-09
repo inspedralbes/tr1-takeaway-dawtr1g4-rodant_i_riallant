@@ -183,7 +183,6 @@ header h1 {
     position: absolute;
     top: 2vh;
     right: 5vw;
-    background-color: var(--aquamarine-blue-500);
     color: var(--white);
     padding: 4vmin 5vmax;
     border: none;
@@ -459,7 +458,6 @@ input {
     padding: 10px;
     font-size: 1.7em;
     border: 1px solid var(--aquamarine-blue-400);
-    ;
     border-radius: 4px;
     width: 60%;
 }
@@ -502,7 +500,6 @@ input {
     margin: 5px;
     padding-right: 2vh;
     border: 1px solid black;
-    background-color: var(--aquamarine-blue-950);
 }
 .productes__producte>div {
     text-align: center;
