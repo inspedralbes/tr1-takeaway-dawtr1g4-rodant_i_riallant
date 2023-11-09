@@ -35,9 +35,7 @@ createApp({
             btnQR: true,
             canviarMarcador: false,
             prefixComunicacio: url_prefix(),
-            producteDetalls: {},
-            mostrarModal: false,
-        }
+            producteDetalls        }
     },
     methods: {
         getPantalla() {
@@ -83,12 +81,8 @@ createApp({
         },
         tancarModal(){
             document.querySelector("dialog").close();
-
-            this.mostrarModal = false;
         },
-        detallsProducte(producte){
-            this.mostrarModal = true;
-            
+        detallsProducte(producte){            
             this.producteDetalls = producte;
 
             setTimeout(() => document.querySelector("dialog").showModal(),1)

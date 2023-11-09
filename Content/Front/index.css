@@ -460,6 +460,14 @@ header h1 {
             "preu preu";
 }
 
+dialog:not([open]){
+    display:none;
+  }
+
+::backdrop{
+    background-color: #3dd0d371;
+}
+
 .modal__nom{
     grid-area: nom;
 }
