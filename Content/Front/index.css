@@ -154,6 +154,7 @@ header h1 {
 .filtre-botiga input {
   margin-bottom: 5vh;
   width: 80%;
+  background-color: var(--aquamarine-blue-600);
   border: 2px solid var(--aquamarine-blue-300);
   font-size: 1.5em;
   color: var(--white);

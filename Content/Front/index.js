@@ -268,7 +268,7 @@ createApp({
                     producte.counter = 0;
                 });
 
-                demanarComandaConstant();
+                this.demanarComandaConstant();
 
             } else {
                 alert("Escriu una adreça d'email vàlida");
@@ -315,7 +315,6 @@ createApp({
         demanarComandaConstant(){
             this.interval = setInterval(() => {
                 this.demanarComanda();
-                console.log('hola');
             }, 2000);     
         }
 

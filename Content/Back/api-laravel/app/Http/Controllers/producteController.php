@@ -42,7 +42,7 @@ class producteController extends Controller
         $originalFileName = $img->getClientOriginalName();
         
         // Define la ruta donde deseas almacenar la imagen y utiliza el nombre original del archivo
-        $imgPath = 'public/storage/img/' . $originalFileName;
+        $imgPath = '../Back/api-laravel/public/storage/img/' . $originalFileName;
         
         // Mueve la imagen a la ubicación deseada con el nombre original
         $img->move(public_path('../public/storage/img/'), $originalFileName);

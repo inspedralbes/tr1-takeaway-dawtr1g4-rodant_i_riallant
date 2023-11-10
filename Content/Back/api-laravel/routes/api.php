@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\categoriaController;
-use App\Http\Controllers\comandaController;
-use App\Http\Controllers\producteController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ComandaController;
+use App\Http\Controllers\ProducteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,26 +17,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/productes', [producteController::class, 'index']);
+Route::get('/productes', [ProducteController::class, 'index']);
 
-// Route::post('/productes', [producteController::class, 'store']);
+// Route::post('/productes', [ProducteController::class, 'store']);
 
-Route::get('/productes/{id}', [producteController::class, 'show']);
+Route::get('/productes/{id}', [ProducteController::class, 'show']);
 
-// Route::patch('/productes/{id}', [producteController::class, 'update']);
+// Route::patch('/productes/{id}', [ProducteController::class, 'update']);
 
-// Route::delete('/productes/{id}', [producteController::class, 'destroy']);
+// Route::delete('/productes/{id}', [ProducteController::class, 'destroy']);
 
-Route::get('/productes/search/{name}', [producteController::class, 'search']);
+Route::get('/productes/search/{name}', [ProducteController::class, 'search']);
 
 
-Route::post('/comanda', [comandaController::class,'store']);
+Route::post('/comanda', [ComandaController::class,'store']);
 
-Route::get('/comanda/{id}', [comandaController::class, 'show']);
+Route::get('/comanda/{id}', [ComandaController::class, 'show']);
 
-Route::patch('/comanda/{id}', [comandaController::class, 'modificar']);
+Route::patch('/comanda/{id}', [ComandaController::class, 'modificar']);
 
-Route::get('/categories', [categoriaController::class,'index']);
+Route::get('/categories', [CategoriaController::class,'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
