@@ -11,7 +11,6 @@
         <a href="http://rirtr1g4.daw.inspedralbes.cat/Front/" style="text-decoration: none; color: black;">
   <h1>RODANT I <br>RIALLANT</h1>
 </a>
-
         </nav>
     </header>
     <!-- header -->
