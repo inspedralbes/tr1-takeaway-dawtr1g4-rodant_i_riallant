@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'Tilt Neon';
+    src: url('../fonts/TiltNeon-Regular-VariableFont_XROT\,YROT.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Bold.ttf')format('truetype');
+    src: url('../fonts/Ubuntu-BoldItalic.ttf')format('truetype');
+    src: url('../fonts/Ubuntu-Italic.ttf')format('truetype');
+    src: url('../fonts/Ubuntu-Light.ttf')format('truetype');
+    src: url('../fonts/Ubuntu-LightItalic.ttf')format('truetype');
+    src: url('../fonts/Ubuntu-Medium.ttf')format('truetype');
+    src: url('../fonts/Ubuntu-MediumItalic.ttf')format('truetype');
+    src: url('../fonts/Ubuntu-Regular.ttf')format('truetype');
+}
+:root{
+    --aquamarine-blue-50: #effcfa;
+    --aquamarine-blue-100: #d5f8f7;
+    --aquamarine-blue-200: #b1f0ef;
+    --aquamarine-blue-300: #69e2e2;
+    --aquamarine-blue-400: #3dd0d3;
+    --aquamarine-blue-500: #22b3b8;
+    --aquamarine-blue-600: #1f919b;
+    --aquamarine-blue-700: #1f757f;
+    --aquamarine-blue-800: #225f68;
+    --aquamarine-blue-900: #205059;
+    --aquamarine-blue-950: #10353c;
+    --black: #000;
+    --white: #fff;
+}
+
+body{
+    background-color: var(--aquamarine-blue-50);
+    font-family: 'Ubuntu';
+}
+.header__navbar h1 {
+    font-family: 'Tilt Neon';
+    text-align: center;
+    font-size: 2em;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+.comanda{
+    display: grid;
+    grid-template-areas: "id email"
+            "productes productes"
+            "estat estat"
+            "modificacions modificacions"
+            "form form";
+    grid-template-columns: 1fr 3fr;
+    margin: 5%;
+}
+
+.comanda>*{
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    margin-bottom: 5vh;
+}
+
+.comanda>*:nth-child(1), .comanda>*:nth-child(2){
+    background-color: var(--aquamarine-blue-200);
+}
+
+.comanda__id{
+    grid-area: id;
+    text-align: center;
+}
+
+.comanda__email{
+    grid-area: email;
+    text-align: center;
+}
+
+.comanda__productes{
+    grid-area: productes;
+}
+
+.comanda__estat{
+    grid-area: estat;
+}
+
+.comanda__modificacions{
+    grid-area: modificacions;
+}
+
+.comanda__formulari{
+    grid-area: form;
+}
+
+.productes{
+    display: grid;
+    grid-template-areas: "titol total"
+            "llistat llistat";
+    background-color: var(--aquamarine-blue-300);
+
+}
+
+.productes__titol{
+    grid-area: titol;
+}
+
+.productes__total{
+    grid-area: total;
+    display: flex;
+    align-items: center;
+}
+
+.productes__llistat{
+    grid-area: llistat;
+    background-color: var(--aquamarine-blue-200);
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+
+.producte, .titols{
+    list-style-type: none;
+    text-align: center;
+}
+
+.producte__id, .titols__id{
+    float: left;
+}
+
+.producte__quantitat, .titols__quantitat{
+    float: right;
+}
+
+.estat{
+    border-bottom: 1px solid var(--black);
+}
+
+.estat__dreta, .modificacio__dreta{
+    float: right;
+}
+
+.formulari{
+    display: grid;
+    grid-template-areas: "anterior posterior"
+            "submit submit";
+    background-color: var(--aquamarine-blue-200);
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.formulari>*{
+    margin-bottom: 7vh;
+}
+
+.formulari__anterior, .formulari__posterior{
+    text-align: center;
+    border: var(--aquamarine-blue-950) 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    width: 70%;
+    background-color: var(--aquamarine-blue-800);
+    color: var(--white);
+
+    transform: scale(1.2);
+}
+
+.formulari__anterior{
+    grid-area: anterior;
+}
+
+.formulari__posterior{
+    grid-area: posterior;
+}
+
+.formulari__submit{
+    grid-area: submit;
+    width: 20vw;
+    margin: auto;
+    background-color: var(--aquamarine-blue-400);
+    border: var(--aquamarine-blue-950) 1px solid;
+    border-radius: 5px;
+    
+}
+
+.formulari__anterior>*, .formulari__posterior>*{
+    display: none;
+}
+
+.formulari__input__active{
+    background-color: var(--aquamarine-blue-400);
+    color: var(--black);
+}

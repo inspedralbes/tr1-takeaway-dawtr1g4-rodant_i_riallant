@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Tilt Neon';
+    src: url('../fonts/TiltNeon-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Bold.ttf');
+    src: url('../fonts/Ubuntu-BoldItalic.ttf');
+    src: url('../fonts//Ubuntu-Italic.ttf');
+    src: url('..fonts/Ubuntu-Light.ttf');
+    src: url('../fonts/Ubuntu-LightItalic.ttf');
+    src: url('../fonts/Ubuntu-Medium.ttf');
+    src: url('../fonts/Ubuntu-MediumItalic.ttf');
+    src: url('../fonts/Ubuntu-Regular.ttf');
+}
+
+:root {
+    --aquamarine-blue-50: #effcfa;
+    --aquamarine-blue-100: #d5f8f7;
+    --aquamarine-blue-200: #b1f0ef;
+    --aquamarine-blue-300: #69e2e2;
+    --aquamarine-blue-400: #3dd0d3;
+    --aquamarine-blue-500: #22b3b8;
+    --aquamarine-blue-600: #1f919b;
+    --aquamarine-blue-700: #1f757f;
+    --aquamarine-blue-800: #225f68;
+    --aquamarine-blue-900: #205059;
+    --aquamarine-blue-950: #10353c;
+    --black: #000;
+    --very-light-lime: #7cff6b;
+    --very-dark-lime: #036d1a ;
+}
+
+body {
+    background-color: var(--aquamarine-blue-50);
+}
+
+.header__navbar h1 {
+    font-family: 'Tilt Neon';
+    text-align: center;
+    font-size: 2em;
+}
+h1{
+    font-family: 'Ubuntu';
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.llistat {
+    font-family: 'Ubuntu';
+    background-color: var(--aquamarine-blue-200);
+    display: grid;
+    margin-top: 5vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.titols,
+.comanda {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.comanda:nth-child(2n+1) {
+    background-color: var(--aquamarine-blue-400);
+}
+
+
+
+.comanda:last-child {
+    border-bottom: 1px solid var(--aquamarine-blue-950);
+}
+
+.titols *,
+.comanda * {
+    border-left: 1px solid var(--aquamarine-blue-950);
+    border-top: 1px solid var(--aquamarine-blue-950);
+    padding: 5px;
+    text-align: center;
+}
+
+.titols>*:last-child,
+.comanda>*:last-child {
+    border-right: 1px solid var(--aquamarine-blue-950);
+}
+
+.titols *{
+    margin: 0;
+    padding: 3vh;
+}
+
+.success{
+    width: 85%;
+    background-color: rgb(118, 255, 105);
+    border: 2px solid hsl(120, 100%, 18%);
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.error{
+    width: 85%;
+    background-color: rgb(255, 105, 105);
+    border: 2px solid hsl(0, 100%, 18%);
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}

@@ -1,0 +1,134 @@
+:root{
+    --fons: #effcfa;
+    --strong-cyan: #22B3B8;
+    --lletra: 'Times New Roman', Times, serif;
+    --tamany: 1.4em;
+    --borde: 1px solid #ccc;
+    --black: #000;
+    --white: #fff;
+    --light-grayish-cyan: #d5f8f7;
+    --very-dark-cyan: #205059;
+    }
+body{
+    background-color: var(--fons);
+}
+form{
+    padding-top: 20px;
+    text-align: center;
+    font-family: var(--lletra);
+    font-size: var(--tamany);
+}
+input {
+    border: var(--borde);
+    border-radius: 5px;
+    width: 200px; 
+    padding: 5px; 
+    margin: 10px;
+}
+textarea {
+    border: var(--borde);
+    border-radius: 5px;
+    width: 200px; 
+    padding: 5px; 
+}
+select {
+    border: var(--borde);
+    border-radius: 5px;
+    width: 200px; 
+    padding: 5px; 
+}
+select option{
+    border: var(--borde);
+    border-radius: 5px;
+    width: 200px; 
+    padding: 5px; 
+    color: var(--black);
+}
+.descripcio.formulari_descripcio label {
+    flex: 1;
+}
+
+.descripcio.formulari_descripcio textarea {
+    flex: 2;
+    margin-top: 5px;
+}
+.formulari_btn{
+    margin-top: 25px;
+    background-color: var(--button);
+    color: var(--white);
+    padding: 2vmin 2vmax;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4em;
+}
+header {
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    height: 15vh;
+    margin-bottom: 25px;
+}
+
+.header__navbar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 22px;
+    position: sticky;
+    top: 0;
+}
+
+.header__navbar h1{
+    font-family: 'Tilt Neon';
+}
+
+.header__navbar p {
+    font-size: 74px;
+    margin: 0;
+    margin-bottom: 15px;
+    display: block;
+    
+}
+
+.menu-icon {
+    font-size: 44px;
+
+    display: block;
+}
+
+.nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--white);
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list.active {
+    display: flex;
+}
+
+.cart-button {
+    position: absolute;
+    top: 0;
+    right: 3vw;
+    background-color: var(--strong-cyan);
+    color: var(--white);
+    padding: 4vmin 5vmax;
+    border: none;
+    border-radius: 5px;
+    margin-left: auto;
+    font-size: 30px;
+}
+
+.cart-button i.fa-shopping-cart {
+    margin-right: 5px;
+    font-size: 30px;
+}

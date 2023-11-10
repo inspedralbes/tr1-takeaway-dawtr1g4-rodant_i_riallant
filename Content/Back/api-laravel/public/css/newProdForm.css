@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Tilt Neon';
+    src: url('../fonts/TiltNeon-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Bold.ttf');
+    src: url('../fonts/Ubuntu-BoldItalic.ttf');
+    src: url('../fonts//Ubuntu-Italic.ttf');
+    src: url('..fonts/Ubuntu-Light.ttf');
+    src: url('../fonts/Ubuntu-LightItalic.ttf');
+    src: url('../fonts/Ubuntu-Medium.ttf');
+    src: url('../fonts/Ubuntu-MediumItalic.ttf');
+    src: url('../fonts/Ubuntu-Regular.ttf');
+}
+:root{
+    --aquamarine-blue-50: #effcfa;
+    --aquamarine-blue-100: #d5f8f7;
+    --aquamarine-blue-200: #b1f0ef;
+    --aquamarine-blue-300: #69e2e2;
+    --aquamarine-blue-400: #3dd0d3;
+    --aquamarine-blue-500: #22b3b8;
+    --aquamarine-blue-600: #1f919b;
+    --aquamarine-blue-700: #1f757f;
+    --aquamarine-blue-800: #225f68;
+    --aquamarine-blue-900: #205059;
+    --aquamarine-blue-950: #10353c;
+    --button: #22B3B8;
+    --tamany: 1.4em;
+    --borde: 1px solid #ccc;
+    --black: #000;
+    --white: #fff;
+    --light-grayish-cyan1: #effcfa;
+    --light-grayish-cyan2: #d5f8f7;
+    --strong-cyan: #22B3B8;
+    --very-dark-cyan: #205059;
+    }
+body{
+    background-color: var(--aquamarine-blue-50);
+    font-family: 'Ubuntu';
+}
+.header__navbar h1 {
+    font-family: 'Tilt Neon';
+    text-align: center;
+    font-size: 2em;
+}
+form{
+    font-family: 'Ubuntu';
+    padding-top: 20px;
+    text-align: center;
+    font-size: var(--tamany);
+}
+input {
+    border: var(--borde);
+    border-radius: 5px;
+    width: 200px; 
+    padding: 5px; 
+    margin: 10px;
+}
+textarea {
+    border: var(--borde);
+    border-radius: 5px;
+    width: 200px; 
+    padding: 5px; 
+}
+select {
+    border: var(--borde);
+    border-radius: 5px;
+    width: 200px; 
+    padding: 5px; 
+}
+select option{
+    border: var(--borde);
+    border-radius: 5px;
+    width: 200px; 
+    padding: 5px; 
+    color: var(--black);
+}
+.descripcio.formulari_descripcio label {
+    flex: 1;
+}
+
+.descripcio.formulari_descripcio textarea {
+    flex: 2;
+    margin-top: 5px;
+}
+.formulari_btn{
+    margin-top: 25px;
+    background-color: var(--button);
+    color: var(--white);
+    padding: 2vmin 2vmax;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4em;
+}
+

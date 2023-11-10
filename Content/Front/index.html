@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <link rel="shortcut icon" href="./img/beisbol.jpg">
+    <title> Rodant i Riallant</title>
+</head>
+
+
+<body>
+
+    <div id="app">
+        <header>
+            <h1 @click="canviarPantalla(`titol`)">RODANT I RIALLANT</h1>
+            <input type="checkbox" id="nav-toggler" v-model="desplegador">
+            <div class="page-wrap">
+                <label for="nav-toggler" class="toggle">
+                    <p class="toggle">☰</p>
+                </label>
+                <!-- This is the corresponding nav to the nav toggler above.-->
+                <nav class="hidden-nav">
+                    <ul>
+                        <li @click="canviarPantalla(`titol`)">Rodant i Riallant</li>
+                        <div v-if="getPantalla() == `botiga`">
+                            <li @click="mostrarFiltres()">Filtres</li>
+                            <div v-if="mostrarCategories" class="filtre-botiga">
+                                <div>
+                                    <li @click="filtrar(-1)">Treure</li>
+                                </div>
+                                <h3>Per categoria</h3>
+                                <div v-for="(categoria, index) in categories" @key="index">
+                                    <li @click="filtrar(categoria.id)">{{categoria.nom}}</li>
+                                </div>
+                                <h3>Per nom</h3>
+                                <input v-model="busqueda">
+                            </div>
+                        </div>
+                        <li @click="canviarPantalla(`BuscarComanda`)">Buscar Comanda</li>
+                        <li @click="mostrarFeinaAdministrador()">Administrador</li>
+                        <div v-if="mostrarAdministrador" class="feina-adminitrador">
+                            <li><a :href="`${agafarUrl()}/afegir`"> Afegir producte</a></li>
+                            <li><a :href="`${agafarUrl()}/llistat-prod`"> Afegir estoc</a></li>
+                            <li><a :href="`${agafarUrl()}/comandes`">Modificar comanda</a></li>
+                        </div>
+                    </ul>
+                </nav>
+                <button v-if="getPantalla() == `botiga`" class="cart-button" @click="canviarPantalla('checkout')">
+                    <i class="fas fa-shopping-cart"></i></button>
+
+        </header>
+        <div v-if="getPantalla() == `titol`" class="app__landing landing">
+            <div class="landing-botiga">
+                <button @click="canviarPantalla(`botiga`)">Botiga</button>
+                <div class="landing__informacio informacio">
+                    <h1 class="landing-salutacio">Benvingut a <br> Rodant i Riallant</h1>
+                    <h2>Horaris d'Atenció:</h2>
+                    <p><b>Dilluns a Divendres:</b> 9:00h - 19:00h</p>
+                    <h2><b>Contacte:</b></h2>
+                    <p><b>Tèlefon:</b> +34 5872568978</p>
+                    <p><b>Correu: </b><a href="mailto:info@rodantiriallant.com">info@rodantiriallant.com</a></p>
+                    <p><b>Direcció:</b> Carrer de les Pilotes 8 (La Rodona)</p>
+                    <img src="./img/botiga.png" alt="Imatge de la botiga Rodant i Riallant">
+                </div>
+            </div>
+        </div>
+
+        <div v-if="getPantalla() == `botiga`">
+            <div class="botiga__menu">
+                <div v-for="(producte, index) in productes">
+                    <div v-if="producte.nom.toLowerCase().includes(busqueda.toLowerCase().trim())">
+                        <div :id="'id' + index" :class="['botiga__item']">
+                            <div class="botiga__nom">{{producte.nom}}</div>
+                            <div class="botiga__preu">{{ producte.preu }}€</div>
+                            <div class="botiga__butons">
+                                <input class="buttons__button" type="button" value="-" @click="disminuirDemanats(index, $event)">
+                                <input class="botiga__quantitat" v-model="productes[index].counter" disabled>
+                                <input class="buttons__button" type="button" value="+" @click="augmentarDemanats(index, $event)">
+                            </div>
+                            <img class="botiga__imagen" @click="detallsProducte(producte)" :src="producte.img" alt="producte">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <dialog class="botiga__modal modal" >
+                <button autofocus @click="tancarModal()" class="modal__tancar">Tancar</button>
+                <h3 class="modal__nom">{{producteDetalls.nom}}</h3>
+                <p class="modal__descripcio">{{producteDetalls.descripcio}}</p>
+
+                <p class="modal__preu">Preu: {{producteDetalls.preu}}€</p>
+                <img :src="producteDetalls.img" alt="imatge" class="modal__imatge">
+            </dialog>              
+        </div>
+
+        <div v-if="getPantalla() == 'BuscarComanda'">
+            <div class="buscar-comanda">
+                <label for="numComanda">Numero de la comanda:</label>
+                <input type="number" id="numComanda" name="numComanda" min="1" v-model="comanda.id" />
+                <input type="submit" value="Enviar" @click="buscarComanda" />
+            </div>
+        </div>
+        <div v-if="getPantalla() == `botiga`" @click="augmentarTamany" :class="{ ticket__productes : !mostrarTicket , ticket__productes_desplegat : mostrarTicket}">
+            <div class="ticket-productes-total">
+                <h2>Producte:</h2>
+                <p>{{getProducteTotalComprat()}}</p>
+                <h2>Total:</h2>
+                <p>{{getTotal()}}</p>
+            </div>
+            <div class="productes__llista llista">
+                <div v-if="mostrarTicket" class="llista__producte llista__titols">
+                    <div>
+                        <h2></h2>
+                    </div>
+                    <div class="titols__prodNom">
+                        <h2>Nom</h2>
+                    </div>
+                    <div class="titols__preu-unic">
+                        <p>Preu</p>
+                    </div>
+                    <div class="titols__quantitat">
+                        <p>Quantitat</p>
+                    </div>
+                    <div class="titols__preu-quantitat">
+                        <p>Suma</p>
+                    </div>
+                </div>
+                <div v-for="(producteComprar, index) in compra" >
+                    <div class="llista__producte" v-if="mostrarTicket">
+                        <div class="producte__prodImg">
+                            <img :src="producteComprar.img" alt="producte">
+                        </div>
+                        <div class="producte__prodNom">
+                            <h2>{{producteComprar.nom}}</h2>
+                        </div>
+                        <div class="producte__preu--unic">
+                            <p>{{producteComprar.preu}}€</p>
+                        </div>
+                        <div class="producte__quantitat">
+                            <p>{{producteComprar.counter}}</p>
+                        </div>
+                        <div class="producte__preu--suma">
+                            <p>{{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€
+                            </p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+
+        <div v-if="getPantalla() == `checkout`">
+            <div class="checkout-producte">
+                <button @click="canviarPantalla(`botiga`)">Seguir comprant</button>
+            </div>
+            <div v-for="(producteComprar, index) in compra">
+                <div class="productes__producte producte">
+                    <div class="producte__foto">
+                        <img :src="producteComprar.img" alt="producte">
+                    </div>
+                    <div class="producte__titol">
+                        <h2>{{producteComprar.nom}}</h2>
+                    </div>
+                    <div class="producte__preus preus">
+                        <div class="preus__preu-unic">
+                            <p>{{producteComprar.preu}}€</p>
+                        </div>
+                        <div class="preus__quantitat">
+                            <p>{{producteComprar.counter}}</p>
+                        </div>
+                        <div class="preus__preu-quantitat">
+                            <p>{{(Math.round(producteComprar.preu*producteComprar.counter*100)/100).toFixed(2)}}€</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <h2 class="total__preu-producte" :class="preuTotal==0?`total__preu-producte--sense-producte`:``">
+                {{preuTotal==0?`No s'ha comprat cap producte`:`${preuTotal}€`}}</h2>
+            <div v-if="preuTotal!=0" class="formulari__usuari email">
+                <label for="email">Email </label>
+                <input v-model="email" id="email">
+                <button @click="ferCompra()">
+                    <h1>{{}}COMPRAR</h1>
+                </button>
+            </div>
+
+        </div>
+        <div v-if="getPantalla() == `comanda`" class="app__comanda comanda">
+            <h1 class="comanda__numero">Comanda nº{{comanda.id}}</h1>
+            <!-- <h2 class="comanda__estat" :class="'comanda__estat--' + comanda.estat">Estat: {{comanda.estat}}</h2> -->
+            <!-- Crear progreso estado aquí -->
+            <!-- <p class="arrow_test">arrow test : &#8593;  &#10514; <i class="comanda__progress--marker"></i></p> -->
+            <div class="comanda__estat estat">
+
+                <p class="estat__part estat__part--0">Pendent</p>
+                <p class="estat__part estat__part--1">Per preparar</p>
+                <p class="estat__part estat__part--2">Per enviar</p>
+                <p class="estat__part estat__part--3">Per repartir</p>
+                <p class="estat__part estat__part--4">Per recollir</p>
+                <img class="estat__part--marcador" :class="[canviarMarcador?`part__marcador--`+comanda.estat:'']"
+                    src="./img/progress__arrow.png" alt="fletxa" srcset="">
+
+                <!-- :class="`part__marcador--` + comanda.estat " -->
+            </div>
+            <!-- Insertando codigo QR -->
+            <div class="wrapper">
+                <div class="form" v-if="btnQR">
+                    <button  @click="generarQr" >Veure QR</button>
+                </div>
+                <div id="qr-code" v-if="!btnQR" >
+                    <img :src="imagenQr" >
+                </div>
+            </div>
+
+            <div v-if="comanda.estat == 0">
+                <button @click="modificarComanda()" class="comanda__modificar">Modificar comanda</button>
+            </div>
+
+            <button @click="canviarPantalla(`botiga`)" class="btn_Botiga">Botiga</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Rodant i Riallant. Tots els seus drets reservats.</p>
+    </footer>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
